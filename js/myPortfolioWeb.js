@@ -118,10 +118,10 @@ function removeClass(element, name) {
     element.className = arr.join(" ");
 }
 
-document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
+/*document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
 document.getElementById('html_css_javascript').addEventListener('click', filterSelection.bind(null, 'html_css_javascript'));
 document.getElementById('java').addEventListener('click', filterSelection.bind(null, 'java'));
-document.getElementById('android').addEventListener('click', filterSelection.bind(null, 'android'));
+document.getElementById('android').addEventListener('click', filterSelection.bind(null, 'android'));*/
 
 function viewPortfolio(event) {
     var polyNode = event.target;

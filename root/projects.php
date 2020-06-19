@@ -15,7 +15,10 @@
         <!--  포트폴리오 카테고리화 시켜서 리스트 및 클릭시 창 팝업  -->
         <div class="section-container">
             <div class="projects-area" id="projects">
-                <div class="title">PROJECTS</div>
+                <div class="title">
+                    PROJECTS
+                </div>
+
                 <div class="filter">
                     <ul class="list">
                         <li class="listItem active" id="all">All</li>
@@ -24,6 +27,7 @@
                         <li class="listItem" id="android">ANDROID</li>
                     </ul>
                 </div>
+
                 <div class="container">
                     <div class="filterItem android">
                         <div class="image">
@@ -192,5 +196,13 @@
         </div>
 
         <script src="../js/myPortfolioWeb.js"></script>
+
+        <script type="text/javascript">
+            document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
+            document.getElementById('html_css_javascript').addEventListener('click', filterSelection.bind(null, 'html_css_javascript'));
+            document.getElementById('java').addEventListener('click', filterSelection.bind(null, 'java'));
+            document.getElementById('android').addEventListener('click', filterSelection.bind(null, 'android'));
+        </script>
+
     </body>
 </html>

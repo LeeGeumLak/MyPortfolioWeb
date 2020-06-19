@@ -288,7 +288,7 @@ ul {
 .main-area > .container {
     position: relative;
     height: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .main-area > .container > .image-slide {
@@ -487,12 +487,13 @@ section {
 
 /* SKILLS AREA */
 .skills-area {
-    height: auto;
+    height: 1100px;
     background-color: #f9f9ff;
 }
 
 .skills-area > .container {
     text-align: center;
+    margin-bottom: 100px;
 }
 
 .skills-area > .container > .item {

@@ -15,7 +15,10 @@
         <!--   사용가능한 언어 및 플랫폼 및 설명 리스트  -->
         <div class="section-container">
             <div class="skills-area" id="skills">
-                <div class="title">SERVICE</div>
+                <div class="title">
+                    SERVICE
+                </div>
+
                 <div class="container">
 
                     <div class="item">
