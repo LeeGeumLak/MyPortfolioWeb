@@ -28,7 +28,8 @@ function menuToggle(){
 
 document.getElementById('toggleBtn').addEventListener('click', menuToggle);
 
-/* MAIN AREA */
+
+/* MAIN AREA  */
 var imageSlideIndex = 1;
 showImageSlides(imageSlideIndex);
 
@@ -75,9 +76,11 @@ document.getElementById('firstSlide').addEventListener('click', currentImageSlid
 document.getElementById('secondSlide').addEventListener('click', currentImageSlide.bind(null,2));
 document.getElementById('thirdSlide').addEventListener('click', currentImageSlide.bind(null,3));
 document.getElementById('forthSlide').addEventListener('click', currentImageSlide.bind(null,4));
+document.getElementById('fifthSlide').addEventListener('click', currentImageSlide.bind(null,5));
+document.getElementById('sixthSlide').addEventListener('click', currentImageSlide.bind(null,6));
 
 
-/* PORTFOLIO AREA */
+/* PROJECTS AREA */
 filterSelection('all');
 
 function filterSelection(id) {
@@ -151,7 +154,7 @@ for(var i=0;i<filterItems.length;i++){
     filterItems[i].addEventListener('click', viewPortfolio);
 }
 
-/* CONTACT AREA */
+/* BULLETIN BOARD AREA */
 
 
 /* ANCHOR */
@@ -164,17 +167,20 @@ function moveTo(id) {
     document.getElementById('menu').classList.remove('show');
 }
 
+document.getElementById('navbarMain').onclick = function(){
+    location.href="/main.php";
+};
 document.getElementById('navbarAbout').onclick = function(){
     location.href="/about.php";
 };
-document.getElementById('navbarService').onclick = function(){
-    location.href="/service.php";
+document.getElementById('navbarSkills').onclick = function(){
+    location.href="/skills.php";
 };
-document.getElementById('navbarPortfolio').onclick = function(){
-    location.href="/portfolio.php";
+document.getElementById('navbarProjects').onclick = function(){
+    location.href="/projects.php";
 };
-document.getElementById('navbarContact').onclick = function(){
-    location.href="/contact.php";
+document.getElementById('navbarBulletinBoard').onclick = function(){
+    location.href="/bulletinBoard.php";
 };
 
 /*document.getElementById('navbarAbout').addEventListener('click', moveTo.bind(null,'about'));

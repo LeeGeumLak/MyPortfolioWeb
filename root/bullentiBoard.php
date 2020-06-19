@@ -14,8 +14,8 @@
 
         <!--  소통할 수 있는 게시판   -->
         <div class="section-container">
-            <div class="contact-area" id="contact">
-                <div class="title">CONTACT</div>
+            <div class="bulletinBoard-area" id="bulletinBoard">
+                <div class="title">Bullentin Board</div>
 
                 <div class="container">
                     <div id="data-container"></div>
@@ -27,16 +27,7 @@
             </div>
         </div>
 
-        <footer class="footer-area">
-            <div class="sns">
-                <div class="item" id="facebook"><i class="fab fa-facebook-square"></i></div>
-                <div class="item" id="google"><i class="fab fa-google-plus"></i></div>
-                <div class="item" id="instagram"><i class="fab fa-instagram"></i></div>
-            </div>
-            <div class="info">
-                <p>Copyright © 2020 LGL Corp. All rights reserved.</p>
-            </div>
-        </footer>
+        <?php include './footer.php'?>
 
         <div id="portfolioModal" class="modal"b>
             <span class="close" id="modalClose">&times;</span>
@@ -48,7 +39,8 @@
             </div>
         </div>
 
-
+        <!-- 메인 js 파일 스크립트 추가 -->
+        <script src="../js/myPortfolioWeb.js"></script>
 
     </body>
 </html>

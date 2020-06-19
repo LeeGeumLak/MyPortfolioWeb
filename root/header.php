@@ -13,9 +13,6 @@
 <!-- style css 파일 가져오기 -->
 <link rel="stylesheet" href="../css/style.css" />
 
-<!-- 메인 js 파일 스크립트 추가 -->
-<script src="../js/myPortfolioWeb.js"></script>
-
 <!--  paging    -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

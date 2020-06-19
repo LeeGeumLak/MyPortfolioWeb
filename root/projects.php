@@ -14,8 +14,8 @@
 
         <!--  포트폴리오 카테고리화 시켜서 리스트 및 클릭시 창 팝업  -->
         <div class="section-container">
-            <div class="portfolio-area" id="portfolio">
-                <div class="title">PORTFOLIO</div>
+            <div class="projects-area" id="projects">
+                <div class="title">PROJECTS</div>
                 <div class="filter">
                     <ul class="list">
                         <li class="listItem active" id="all">All</li>
@@ -88,7 +88,7 @@
                     <div class="filterItem java">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="../img/imgSlider2.jpg">
+                            <img src="../img/imgSlider5.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -103,7 +103,7 @@
                     <div class="filterItem android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="../img/imgSlider1.jpg">
+                            <img src="../img/imgSlider6.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -118,7 +118,7 @@
                     <div class="filterItem html_css_javascript">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="../img/imgSlider3.jpg">
+                            <img src="../img/imgSlider1.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -133,7 +133,7 @@
                     <div class="filterItem android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="../img/imgSlider1.jpg">
+                            <img src="../img/imgSlider2.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -148,7 +148,7 @@
                     <div class="filterItem java android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="../img/imgSlider1.jpg">
+                            <img src="../img/imgSlider3.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -163,7 +163,7 @@
                     <div class="filterItem html_css_javascript android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="../img/imgSlider3.jpg">
+                            <img src="../img/imgSlider4.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -179,16 +179,7 @@
             </div>
         </div>
 
-        <footer class="footer-area">
-            <div class="sns">
-                <div class="item" id="facebook"><i class="fab fa-facebook-square"></i></div>
-                <div class="item" id="google"><i class="fab fa-google-plus"></i></div>
-                <div class="item" id="instagram"><i class="fab fa-instagram"></i></div>
-            </div>
-            <div class="info">
-                <p>Copyright © 2020 LGL Corp. All rights reserved.</p>
-            </div>
-        </footer>
+        <?php include './footer.php'?>
 
         <div id="portfolioModal" class="modal"b>
             <span class="close" id="modalClose">&times;</span>
