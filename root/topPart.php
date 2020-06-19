@@ -4,11 +4,16 @@
         <a class="navbar-brand" id="navbarBrand">LGL 's</a>
         <a class="navbar-toggler" id="toggleBtn"><i class="fa fa-bars"></i></a>
         <div class="navbar-menu" id="menu">
-            <div class="nav-item"><a class="nav-link" id="navbarMain">main</a></div>
+            <!--<div class="nav-item"><a class="nav-link" id="navbarMain">main</a></div>
             <div class="nav-item"><a class="nav-link" id="navbarAbout">about</a></div>
             <div class="nav-item"><a class="nav-link" id="navbarSkills">skills</a></div>
             <div class="nav-item"><a class="nav-link" id="navbarProjects">projects</a></div>
-            <div class="nav-item"><a class="nav-link" id="navbarBullentinBoard">bulletin board</a></div>
+            <div class="nav-item"><a class="nav-link" id="navbarBullentinBoard">bulletin board</a></div>-->
+            <div class="nav-item"><a class="nav-link" href="./main.php" ">main</a></div>
+            <div class="nav-item"><a class="nav-link" href="./about.php">about</a></div>
+            <div class="nav-item"><a class="nav-link" href="./skills.php">skills</a></div>
+            <div class="nav-item"><a class="nav-link" href="./projects.php">projects</a></div>
+            <div class="nav-item"><a class="nav-link" href="./bulletinBoard.php">bulletin board</a></div>
         </div>
     </nav>
 </header>
