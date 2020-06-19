@@ -17,8 +17,13 @@
         <!-- fonts -->
         <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR" rel="stylesheet">
 
+        <!--  paging    -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+
         <!-- css파일 가져오기 -->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
 
     <body>
@@ -36,54 +41,18 @@
             </nav>
         </header>
 
-        <!--  간단한 소개 및 신상정보, 연락처 등을 표시  -->
+        <!--  소통할 수 있는 게시판   -->
         <div class="section-container">
-            <div class="about-area" id="about">
-                <div class="title">
-                    ABOUT
+            <div class="contact-area" id="contact">
+                <div class="title">CONTACT</div>
+
+                <div class="container">
+                    <div id="data-container"></div>
+                    <div id="pagination"></div>
                 </div>
-                <div class="picture">
-                    <img src="img/imgSlider1.jpg">
-                    <div class="name">이금락</div>
-                </div>
-                <div class="text">
-                    <div class="intro">
-                        안녕하세요. ~~ 자기 소개 ~~ 문의하실게 있으면 언제든 연락 주세요.
-                    </div>
-                    <ul>
-                        <li>
-                            <div class="info">
-                                <i class="far fa-calendar-alt"></i> 30st March, 1994
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info">
-                                <i class="fas fa-phone"></i> +82 10-1234-5678
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info">
-                                <i class="fas fa-envelope"></i> ekdma4105@naver.com
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info">
-                                <i class="fas fa-home"></i> 4-gil, Mokdongnam-ro, Yangcheon-gu, Seoul, Republic of Korea
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="sns">
-                        <a>
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a>
-                            <i class="fab fa-google-plus-g"></i>
-                        </a>
-                        <a>
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
 
@@ -108,6 +77,7 @@
             </div>
         </div>
 
-        <script src="js/myPortfolioWeb.js"></script>
+        <script src="../js/myPortfolioWeb.js"></script>
+
     </body>
 </html>

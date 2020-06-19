@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="ko">
+<html>
     <head>
         <title>MyPortfolioWeb</title>
 
@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR" rel="stylesheet">
 
         <!-- css파일 가져오기 -->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
 
     <body>
@@ -36,36 +36,52 @@
             </nav>
         </header>
 
-        <!--  메인화면에 표시될 이미지 슬라이더   -->
-        <!--  자신의 사진이나 관심있는 분야 사진 등을 표시  -->
+        <!--  간단한 소개 및 신상정보, 연락처 등을 표시  -->
         <div class="section-container">
-            <div class="welcome-area">
-                <div class="container">
-                    <div class="image-slide fade">
-                        <img src="img/imgSlider1.jpg">
-                        <div class="numbertext"></div>
+            <div class="about-area" id="about">
+                <div class="title">
+                    ABOUT
+                </div>
+                <div class="picture">
+                    <img src="../img/imgSlider1.jpg">
+                    <div class="name">이금락</div>
+                </div>
+                <div class="text">
+                    <div class="intro">
+                        안녕하세요. ~~ 자기 소개 ~~ 문의하실게 있으면 언제든 연락 주세요.
                     </div>
-                    <div class="image-slide fade">
-                        <img src="img/imgSlider2.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="img/imgSlider3.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="img/imgSlider4.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-
-                    <a class="image-prev" id="imagePrev">&#10094;</a>
-                    <a class="image-next" id="imageNext">&#10095;</a>
-
-                    <div class="slide">
-                        <span class="slide" id="firstSlide"></span>
-                        <span class="slide" id="secondSlide"></span>
-                        <span class="slide" id="thirdSlide"></span>
-                        <span class="slide" id="forthSlide"></span>
+                    <ul>
+                        <li>
+                            <div class="info">
+                                <i class="far fa-calendar-alt"></i> 30st March, 1994
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                                <i class="fas fa-phone"></i> +82 10-1234-5678
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                                <i class="fas fa-envelope"></i> ekdma4105@naver.com
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info">
+                                <i class="fas fa-home"></i> 4-gil, Mokdongnam-ro, Yangcheon-gu, Seoul, Republic of Korea
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="sns">
+                        <a>
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a>
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a>
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -92,6 +108,6 @@
             </div>
         </div>
 
-        <script src="js/myPortfolioWeb.js"></script>
+        <script src="../js/myPortfolioWeb.js"></script>
     </body>
 </html>

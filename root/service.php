@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR" rel="stylesheet">
 
         <!-- css파일 가져오기 -->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
 
     <body>
@@ -96,6 +96,6 @@
             </div>
         </div>
 
-        <script src="js/myPortfolioWeb.js"></script>
+        <script src="../js/myPortfolioWeb.js"></script>
     </body>
 </html>

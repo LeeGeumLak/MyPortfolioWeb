@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
         <title>MyPortfolioWeb</title>
 
@@ -17,13 +17,8 @@
         <!-- fonts -->
         <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR" rel="stylesheet">
 
-        <!--  paging    -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
-
         <!-- css파일 가져오기 -->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
 
     <body>
@@ -41,53 +36,38 @@
             </nav>
         </header>
 
-        <!--  소통할 수 있는 게시판   -->
+        <!--  메인화면에 표시될 이미지 슬라이더   -->
+        <!--  자신의 사진이나 관심있는 분야 사진 등을 표시  -->
         <div class="section-container">
-            <div class="contact-area" id="contact">
-                <div class="title">CONTACT</div>
-
+            <div class="welcome-area">
                 <div class="container">
-                    <div id="data-container"></div>
-                    <div id="pagination"></div>
+                    <div class="image-slide fade">
+                        <img src="../img/imgSlider1.jpg">
+                        <div class="numbertext"></div>
+                    </div>
+                    <div class="image-slide fade">
+                        <img src="../img/imgSlider2.jpg">
+                        <div class="numbertext"></div>
+                    </div>
+                    <div class="image-slide fade">
+                        <img src="../img/imgSlider3.jpg">
+                        <div class="numbertext"></div>
+                    </div>
+                    <div class="image-slide fade">
+                        <img src="../img/imgSlider4.jpg">
+                        <div class="numbertext"></div>
+                    </div>
+
+                    <a class="image-prev" id="imagePrev">&#10094;</a>
+                    <a class="image-next" id="imageNext">&#10095;</a>
+
+                    <div class="slide">
+                        <span class="slide" id="firstSlide"></span>
+                        <span class="slide" id="secondSlide"></span>
+                        <span class="slide" id="thirdSlide"></span>
+                        <span class="slide" id="forthSlide"></span>
+                    </div>
                 </div>
-
-                <script>
-                    $(function () {
-                        let container = $('#pagination');
-                        container.pagination({
-                            dataSource: [
-                                {name: "hello1"},
-                                {name: "hello2"},
-                                {name: "hello3"},
-                                {name: "hello4"},
-                                {name: "hello5"},
-                                {name: "hello6"},
-                                {name: "hello7"},
-                                {name: "hello8"},
-                                {name: "hello9"},
-                                {name: "hello10"},
-                                {name: "hello11"},
-                                {name: "hello12"},
-                                {name: "hello13"},
-                                {name: "hello14"},
-                                {name: "hello15"},
-                                {name: "hello16"},
-                                {name: "hello17"},
-                            ],
-                            callback: function (data, pagination) {
-                                var dataHtml = '<ul>';
-
-                                $.each(data, function (index, item) {
-                                    dataHtml += '<li>' + item.name + '</li>';
-                                });
-
-                                dataHtml += '</ul>';
-
-                                $("#data-container").html(dataHtml);
-                            }
-                        })
-                    })
-                </script>
             </div>
         </div>
 
@@ -112,7 +92,6 @@
             </div>
         </div>
 
-        <script src="js/myPortfolioWeb.js"></script>
-
+        <script src="../js/myPortfolioWeb.js"></script>
     </body>
 </html>

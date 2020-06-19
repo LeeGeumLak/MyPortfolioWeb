@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Heebo|Noto+Sans+KR" rel="stylesheet">
 
         <!-- css파일 가져오기 -->
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
     </head>
 
     <body>
@@ -52,7 +52,7 @@
                     <div class="filterItem android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider1.jpg">
+                            <img src="../img/imgSlider1.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -67,7 +67,7 @@
                     <div class="filterItem java">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider2.jpg">
+                            <img src="../img/imgSlider2.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -82,7 +82,7 @@
                     <div class="filterItem html_css_javascript java">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider3.jpg">
+                            <img src="../img/imgSlider3.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -97,7 +97,7 @@
                     <div class="filterItem html_css_javascript">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider4.jpg">
+                            <img src="../img/imgSlider4.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -112,7 +112,7 @@
                     <div class="filterItem java">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider2.jpg">
+                            <img src="../img/imgSlider2.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -127,7 +127,7 @@
                     <div class="filterItem android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider1.jpg">
+                            <img src="../img/imgSlider1.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -142,7 +142,7 @@
                     <div class="filterItem html_css_javascript">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider3.jpg">
+                            <img src="../img/imgSlider3.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -157,7 +157,7 @@
                     <div class="filterItem android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider1.jpg">
+                            <img src="../img/imgSlider1.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -172,7 +172,7 @@
                     <div class="filterItem java android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider1.jpg">
+                            <img src="../img/imgSlider1.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -187,7 +187,7 @@
                     <div class="filterItem html_css_javascript android">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
-                            <img src="img/imgSlider3.jpg">
+                            <img src="../img/imgSlider3.jpg">
                         </div>
                         <div class="main">
                             메인 제목
@@ -224,6 +224,6 @@
             </div>
         </div>
 
-        <script src="js/myPortfolioWeb.js"></script>
+        <script src="../js/myPortfolioWeb.js"></script>
     </body>
 </html>
