@@ -708,8 +708,6 @@ section {
 
 /* BULLETIN BOARD AREA */
 .bulletinBoard-area {
-    width: 900px;
-    position: relative;
     height: auto;
     background-color: #f9f9ff;
 }
@@ -721,11 +719,16 @@ section {
     padding: 40px;
 }
 
-.bulletinBoard-area > .container > .list-table {
+#board-area {
+    width: 900px;
+    position: relative;
+}
+
+.list-table {
     margin-top: 40px;
 }
 
-.bulletinBoard-area > .container > .list-table thread th {
+.list-table thead th {
     height: 40px;
     border-top: 2px solid #09C;
     border-bottom: 1px solid #CCC;
@@ -733,7 +736,7 @@ section {
     font-size: 17px;
 }
 
-.bulletinBoard-area > .container > .list-table tbody td {
+.list-table tbody td {
     text-align: center;
     padding: 10px 0;
     border-bottom: 1px solid #CCC; height: 20px;
