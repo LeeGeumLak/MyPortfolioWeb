@@ -11,9 +11,9 @@
     // db문자열 utf-8 인코딩
     $db->set_charset("utf8");
 
-    if(!$db) {
+    /*if(!$db) {
         die('MySQL connect ERROR : ' . mysqli_error());
-    }
+    }*/
 
     function mq($sql){
         global $db;
