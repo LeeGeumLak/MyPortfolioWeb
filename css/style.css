@@ -103,9 +103,10 @@ input, select {
 
 /* COMMON */
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-size: 0;
+    font-family: 'Malgun gothic', 'Sans-Serif', 'Arial';
 }
 
 body {
@@ -129,6 +130,14 @@ a {
 
 ul {
     list-style-type: none;
+}
+
+.fl {
+    float:left;
+}
+
+.tc {
+    text-align: center;
 }
 
 /* HEADER */
@@ -699,6 +708,8 @@ section {
 
 /* BULLETIN BOARD AREA */
 .bulletinBoard-area {
+    width: 900px;
+    position: relative;
     height: auto;
     background-color: #f9f9ff;
 }
@@ -709,6 +720,32 @@ section {
     margin: 20px;
     padding: 40px;
 }
+
+.bulletinBoard-area > .container > .list-table {
+    margin-top: 40px;
+}
+
+.bulletinBoard-area > .container > .list-table thread th {
+    height: 40px;
+    border-top: 2px solid #09C;
+    border-bottom: 1px solid #CCC;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.bulletinBoard-area > .container > .list-table tbody td {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #CCC; height: 20px;
+    font-size: 14px;
+}
+
+#write_btn {
+    position: absolute;
+    margin-top: 20px;
+    right: 0;
+}
+
 
 /* FOOTER AREA */
 .footer-area {

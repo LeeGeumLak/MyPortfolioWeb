@@ -6,10 +6,14 @@
     @header('Content_Type: text/html; charset=utf-8');
 
     // db에 mysql을 연결
-    $db = new mysqli("192.168.137.1", "root", "Qlalfqjsgh12#", 'myPortfolioWeb');
+    $db = new mysqli("localhost", "root", "Qlalfqjsgh12#", "myPortfolioWeb");
 
     // db문자열 utf-8 인코딩
     $db->set_charset("utf8");
+
+    if(!$db) {
+        die('MySQL connect ERROR : ' . mysqli_error());
+    }
 
     function mq($sql){
         global $db;
