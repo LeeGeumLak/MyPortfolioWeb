@@ -26,7 +26,7 @@
                         <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
                     </div>
                     <div id="in_pw">
-                        <input type="password" name="pw" id="upw"  placeholder="비밀번호" required />
+                        <input type="password" name="password" id="upassword"  placeholder="비밀번호" required />
                     </div>
                     <div class="bt_se">
                         <button type="submit">글 작성</button>

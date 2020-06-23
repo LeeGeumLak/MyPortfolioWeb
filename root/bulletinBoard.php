@@ -25,15 +25,15 @@
                 <tr>
                     <th width="70">번호</th>
                     <th width="500">제목</th>
-                    <th width="120">글쓴이</th>
-                    <th width="100">작성일</th>
+                    <th width="120">작성자</th>
+                    <th width="100">작성 날짜</th>
                     <th width="100">조회수</th>
                 </tr>
                 </thead>
 
                 <?php
                 // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-                $sql = mq("select * from bulletinBoard order by idx desc limit 0,5");
+                $sql = mq("select * from bulletinBoard order by idxNum desc limit 0,5");
                 while($board = $sql->fetch_array()) {
                     //title변수에 DB에서 가져온 title을 선택
                     $title=$board["title"];
@@ -43,13 +43,13 @@
                     }
                     ?>
                     <tbody>
-                    <tr>
-                        <td width="70"><?php echo $board['idx']; ?></td>
-                        <td width="500"><a href=""><?php echo $title;?></a></td>
-                        <td width="120"><?php echo $board['name']?></td>
-                        <td width="100"><?php echo $board['date']?></td>
-                        <td width="100"><?php echo $board['hit']; ?></td>
-                    </tr>
+                        <tr>
+                            <td width="70"><?php echo $board['idxNum']; ?></td>
+                            <td width="500"><a href=""><?php echo $title;?></a></td>
+                            <td width="120"><?php echo $board['name']?></td>
+                            <td width="100"><?php echo $board['writeDate']?></td>
+                            <td width="100"><?php echo $board['hitNum']; ?></td>
+                        </tr>
                     </tbody>
                 <?php } ?>
             </table>

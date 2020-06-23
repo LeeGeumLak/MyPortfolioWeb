@@ -167,7 +167,7 @@ function moveTo(id) {
     document.getElementById('menu').classList.remove('show');
 }
 
-document.getElementById('navbarMain').onclick = function(){
+/*document.getElementById('navbarMain').onclick = function(){
     location.href="/main.php";
 };
 document.getElementById('navbarAbout').onclick = function(){
@@ -181,7 +181,7 @@ document.getElementById('navbarProjects').onclick = function(){
 };
 document.getElementById('navbarBulletinBoard').onclick = function(){
     location.href="/bulletinBoard.php";
-};
+};*/
 
 /*document.getElementById('navbarAbout').addEventListener('click', moveTo.bind(null,'about'));
 document.getElementById('navbarService').addEventListener('click', moveTo.bind(null,'service'));
