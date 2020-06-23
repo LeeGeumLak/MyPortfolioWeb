@@ -141,7 +141,7 @@
 
         <?php include './footer.php'?>
 
-        <div id="portfolioModal" class="modal"b>
+        <div id="portfolioModal" class="modal">
             <span class="close" id="modalClose">&times;</span>
             <div class="container">
                 <img id="modalImage">

@@ -10,13 +10,22 @@
     $date = date('Y-m-d H:i:s');
 
     if(issest($_POST['lockpost'])) {
-        $lo_post = '1';
+        $lock_post = '1';
     } else {
-        $lo_post = '0';
+        $lock_post = '0';
     }
 
+    $file = $_FILES['uploadFile']['fileName'];
+    $o_name = $_FILES['uploadFile']['name'];
+    $filename = iconv("UTF-8", "EUC-KR", $_FILES['uploadFile']['name']);
+    $folder = "../upload/".$filename;
+    move_uploaded_file($file, $folder);
+
+    // auto_increment 값 초기화
+    $sql_InitIncrement = mq("alter table bulletinBoard auto_increment =1");
+
     if($username && $userpassword && $title && $content){
-        $sql = mq("insert into bulletinBoard (name,password,title,content,writeDate,lock_post) values('".$username."','".$userpassword."','".$title."','".$content."','".$date."','".$lo_post."')");
+        $sql = mq("insert into bulletinBoard (name,password,title,content,writeDate,lock_post) values('".$username."','".$userpassword."','".$title."','".$content."','".$date."','".$lock_post."','".$o_name."')");
 
         echo "<script>
         alert('글쓰기 완료되었습니다.');

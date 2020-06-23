@@ -11,7 +11,7 @@
             <h1><a href="/"></a></h1>
             <h4>글을 작성하는 공간입니다.</h4>
             <div id="write_area">
-                <form action="bulletinBoardWrite_ok.php" method="post">
+                <form action="bulletinBoardWrite_ok.php" method="post" enctype="multipart/form-data">
                     <div id="in_title">
                         <h1>제목 : </h1>
                         <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
@@ -30,6 +30,9 @@
                     </div>
                     <div id="in_lock">
                         <input type="checkbox" value="1" name="lockpost"/>수정/삭제시 비밀번호를 입력해야합니다.
+                    </div>
+                    <div id="in_file">
+                        <input type="file" value="1" name="uploadFile"/>
                     </div>
                     <div class="bt_se">
                         <button type="submit">글 작성</button>

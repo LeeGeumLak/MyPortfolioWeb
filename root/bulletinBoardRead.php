@@ -31,6 +31,9 @@
                 <?php echo $board['name']; ?> <?php echo $board['writeDate']; ?> 조회:<?php echo $board['hitNum']; ?>
                 <div id="bo_line"></div>
             </div>
+            <div>
+                파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
+            </div>
             <div id="bo_content">
                 <?php echo nl2br("$board[content]"); ?>
             </div>
@@ -90,7 +93,9 @@
                 </form>
             </div>
         </div><!--- 댓글 불러오기 끝 -->
+
         <div id="foot_box"></div>
+
         </div>
     </body>
 </html>
