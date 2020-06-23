@@ -20,6 +20,17 @@
         </div>
 
         <div id="board-area">
+            <div id="search_box_top">
+                <form action="./searchResult.php" method="get">
+                    <select name="catgo">
+                        <option value="title">제목</option>
+                        <option value="name">작성자</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input type="text" name="search" size="40" required="required" /> <button>검색</button>
+                </form>
+            </div>
+
             <table class="list-table">
                 <thead>
                 <tr>
@@ -82,8 +93,19 @@
 
                                 if($board['lock_post']=="1") {
                                     ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
-                                } else{  ?>
-                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?><span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
+                                } else {
+                                    $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
+
+                                    date_default_timezone_set("Asia/Seoul");
+                                    $timeNow = date('Y-m-d H:i:s'); //$timenow변수에 현재 시간 Y-M-D를 넣음
+
+                                    if($boardTime == $timeNow) {
+                                        $img = "<img src='../img/new.png' alt='new' title='new' />";
+                                    }else{
+                                        $img ="";
+                                    }  ?>
+                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?>
+                                        <span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
                             </td>
 
                             <td width="120"><?php echo $board['name']?></td>

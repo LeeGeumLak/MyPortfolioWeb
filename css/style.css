@@ -925,11 +925,11 @@ section {
     color:red;
     margin-left: 15px;
 }
-#search_box {
+#search_box_top {
     margin-top:30px;
     text-align: right;
 }
-#search_box2 {
+#search_box_bottom {
     text-align: center;
     margin-top: 30px;
 
