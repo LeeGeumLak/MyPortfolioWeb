@@ -6,7 +6,8 @@
     $userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $date = date('Y-m-d');
+    date_default_timezone_set("Asia/Seoul");
+    $date = date('Y-m-d H:i:s');
     if($username && $userpassword && $title && $content){
         $sql = mq("insert into bulletinBoard (name,pw,title,content,writeDate) values('".$username."','".$$userpassword."','".$title."','".$content."','".$date."')");
 
