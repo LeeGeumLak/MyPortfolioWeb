@@ -41,6 +41,10 @@
                         //title이 30을 넘어서면 생략(...)표시
                         $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
                     }
+
+                    // 댓글의 개수 카운트
+                    $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'"); //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
+                    $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
                     ?>
                     <tbody>
                         <tr>
@@ -51,9 +55,8 @@
                                 if($board['lock_post']=="1") {
                                     ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
                                 } else{  ?>
-                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;
-                                }
-                                ?></a></td>
+                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?><span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
+                            </td>
 
                             <td width="120"><?php echo $board['name']?></td>
                             <td width="100"><?php echo $board['writeDate']?></td>
