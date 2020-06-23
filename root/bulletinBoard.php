@@ -32,9 +32,37 @@
                 </thead>
 
                 <?php
-                // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-                $sql = mq("select * from bulletinBoard order by idxNum desc limit 0,5");
-                while($board = $sql->fetch_array()) {
+                if(isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
+                }
+
+                // bulletinBoard 테이블에서 idxNum를 기준으로 내림차순해서 5개까지 표시
+                $sql = mq("select * from bulletinBoard");
+                $rowNum = mysqli_num_rows($sql); // 총 게시판 글 수
+                $list = 5; // 한 페이지에 보여줄 개수
+                $paginationCnt = 5; // 하나의 pagination 당 보여줄 페이지의 개수
+
+                $paginationNum = ceil($page/$paginationCnt);
+                $paginationStart = (($paginationNum-1) * $paginationCnt) + 1; // 한 pagination 시작
+                $paginationEnd = $paginationStart + $paginationCnt - 1; // 한 pagination 끝
+
+                $totalPage = ceil($rowNum / $list); // 페이징한 페이지의 총 개수
+
+                // 한 pagination의 끝 번호가 totalPage 보다 클 때, 끝 번호를 지정할 수 있다.
+                //(총 페이지 개수로)
+                if($paginationEnd > $totalPage) {
+                    $paginationEnd = $totalPage;
+                }
+
+                // pagination 의 총 개수
+                $totalPagination = ceil($totalPage / $paginationCnt);
+                $startNum = ($page - 1) * $list;
+
+                $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
+
+                while($board = $sql_bulletinBoard->fetch_array()) {
                     //title변수에 DB에서 가져온 title을 선택
                     $title=$board["title"];
                     if(strlen($title)>30) {
@@ -65,6 +93,46 @@
                     </tbody>
                 <?php } ?>
             </table>
+
+            <!---페이징 넘버 --->
+            <div id="page_num">
+                <ul>
+                    <?php
+                    if($page <= 1) {
+                        // 현재 page가 가장 처음 페이지이면, '처음' 글자에 빨간색 표시
+                        echo "<li class='fo_re'>처음</li>";
+                    } else{
+                        // 현재 page가 가장 처음 페이지가 아니면, '처음' 글자에 가장 처음 페이지로 갈 수 있게 링크
+                        echo "<li><a href='?page=1'>처음</a></li>";
+                    }
+
+                    if($page > 1) {
+                        $pre = $page - 1; //pre 변수에 page-1을 해준다(이전 페이지로 이동할 수 있도록)
+                        echo "<li><a href='?page=$pre'>이전</a></li>"; // '이전' 글자에 pre 변수를 링크. '이전' 버튼을 클릭시, 현재 페이지 -1
+                    }
+
+                    //for문 반복문을 한 pagination 시작부터 마지막까지 반복
+                    for($i=$paginationStart; $i<=$paginationEnd; $i++){
+                        if($page == $i){
+                            echo "<li class='fo_re'>[$i]</li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                        }else{
+                            echo "<li><a href='?page=$i'>[$i]</a></li>"; //아니라면 아무런 표시 X
+                        }
+                    }
+
+                    if($paginationNum < $totalPagination){ //만약 현재 pagination 이 총 개수보다 작으면,
+                        $next = $page + 1; //next변수에 page + 1을 해준다.
+                        echo "<li><a href='?page=$next'>다음</a></li>"; // '다음' 글자에 next 변수를 링크. '다음' 버튼 클릭시, 현재 페이지 + 1
+                    }
+
+                    if($page >= $totalPage){ // 현재 페이지가 마지막이면
+                        echo "<li class='fo_re'>마지막</li>"; // '마지막' 글자에 긁은 빨간색을 적용한다.
+                    } else{ // 마지막 페이지가 아니면
+                        echo "<li><a href='?page=$totalPage'>마지막</a></li>"; // '마지막' 글자에 totalPage를 링크.
+                    }
+                    ?>
+                </ul>
+            </div>
 
             <div id="write_btn">
                 <a href="./bulletinBoardWrite.php"><button>글쓰기</button></a>
