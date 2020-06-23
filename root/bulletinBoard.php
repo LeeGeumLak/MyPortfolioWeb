@@ -45,7 +45,16 @@
                     <tbody>
                         <tr>
                             <td width="70"><?php echo $board['idxNum']; ?></td>
-                            <td width="500"><a href=""><?php echo $title;?></a></td>
+                            <td width="500"><?php
+                                $lockimg = "<img src='../img/imgSlider1.jpg' alt='lock' title='lock' with='20' height='20' />";
+
+                                if($board['lock_post']=="1") {
+                                    ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
+                                } else{  ?>
+                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;
+                                }
+                                ?></a></td>
+
                             <td width="120"><?php echo $board['name']?></td>
                             <td width="100"><?php echo $board['writeDate']?></td>
                             <td width="100"><?php echo $board['hitNum']; ?></td>

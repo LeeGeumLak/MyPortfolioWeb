@@ -12,12 +12,12 @@
         <?php include './topPart.php'?>
 
         <?php
-        $bno = $_GET['idxNum']; /* bno함수에 idx값을 받아와 넣음*/
-        $hit = mysqli_fetch_array(mq("select * from bulletinBoard where idxNum ='".$bno."'"));
-        $hit = $hit['hitNum'] + 1;
-        $fet = mq("update bulletinBoard set hitNum = '".$hit."' where idxNum = '".$bno."'");
-        $sql = mq("select * from bulletinBoard where idxNum='".$bno."'"); /* 받아온 idxNum값을 선택 */
-        $board = $sql->fetch_array();
+            $bno = $_GET['idxNum']; /* bno함수에 idx값을 받아와 넣음*/
+            $hit = mysqli_fetch_array(mq("select * from bulletinBoard where idxNum ='".$bno."'"));
+            $hit = $hit['hitNum'] + 1;
+            $fet = mq("update bulletinBoard set hitNum = '".$hit."' where idxNum = '".$bno."'");
+            $sql = mq("select * from bulletinBoard where idxNum='".$bno."'"); /* 받아온 idxNum값을 선택 */
+            $board = $sql->fetch_array();
         ?>
         <!-- 글 불러오기 -->
         <div id="board_read">

@@ -28,6 +28,9 @@
                     <div id="in_pw">
                         <input type="password" name="password" id="upassword"  placeholder="비밀번호" required />
                     </div>
+                    <div id="in_lock">
+                        <input type="checkbox" value="1" name="lockpost"/>수정/삭제시 비밀번호를 입력해야합니다.
+                    </div>
                     <div class="bt_se">
                         <button type="submit">글 작성</button>
                     </div>
