@@ -1,10 +1,10 @@
 <!--- 게시글 수정 -->
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+    include "../DBConnect.php";
 
-$bno = $_GET['idx'];
-$sql = mq("select * from board where idx='$bno';");
-$board = $sql->fetch_array();
+    $bno = $_GET['idxNum'];
+    $sql = mq("select * from bulletinBoard where idxNum='$bno';");
+    $board = $sql->fetch_array();
 ?>
 
 <!doctype html>
@@ -20,7 +20,7 @@ $board = $sql->fetch_array();
         <h1><a href="/">자유게시판</a></h1>
         <h4>글을 수정합니다.</h4>
         <div id="write_area">
-            <form action="bulletinBoardModify_ok.php?idx=<?php echo $bno; ?>" method="post">
+            <form action="bulletinBoardModify_ok.php?idxNum=<?php echo $bno; ?>" method="post">
                 <div id="in_title">
                     <h1>제목 : </h1>
                     <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>

@@ -3,9 +3,11 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/root/bulletinBoard.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardDelete.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/root/bulletinBoardModify.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardModify_ok.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardRead.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardWrite_ok.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/check_bulletinBoardRead.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/root/comment_ok.php" dialect="GenericSQL" />
   </component>
 </project>

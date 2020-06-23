@@ -46,7 +46,7 @@
                         <tr>
                             <td width="70"><?php echo $board['idxNum']; ?></td>
                             <td width="500"><?php
-                                $lockimg = "<img src='../img/imgSlider1.jpg' alt='lock' title='lock' with='20' height='20' />";
+                                $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' with='20' height='20' />";
 
                                 if($board['lock_post']=="1") {
                                     ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;

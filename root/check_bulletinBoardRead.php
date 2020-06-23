@@ -23,14 +23,14 @@ $board = $sql->fetch_array();
 ?>
 <div id='writepass'>
     <form action="" method="post">
-        <p>비밀번호<input type="password" name="password_check" /> <input type="submit" value="확인" /></p>
+        <p>비밀번호<input type="password" name="passwordCheck" /> <input type="submit" value="확인" /></p>
     </form>
 </div>
 <?php
 $bpw = $board['password'];
 
-if(isset($_POST['password_check'])) { //만약 password_check POST값이 있다면
-    $pwk = $_POST['password_check']; // $pwk변수에 POST값으로 받은 password_check 을 넣습니다.
+if(isset($_POST['passwordCheck'])) { //만약 password_check POST값이 있다면
+    $pwk = $_POST['passwordCheck']; // $pwk변수에 POST값으로 받은 password_check 을 넣습니다.
     if(password_verify($pwk,$bpw)) { //다시 if문으로 DB의 password와 입력하여 받아온 bpw와 값이 같은지 비교를 하고
         $pwk == $bpw;
         ?>
