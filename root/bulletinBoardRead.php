@@ -41,8 +41,8 @@
             <div id="bo_ser">
                 <ul>
                     <li><a href="./bulletinBoard.php">[목록으로]</a></li>
-                    <li><a href="./bulletinBoardModify.php?idx=<?php echo $board['idxNum']; ?>">[수정]</a></li>
-                    <li><a href="./bulletinBoardDelete.php?idx=<?php echo $board['idxNum']; ?>">[삭제]</a></li>
+                    <li><a href="./bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>">[수정]</a></li>
+                    <li><a href="./bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>">[삭제]</a></li>
                 </ul>
             </div>
         </div>
