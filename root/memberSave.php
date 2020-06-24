@@ -15,36 +15,43 @@
     $sql = "SELECT * FROM member WHERE memberId = '{$memberId}'";
     $res = $db->query($sql);
     if($res->num_rows >= 1){
-        echo '이미 존재하는 아이디가 있습니다.';
-        exit;
+        echo "<script>
+        alert('이미 존재하는 아이디가 있습니다.');
+        history.back();</script>";
     }
 
     //비밀번호 일치하는지 확인
     if($memberPw !== $memberPw2){
-        echo '비밀번호가 일치하지 않습니다.';
-        exit;
+        echo "<script>
+        alert('비밀번호가 일치하지 않습니다.');
+        history.back();</script>";
     }else{
         //비밀번호를 암호화 처리.
         $memberPw = md5($memberPw);
     }
 
     //닉네임, 생일 그리고 이름이 빈값이 아닌지
-    if($memberNickName == '' || $memberBirthDay == '' || $memberName == ''){
-        echo '생일혹은 닉네임의 값이 없습니다.';
+    if($memberNickName == '' || $memberBirthDay == '' || $memberName == '') {
+        echo "<script>
+        alert('입력이 누락되었습니다.');
+        history.back();</script>";
     }
 
     //이메일 주소가 올바른지
     $checkEmailAddress = filter_var($memberEmailAddress, FILTER_VALIDATE_EMAIL);
 
     if($checkEmailAddress != true){
-        echo "올바른 이메일 주소가 아닙니다.";
-        exit;
+        echo "<script>
+        alert('올바른 이메일 주소가 아닙니다.');
+        history.back();</script>";
     }
 
     // 회원 정보 DB 에 입력
     $sql = "INSERT INTO member VALUES('','{$memberId}','{$memberName}','{$memberNickName}','{$memberPw}','{$memberEmailAddress}','{$memberBirthDay}');";
 
     if($db->query($sql)){
-        echo '회원가입 성공';
+        echo "<script>
+        alert('회원가입이 완료되었습니다.');
+        location.href='./signIn.php';</script>";
     }
 ?>
