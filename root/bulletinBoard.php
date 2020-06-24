@@ -42,17 +42,12 @@
                     </tr>
                 </thead>
 
-                <?php echo "1"?>
-
                 <?php
                 if(isset($_GET['page'])) {
                     $page = $_GET['page'];
                 } else {
                     $page = 1;
                 }
-
-                echo "2";
-
 
                 // bulletinBoard 테이블에서 idxNum를 기준으로 내림차순해서 5개까지 표시
                 $sql = mq("select * from bulletinBoard");
@@ -64,27 +59,19 @@
                 $paginationEnd = $paginationStart + $paginationCnt - 1; // 한 pagination 끝
                 $totalPage = ceil($rowNum / $list); // 페이징한 페이지의 총 개수
 
-                echo "3";
-
                 // 한 pagination의 끝 번호가 totalPage 보다 클 때, 끝 번호를 지정할 수 있다.
                 //(총 페이지 개수로)
                 if($paginationEnd > $totalPage) {
                     $paginationEnd = $totalPage;
                 }
 
-                echo "4";
-
                 // pagination 의 총 개수
                 $totalPagination = ceil($totalPage / $paginationCnt);
                 $startNum = ($page - 1) * $list;
                 $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
 
-                $count = 5;
 
                 while($board = $sql_bulletinBoard->fetch_array()) {
-                    echo $count;
-                    $count++;
-
                     //title변수에 DB에서 가져온 title을 선택
                     $title=$board["title"];
                     if(strlen($title)>30) {

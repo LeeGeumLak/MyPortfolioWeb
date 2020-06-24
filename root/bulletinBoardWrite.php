@@ -27,7 +27,7 @@
                         <input type="password" name="password" id="upassword"  placeholder="비밀번호" required />
                     </div>
                     <div id="in_lock">
-                        <input type="checkbox" value="1" name="lockpost"/>수정/삭제시 비밀번호를 입력해야합니다.
+                        <input type="checkbox" value="1" name="lockpost"/>해당 글을 잠급니다.
                     </div>
                     <div id="in_file">
                         <input type="file" value="1" name="uploadFile"/>
