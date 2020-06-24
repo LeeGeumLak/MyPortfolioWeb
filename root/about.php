@@ -49,14 +49,14 @@
                         </li>
                     </ul>
                     <div class="sns">
-                        <a>
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="https://github.com/LeeGeumLak">
+                            <i class="fab fa-github" style="font-size:36px"></i>
                         </a>
-                        <a>
-                            <i class="fab fa-google-plus-g"></i>
+                        <a href="https://web.facebook.com/profile.php?id=100004703770704">
+                            <i class="fab fa-facebook-square" style="font-size:36px"></i>
                         </a>
-                        <a>
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/geumlak_lee/">
+                            <i class="fab fa-instagram" style="font-size:36px"></i>
                         </a>
                     </div>
                 </div>

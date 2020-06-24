@@ -29,7 +29,7 @@ function menuToggle(){
 document.getElementById('toggleBtn').addEventListener('click', menuToggle);
 
 
-/* MAIN AREA  */
+/*/!* MAIN AREA  *!/
 var imageSlideIndex = 1;
 showImageSlides(imageSlideIndex);
 
@@ -77,10 +77,9 @@ document.getElementById('secondSlide').addEventListener('click', currentImageSli
 document.getElementById('thirdSlide').addEventListener('click', currentImageSlide.bind(null,3));
 document.getElementById('forthSlide').addEventListener('click', currentImageSlide.bind(null,4));
 document.getElementById('fifthSlide').addEventListener('click', currentImageSlide.bind(null,5));
-document.getElementById('sixthSlide').addEventListener('click', currentImageSlide.bind(null,6));
+document.getElementById('sixthSlide').addEventListener('click', currentImageSlide.bind(null,6));*/
 
-
-/* PROJECTS AREA */
+/*/!* PROJECTS AREA *!/
 filterSelection('all');
 
 function filterSelection(id) {
@@ -118,10 +117,10 @@ function removeClass(element, name) {
     element.className = arr.join(" ");
 }
 
-/*document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
+/!*document.getElementById('all').addEventListener('click', filterSelection.bind(null, 'all'));
 document.getElementById('html_css_javascript').addEventListener('click', filterSelection.bind(null, 'html_css_javascript'));
 document.getElementById('java').addEventListener('click', filterSelection.bind(null, 'java'));
-document.getElementById('android').addEventListener('click', filterSelection.bind(null, 'android'));*/
+document.getElementById('android').addEventListener('click', filterSelection.bind(null, 'android'));*!/
 
 function viewPortfolio(event) {
     var polyNode = event.target;
@@ -152,10 +151,9 @@ var filterItems = document.getElementsByClassName('overlay');
 
 for(var i=0;i<filterItems.length;i++){
     filterItems[i].addEventListener('click', viewPortfolio);
-}
+}*/
 
 /* BULLETIN BOARD AREA */
-
 
 /* ANCHOR */
 function moveTo(id) {
