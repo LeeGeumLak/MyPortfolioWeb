@@ -35,13 +35,13 @@
             $pwk == $bpw;
 ?>
         <!-- pwk와 bpw값이 같으면 bulletinBoardRead.php로 전송 -->
-        <script
-                type="text/javascript">location.replace("./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>");
+        <script type="text/javascript">
+            location.replace("./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>");
         </script>
         <?php
     } else{ ?>
         <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
-        <script
-                type="text/javascript">alert('비밀번호가 틀립니다');
+        <script type="text/javascript">
+            alert('비밀번호가 틀립니다');
         </script>
     <?php } } ?>

@@ -16,7 +16,7 @@
         <?php include './topPart.php'?>
 
         <?php
-            $bno = $_GET['idxNum']; /* bno함수에 idx값을 받아와 넣음*/
+            $bno = $_GET['idxNum']; /* bno함수에 idxNum 값을 받아와 넣음*/
             $hit = mysqli_fetch_array(mq("select * from bulletinBoard where idxNum ='".$bno."'"));
             $hit = $hit['hitNum'] + 1;
             $fet = mq("update bulletinBoard set hitNum = '".$hit."' where idxNum = '".$bno."'");
@@ -40,7 +40,7 @@
             <!-- 목록, 수정, 삭제 -->
             <div id="bo_ser">
                 <ul>
-                    <li><a href="/">[목록으로]</a></li>
+                    <li><a href="./bulletinBoard.php">[목록으로]</a></li>
                     <li><a href="./bulletinBoardModify.php?idx=<?php echo $board['idxNum']; ?>">[수정]</a></li>
                     <li><a href="./bulletinBoardDelete.php?idx=<?php echo $board['idxNum']; ?>">[삭제]</a></li>
                 </ul>
