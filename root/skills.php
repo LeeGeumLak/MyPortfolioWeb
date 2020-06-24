@@ -20,7 +20,6 @@
                 </div>
 
                 <div class="container">
-
                     <div class="item">
                         <div class="icon"><span><i class="fab fa-html5"></i></span></div>
                         <div class="skills">HTML</div>

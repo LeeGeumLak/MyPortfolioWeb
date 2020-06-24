@@ -532,7 +532,7 @@ section {
     color: #aaa;
 }
 
-.skills-area > .container > .item > .service {
+.skills-area > .container > .item > .skills {
     font-size: 32px;
     font-weight: bold;
     padding: 10px 0;
@@ -730,6 +730,7 @@ section {
     width: 900px;
     position: relative;
 }
+
 .list-table {
     margin-top: 40px;
 }
@@ -747,6 +748,12 @@ section {
     height:20px;
     font-size: 14px;
 }
+
+.list-table tbody td > .img {
+    width: 20px;
+    height: 20px;
+}
+
 #write_btn {
     position: absolute;
     margin-top:20px;
