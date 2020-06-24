@@ -16,7 +16,7 @@
         <div class="section-container">
             <div class="skills-area" id="skills">
                 <div class="title">
-                    SERVICE
+                    SKILLS
                 </div>
 
                 <div class="container">

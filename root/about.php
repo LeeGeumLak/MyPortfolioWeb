@@ -19,22 +19,22 @@
                     ABOUT
                 </div>
                 <div class="picture">
-                    <img src="../img/imgSlider1.jpg">
-                    <div class="name">이금락</div>
+                    <img src="../img/lglProfileImg.jpg">
+                    <div class="name">이 금 락</div>
                 </div>
                 <div class="text">
                     <div class="intro">
-                        안녕하세요. ~~ 자기 소개 ~~ 문의하실게 있으면 언제든 연락 주세요.
+                        안녕하세요. 성장중인 개발자 이금락입니다.<br>문의하실게 있으면 언제든 연락 주세요.
                     </div>
                     <ul>
                         <li>
                             <div class="info">
-                                <i class="far fa-calendar-alt"></i> 30st March, 1994
+                                <i class="far fa-calendar-alt"></i> 1994년 3월 30일
                             </div>
                         </li>
                         <li>
                             <div class="info">
-                                <i class="fas fa-phone"></i> +82 10-1234-5678
+                                <i class="fas fa-phone"></i> +82 10-3670-8702
                             </div>
                         </li>
                         <li>
@@ -44,19 +44,19 @@
                         </li>
                         <li>
                             <div class="info">
-                                <i class="fas fa-home"></i> 4-gil, Mokdongnam-ro, Yangcheon-gu, Seoul, Republic of Korea
+                                <i class="fas fa-home"></i> 서울시 양천구 목동남로4길 6-23
                             </div>
                         </li>
                     </ul>
                     <div class="sns">
                         <a href="https://github.com/LeeGeumLak">
-                            <i class="fab fa-github" style="font-size:36px"></i>
+                            <i class="fab fa-github" style="font-size:30px"></i>
                         </a>
                         <a href="https://web.facebook.com/profile.php?id=100004703770704">
-                            <i class="fab fa-facebook-square" style="font-size:36px"></i>
+                            <i class="fab fa-facebook-square" style="font-size:30px"></i>
                         </a>
                         <a href="https://www.instagram.com/geumlak_lee/">
-                            <i class="fab fa-instagram" style="font-size:36px"></i>
+                            <i class="fab fa-instagram" style="font-size:30px"></i>
                         </a>
                     </div>
                 </div>
@@ -64,7 +64,6 @@
         </div>
 
         <?php include './footer.php'?>
-
 
         <div id="portfolioModal" class="modal"b>
             <span class="close" id="modalClose">&times;</span>
