@@ -749,11 +749,6 @@ section {
     font-size: 14px;
 }
 
-.list-table > .img {
-    width: 20px;
-    height: 20px;
-}
-
 #write_btn {
     position: absolute;
     margin-top:20px;
