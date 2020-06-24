@@ -570,6 +570,7 @@ section {
 
 .projects-area > .container {
     padding-top: 50px;
+    font-size: 0px;
 }
 
 .projects-area > .container > .filterItem {

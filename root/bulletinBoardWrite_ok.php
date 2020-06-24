@@ -8,7 +8,7 @@
     $title = $_POST['title'];
     $content = $_POST['content'];
 
-    //date_default_timezone_set("Asia/Seoul");
+    date_default_timezone_set("Asia/Seoul");
     $date = date('Y-m-d H:i:s');
 
     if(isset($_POST['lockpost'])) {
