@@ -15,7 +15,7 @@
         <!--  소통할 수 있는 게시판   -->
         <div class="section-container">
             <div class="bulletinBoard-area" id="bulletinBoard">
-                <div class="title">Bulletin Board<br>자유롭게 이야기하는 공간입니다.</div>
+                <div class="title">Bullentin Board<br>자유롭게 이야기하는 공간입니다.</div>
             </div>
         </div>
 
@@ -33,13 +33,13 @@
 
             <table class="list-table">
                 <thead>
-                    <tr>
-                        <th width="70">번호</th>
-                        <th width="500">제목</th>
-                        <th width="120">작성자</th>
-                        <th width="100">작성 날짜</th>
-                        <th width="100">조회수</th>
-                    </tr>
+                <tr>
+                    <th width="70">번호</th>
+                    <th width="500">제목</th>
+                    <th width="120">작성자</th>
+                    <th width="100">작성 날짜</th>
+                    <th width="100">조회수</th>
+                </tr>
                 </thead>
 
                 <?php
