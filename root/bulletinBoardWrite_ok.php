@@ -1,5 +1,6 @@
 <?php
     include "../DBConnect.php";
+    include "../password.php";
 
     //각 변수에 write.php에서 input name값들을 저장한다
     $username = $_POST['name'];
@@ -26,7 +27,7 @@
     $sql_InitIncrement = mq("alter table bulletinBoard auto_increment =1");
 
     if($username && $userpassword && $title && $content){
-        $sql = mq("insert into bulletinBoard (name,password,title,content,writeDate,lock_post) values('".$username."','".$userpassword."','".$title."','".$content."','".$date."','".$lock_post."','".$o_name."')");
+        $sql = mq("insert into bulletinBoard(name, password, title, content, writeDate, lock_post) values('".$username."','".$userpassword."','".$title."','".$content."','".$date."','".$lock_post."','".$o_name."')");
 
         echo "<script>
         alert('글쓰기 완료되었습니다.');
