@@ -86,32 +86,32 @@
                     $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
                     ?>
                     <tbody>
-                        <tr>
-                            <td width="70"><?php echo $board['idxNum']; ?></td>
-                            <td width="500"><?php
-                                $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' with='20' height='20' />";
+                    <tr>
+                        <td width="70"><?php echo $board['idxNum']; ?></td>
+                        <td width="500"><?php
+                            $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' with='20' height='20' />";
 
-                                if($board['lock_post']=="1") {
-                                    ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
+                            if($board['lock_post']=="1") {
+                            ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
                                 } else {
-                                    $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
+                                $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
 
-                                    date_default_timezone_set("Asia/Seoul");
-                                    $timeNow = date('Y-m-d H:i:s'); //$timenow변수에 현재 시간 Y-M-D를 넣음
+                                date_default_timezone_set("Asia/Seoul");
+                                $timeNow = date('Y-m-d H:i:s'); //$timenow변수에 현재 시간 Y-M-D를 넣음
 
-                                    if($boardTime == $timeNow) {
-                                        $img = "<img src='../img/new.png' alt='new' title='new' />";
-                                    }else{
-                                        $img ="";
-                                    }  ?>
-                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?>
-                                        <span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
-                            </td>
+                                if($boardTime == $timeNow) {
+                                    $img = "<img src='../img/new.png' alt='new' title='new' />";
+                                }else{
+                                    $img ="";
+                                }  ?>
+                                <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?>
+                                    <span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
+                        </td>
 
-                            <td width="120"><?php echo $board['name']?></td>
-                            <td width="100"><?php echo $board['writeDate']?></td>
-                            <td width="100"><?php echo $board['hitNum']; ?></td>
-                        </tr>
+                        <td width="120"><?php echo $board['name']?></td>
+                        <td width="100"><?php echo $board['writeDate']?></td>
+                        <td width="100"><?php echo $board['hitNum']; ?></td>
+                    </tr>
                     </tbody>
                 <?php } ?>
             </table>

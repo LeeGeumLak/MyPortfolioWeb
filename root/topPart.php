@@ -9,6 +9,7 @@
             <div class="nav-item"><a class="nav-link" href="./skills.php">skills</a></div>
             <div class="nav-item"><a class="nav-link" href="./projects.php">projects</a></div>
             <div class="nav-item"><a class="nav-link" href="./bulletinBoard.php">bulletin board</a></div>
+            <div class="nav-item"><a class="nav-link" href="./news.php">news</a></div>
             <div class="nav-item"><a class="nav-link" href="./broadcast.php">broadcast</a></div>
         </div>
     </nav>

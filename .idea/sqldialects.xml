@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/root/bulletinBoard.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardDelete.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardModify.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardModify_ok.php" dialect="GenericSQL" />
@@ -11,5 +10,7 @@
     <file url="file://$PROJECT_DIR$/root/commentDelete.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/commentModify_ok.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/comment_ok.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/root/memberSave.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/root/signIn.php" dialect="GenericSQL" />
   </component>
 </project>
