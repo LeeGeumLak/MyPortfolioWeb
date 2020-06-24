@@ -26,16 +26,16 @@
 
         <!-- 글 불러오기 -->
         <div id="board_read">
-            <h2><?php echo $board['title']; ?></h2>
+            <h2 style="font-size: 50px"><br><?php echo $board['title'];?></h2>
             <div id="user_info">
-                <?php echo $board['name']; ?> <?php echo $board['writeDate']; ?> 조회:<?php echo $board['hitNum']; ?>
+                <?php echo $board['name']; ?>    ( <?php echo $board['writeDate']; ?> / 조회 : <?php echo $board['hitNum']; ?> )
                 <div id="bo_line"></div>
+            </div>
+            <div id="bo_content" style="font-size: 40px">
+                <?php echo nl2br("$board[content]"); ?>
             </div>
             <div>
                 파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
-            </div>
-            <div id="bo_content">
-                <?php echo nl2br("$board[content]"); ?>
             </div>
             <!-- 목록, 수정, 삭제 -->
             <div id="bo_ser">
@@ -49,13 +49,13 @@
 
         <!--- 댓글 불러오기 -->
         <div class="comment_view">
-            <h3>댓글목록</h3>
+            <h3 style="font-size: 30px">댓글목록</h3>
             <?php
             $sql_comment = mq("select * from comment where bulletinNum='".$bno."' order by idxNum desc");
             while($comment = $sql_comment->fetch_array()){
                 ?>
                 <div class="dap_lo">
-                    <div><b><?php echo $comment['name'];?></b></div>
+                    <div><b style="font-size: 20px"><?php echo $comment['name'];?></b></div>
                     <div class="dap_to comment_edit"><?php echo nl2br("$comment[content]"); ?></div>
                     <div class="comment_me dap_to"><?php echo $comment['writeDate']; ?></div>
                     <div class="comment_me comment_menu">
