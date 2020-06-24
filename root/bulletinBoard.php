@@ -42,6 +42,8 @@
                     </tr>
                 </thead>
 
+                <?php echo "1"?>
+
                 <?php
                 if(isset($_GET['page'])) {
                     $page = $_GET['page'];
@@ -49,17 +51,20 @@
                     $page = 1;
                 }
 
+                echo "2";
+
+
                 // bulletinBoard 테이블에서 idxNum를 기준으로 내림차순해서 5개까지 표시
                 $sql = mq("select * from bulletinBoard");
                 $rowNum = mysqli_num_rows($sql); // 총 게시판 글 수
                 $list = 5; // 한 페이지에 보여줄 개수
                 $paginationCnt = 5; // 하나의 pagination 당 보여줄 페이지의 개수
-
                 $paginationNum = ceil($page/$paginationCnt);
                 $paginationStart = (($paginationNum-1) * $paginationCnt) + 1; // 한 pagination 시작
                 $paginationEnd = $paginationStart + $paginationCnt - 1; // 한 pagination 끝
-
                 $totalPage = ceil($rowNum / $list); // 페이징한 페이지의 총 개수
+
+                echo "3";
 
                 // 한 pagination의 끝 번호가 totalPage 보다 클 때, 끝 번호를 지정할 수 있다.
                 //(총 페이지 개수로)
@@ -67,13 +72,19 @@
                     $paginationEnd = $totalPage;
                 }
 
+                echo "4";
+
                 // pagination 의 총 개수
                 $totalPagination = ceil($totalPage / $paginationCnt);
                 $startNum = ($page - 1) * $list;
-
                 $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
 
+                $count = 5;
+
                 while($board = $sql_bulletinBoard->fetch_array()) {
+                    echo $count;
+                    $count++;
+
                     //title변수에 DB에서 가져온 title을 선택
                     $title=$board["title"];
                     if(strlen($title)>30) {
@@ -82,33 +93,30 @@
                     }
 
                     // 댓글의 개수 카운트
-                    //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
-                    $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'");
+                    $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'"); //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
                     $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
                     ?>
+
                     <tbody>
                         <tr>
                             <td width="70"><?php echo $board['idxNum']; ?></td>
                             <td width="500"><?php
                                 $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' with='20' height='20' />";
-
-                                if($board['lock_post']=="1") { ?>
-                                    <a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
-                                } else {
+                                if($board['lock_post']=="1") {
+                                ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
+                                    } else {
                                     $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
 
                                     date_default_timezone_set("Asia/Seoul");
                                     $timeNow = date('Y-m-d H:i:s'); //$timenow변수에 현재 시간 Y-M-D를 넣음
-
                                     if($boardTime == $timeNow) {
                                         $img = "<img src='../img/new.png' alt='new' title='new' />";
-                                    } else{
+                                    }else{
                                         $img ="";
                                     }  ?>
-                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;
-                                }?> <span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
+                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?>
+                                        <span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
                             </td>
-
                             <td width="120"><?php echo $board['name']?></td>
                             <td width="100"><?php echo $board['writeDate']?></td>
                             <td width="100"><?php echo $board['hitNum']; ?></td>
