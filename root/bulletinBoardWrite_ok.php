@@ -10,7 +10,7 @@
     date_default_timezone_set("Asia/Seoul");
     $date = date('Y-m-d H:i:s');
 
-    if(issest($_POST['lockpost'])) {
+    if(isset($_POST['lockpost'])) {
         $lock_post = '1';
     } else {
         $lock_post = '0';
