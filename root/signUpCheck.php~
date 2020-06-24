@@ -1,0 +1,34 @@
+<?php
+    $id=$_POST['id'];
+    $pw=$_POST['pw'];
+    $pwc=$_POST['pwc'];
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+
+    if($pw != $pwc) { //비밀번호와 비밀번호 확인 문자열이 맞지 않을 경우
+        echo "비밀번호와 비밀번호 확인이 서로 다릅니다.";
+        echo "<a href=./signUp.php>back page</a>";
+        exit();
+    }
+    if($id==NULL || $pw==NULL || $name==NULL || $email==NULL) {
+        echo "빈 칸을 모두 채워주세요";
+        echo "<a href=./signUp.php>back page</a>";
+        exit();
+    }
+
+    include "../DBConnect.php";
+
+    $check="SELECT * from userInfo WHERE userid='$id'";
+    $result=$db->query($check);
+
+    if($result->num_rows==1) {
+        echo "중복된 id입니다.";
+        echo "<a href=./signUp.php>back page</a>";
+        exit();
+    }
+
+    $signUp = mysqli_query($db,"INSERT INTO userInfo (userid,userpw,name,email) VALUES ('$id','$pw','$name','$email')");
+    if($signUp) {
+        echo "sign up success";
+    }
+?>

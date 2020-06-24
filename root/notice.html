@@ -1,0 +1,51 @@
+<!--하루동안 나타나지 않는 팝업창-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+    <title>동아마라톤 공지</title>
+    <style type="text/css">
+        <!--
+        .face_twit{position:absolute;top:0;left:0;width:327px;height:392px;}
+        //-->
+    </style>
+    <script type="text/javascript">
+        <!--
+        //쿠키 저장
+        function notice_setCookie(name, value, expiredays) {
+            var todayDate=new Date();
+            todayDate.setDate(todayDate.getDate()+expiredays);
+            document.cookie=name+"="+escape(value)+"; path=/; expires="+todayDate.toGMTString()+";";
+        }
+        //팝업창 닫기
+        function notice_closeWin() {
+            if(document.forms[0].Notice.checked)
+                notice_setCookie("Notice","done",1) //1=하루동안 공지창을 열지 않음
+            self.close();
+        }
+        //-->
+    </script>
+</head>
+
+<body>
+<div class="face_twit">
+    <form name="form1">
+        <table width="327" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td><img src="http://marathon.donga.com/popup/img/face_twi_pop.gif" border="0" width="327" height="372" usemap="#Map"></td>
+            </tr>
+        </table>
+        <table width="327" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><input type="checkbox" name="Notice"><img src="http://marathon.donga.com/popup/img/closed_txt.gif" border="0" width="161" height="11"></td>
+                <td align="right"><input type="image" src="http://marathon.donga.com/popup/img/closed_btn.gif" border="0" width="54" height="13" onclick="notice_closeWin()"></td>
+            </tr>
+        </table>
+        <map name="Map" id="Map">
+            <area shape="rect" coords="27,293,158,347" href="http://www.facebook.com/dongamarathon" target="_blank">
+            <area shape="rect" coords="165,293,300,346" href="http://twitter.com/dongamarathon" target="_blank">
+        </map>
+    </form>
+</div>
+</body>
+</html>

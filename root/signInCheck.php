@@ -3,7 +3,7 @@ session_start();
 include "../DBConnect.php";
 
 $memberId = $_POST['memberId'];
-$memberPw = md5($memberPw = $_POST['memberPw']);
+$memberPw = md5($memberPw = $_POST['password']);
 
 $sql = "SELECT * FROM member WHERE memberId = '{$memberId}' AND password = '{$memberPw}'";
 $res = $db->query($sql);
@@ -11,8 +11,8 @@ $res = $db->query($sql);
 $row = $res->fetch_array(MYSQLI_ASSOC);
 
 if ($row != null) {
-    $_SESSION['ses_userid'] = $row['memberId'];
-    echo $_SESSION['ses_userid'].'님 안녕하세요';
+    $_SESSION['sessionUserId'] = $row['memberId'];
+    echo $_SESSION['sessionUserId'].'님 안녕하세요';
     echo '<a href="./signOut.php">로그아웃 하기</a>';
 }
 
