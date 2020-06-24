@@ -749,7 +749,7 @@ section {
     font-size: 14px;
 }
 
-.list-table tbody td > .img {
+.list-table > .img {
     width: 20px;
     height: 20px;
 }
