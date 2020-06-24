@@ -15,11 +15,11 @@
         <!--  소통할 수 있는 게시판   -->
         <div class="section-container">
             <div class="bulletinBoard-area" id="bulletinBoard">
-                <div class="title">Bullentin Board<br>자유롭게 의견을 나누는 공간입니다.</div>
+                <div class="title">Bullentin Board<br>자유롭게 이야기하는 공간입니다.</div>
             </div>
         </div>
 
-        <div id="board-area">
+        <div id="board_area">
             <div id="search_box_top">
                 <form action="./searchResult.php" method="get">
                     <select name="catgo">

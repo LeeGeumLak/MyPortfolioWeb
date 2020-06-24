@@ -13,12 +13,10 @@
             <div id="write_area">
                 <form action="bulletinBoardWrite_ok.php" method="post" enctype="multipart/form-data">
                     <div id="in_title">
-                        <h1>제목 : </h1>
                         <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
                     </div>
                     <div class="wi_line"></div>
                     <div id="in_name">
-                        <h1>작성자 : </h1>
                         <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" required></textarea>
                     </div>
                     <div class="wi_line"></div>

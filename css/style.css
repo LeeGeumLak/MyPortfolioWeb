@@ -126,9 +126,10 @@ a {
     text-decoration: none;
     font-size: 14px;
     text-transform: uppercase;
+    color:#333;
 }
 
-ul {
+ul li {
     list-style-type: none;
 }
 
@@ -708,6 +709,7 @@ section {
 
 /* BULLETIN BOARD AREA */
 .bulletinBoard-area {
+    width: 900px;
     height: auto;
     background-color: #f9f9ff;
 }
