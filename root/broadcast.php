@@ -1,5 +1,13 @@
 <?php
-
+    session_start();
+    //로그인 세션 없을때, 로그인 페이지로 이동
+    if(!isset($_SESSION['userId'])){
+        alert('방송 시청은 로그인을 해야 가능합니다.');
+        echo("<script>location.href='./signIn.php';</script>");
+    //로그인 세션 있을때, 방송 페이지 접근
+    } else {
+        // do nothing
+    }
 ?>
 
 <!DOCTYPE html>
