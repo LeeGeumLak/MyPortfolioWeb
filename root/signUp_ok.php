@@ -11,7 +11,7 @@
     $sql_InitIncrement = mq("alter table userInfo auto_increment =1");
 
     if($userId && $nickName && $userPassword) {
-        $sql = mq("insert into userInfo (userId, nickName, userPassword, createDate, loginDate) values ('".$userId."', '".$nickName."', '".$userPassword."', now(), now())");
+        $sql = mq("insert into userInfo (userId, nickName, userPassword) values ('".$userId."', '".$nickName."', '".$userPassword."')");
         echo "<script>alert('회원가입이 완료됐습니다.');</script>";
     }
     else {
