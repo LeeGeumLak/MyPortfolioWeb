@@ -13,4 +13,4 @@
     alert("수정되었습니다.");
 </script>
 
-<meta http-equiv="refresh" content="0 url=./bulletinBoardRead.php?idx=<?php echo $bno; ?>">
+<meta http-equiv="refresh" content="0 url=./bulletinBoardRead.php?idxNum=<?php echo $bno; ?>">
