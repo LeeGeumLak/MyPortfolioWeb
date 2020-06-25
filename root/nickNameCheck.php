@@ -8,6 +8,4 @@
     $result = $db->query($sql);
     $row = $result->fetch_assoc();
     echo(json_encode(array("result" => $row["COUNT(*)"])));
-
-    $db->close();
 ?>

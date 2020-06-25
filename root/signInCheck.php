@@ -34,6 +34,4 @@
     } else {
         echo(json_encode(array("result" => false)));
     }
-
-    $db->close();
 ?>
