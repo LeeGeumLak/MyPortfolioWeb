@@ -713,7 +713,7 @@ section {
 /* BULLETIN BOARD AREA */
 .bulletinBoard-area {
     width: 900px;
-    height: auto;
+    height: 200px;
     background-color: #f9f9ff;
 }
 
