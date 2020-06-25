@@ -70,7 +70,6 @@
                 $startNum = ($page - 1) * $list;
                 $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
 
-
                 while($board = $sql_bulletinBoard->fetch_array()) {
                     //title변수에 DB에서 가져온 title을 선택
                     $title=$board["title"];

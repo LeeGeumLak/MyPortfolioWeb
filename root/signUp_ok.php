@@ -7,9 +7,9 @@
     $nickName = $_POST['nickName'];
     $userPassword = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user (userId, nickName, userPassword, createDate, loginDate) VALUES ('$userId','$nickName' ,'$userPassword',now(),now());";
+    $sql = mq("INSERT INTO user (userId, nickName, userPassword, createDate, loginDate) VALUES ('$userId', '$nickName', '$userPassword', now(), now());");
 
-    if ($db->query($sql) === TRUE) {
+    if ($sql == TRUE) {
         echo "<script type='text/javascript'>alert('회원가입이 완료됐습니다.');</script>";
     } else {
         echo "<script type='text/javascript'>alert('회원가입에 실패했습니다.');</script>";
