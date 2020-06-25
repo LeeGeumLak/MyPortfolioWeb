@@ -7,15 +7,16 @@
     $nickName = $_POST['nickName'];
     $userPassword = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
 
-    $sql = mq("INSERT INTO user (userId, nickName, userPassword, createDate, loginDate) VALUES ('$userId', '$nickName', '$userPassword', now(), now());");
+    // auto_increment 값 초기화
+    $sql_InitIncrement = mq("alter table userInfo auto_increment =1");
+
+    $sql = mq("INSERT INTO userInfo (userId, nickName, userPassword, createDate, loginDate) VALUES ('$userId', '$nickName', '$userPassword', now(), now());");
 
     if ($sql == TRUE) {
         echo "<script type='text/javascript'>alert('회원가입이 완료됐습니다.');</script>";
     } else {
         echo "<script type='text/javascript'>alert('회원가입에 실패했습니다.');</script>";
     }
-
-    $db->close();
 
     echo("<script>location.replace('./signIn.php');</script>");
 ?>
