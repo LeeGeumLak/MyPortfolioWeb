@@ -11,7 +11,7 @@
     $userId = $_POST['userId'];
     $userPassword = $_POST['userPassword'];
 
-    $sql = "SELECT * FROM user WHERE userID = '$userId'";
+    $sql = "SELECT * FROM userInfo WHERE userId = '$userId'";
     $result = $db->query($sql);
 
     //해당하는 아이디가 존재할경우

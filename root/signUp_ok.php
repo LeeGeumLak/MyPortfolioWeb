@@ -10,12 +10,12 @@
     // auto_increment 값 초기화
     $sql_InitIncrement = mq("alter table userInfo auto_increment =1");
 
-    $sql = mq("INSERT INTO userInfo (userId, nickName, userPassword, createDate, loginDate) VALUES ('$userId', '$nickName', '$userPassword', now(), now());");
+    $sql = mq("insert into userInfo (userId, nickName, userPassword, createDate, loginDate) values ('.$userId', '.$nickName', '.$userPassword', now(), now())");
 
     if ($sql == TRUE) {
-        echo "<script type='text/javascript'>alert('회원가입이 완료됐습니다.');</script>";
+        echo "<script>alert('회원가입이 완료됐습니다.');</script>";
     } else {
-        echo "<script type='text/javascript'>alert('회원가입에 실패했습니다.');</script>";
+        echo "<script>alert('회원가입에 실패했습니다.');</script>";
     }
 
     echo("<script>location.replace('./signIn.php');</script>");
