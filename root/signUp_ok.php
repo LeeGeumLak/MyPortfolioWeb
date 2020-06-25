@@ -16,8 +16,9 @@
     }
     else {
         echo "<script>alert('회원가입에 실패했습니다.');</script>";
-        echo "<script>location.replace('./signIn.php');</script>";
     }
+
+    echo "<script>location.replace('./signIn.php');</script>";
 
 ?>
 
