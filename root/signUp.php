@@ -1,194 +1,166 @@
-<!doctype html>
+<script type="text/javascript">
+    //빈값 체크 함수
+    var isEmpty = function(value){
+        if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
+            return true
+        } else{
+            return false
+        }
+    };>
+</script>
+
 <html>
     <head>
         <?php include './header.php'?>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     </head>
-
     <body>
-        <!--  최상단 네비게이션바     -->
-        <?php include './topPart.php'?>
-
-        <div id="wrap">
-            <div id="container">
-                <h1 class="title">회원가입</h1>
-                <form name="signUp" action="./memberSave.php" method="post" onsubmit="return checkSubmit()">
-                    <div class="line">
-                        <p>아이디</p>
-                        <div class="inputArea">
-                            <input type="text" name="memberId" class="memberId" />
-                        </div>
-                        <div class="memberIdCheck">중복 확인</div>
-                        <div class="memberIdComment comment"></div>
-                    </div>
-                    <div class="line">
-                        <p>이름</p>
-                        <div class="inputArea">
-                            <input type="text" name="memberName" class="memberName" />
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>비밀번호</p>
-                        <div class="inputArea">
-                            <input type="password" name="memberPw" class="memberPw" />
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>비밀번호 확인</p>
-                        <div class="inputArea">
-                            <input type="password" name="memberPw2" class="memberPw2"  />
-                            <div class="memberPw2Comment comment"></div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>닉네임</p>
-                        <div class="inputArea">
-                            <input type="text" name="memberNickName" class="memberNickName"  />
-                            <div class="memberNickNameComment comment"></div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>이메일</p>
-                        <div class="inputArea">
-                            <input type="text" name="memberEmailAddress" class="memberEmailAddress" />
-                            <div class="memberEmailAddressComment comment"></div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>생일</p>
-                        <div class="inputArea">
-                            <input type="text" name="memberBirthDay" class="memberBirthDay" />
-                            <div class="memberBirthDayComment comment"></div>
-                        </div>
-                    </div>
-                    <div class="line">
-                        <input type="submit" value="가입하기" class="submit" />
-                    </div>
+        <div style="position:relative; height: 500px">
+            <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px;">
+                <form id="signForm" action="./signUp_ok.php" method="POST" >
+                    <h1 style="text-align:center" >회원가입</h1>
+                    <input type="text" name="userId" class="form-control" id="userId" placeholder="Email address"/><br>
+                    <div id ="userIdCheck" style="text-align:center; font-weight: bold; display: none; margin-bottom:15px;">아이디 유효성 검사 Text</div>
+                    <input type="text" name="nickName" class="form-control" id="nickName" placeholder="nick name"/><br>
+                    <div id ="nickNameCheck" style="text-align:center; font-weight: bold; display: none; margin-bottom:15px;">닉네임 유효성 검사 Text</div>
+                    <input type="password" name="userPassword" class="form-control password" id="userPassword" placeholder="Password"/><br>
+                    <input type="password" name="confirmUserPassword" class="form-control password" id="confirmUserPassword" placeholder="confirm Password"/><br>
+                    <div id ="confirmUserPasswordCheck" style="text-align:center; font-weight: bold; display: none; margin-bottom:15px;">패스워드 확인 유효성 검사 Text</div>
+                    <button id="signUpBtn" style="display: block; width:100%;" type="button" name="signUp" class="btn btn-warning">회원가입</button><br>
+                    <button id="cancelBtn" style="display: block; width:100%;" type="button" name="cancelBtn" class="btn">취소</button><br>
                 </form>
-
-                <div class="formCheck">
-                    <input type="hidden" name="idCheck" class="idCheck" />
-                    <input type="hidden" name="pw2Check" class="pwCheck2" />
-                    <input type="hidden" name="eMailCheck" class="eMailCheck" />
-                </div>
             </div>
         </div>
-
-        <script type="text/javascript">
-            $(function(){
-                //아이디 중복 확인 소스
-                var memberIdCheck = $('.memberIdCheck');
-                var memberId = $('.memberId');
-                var memberIdComment = $('.memberIdComment');
-                var memberPw = $('.memberPw');
-                var memberPw2 = $('.memberPw2');
-                var memberPw2Comment = $('.memberPw2Comment');
-                var memberNickName = $('.memberNickName');
-                var memberNickNameComment = $('.memberNickNameComment');
-                var memberEmailAddress = $('.memberEmailAddress');
-                var memberEmailAddressComment = $('.memberEmailAddressComment');
-                var memberBirthDay = $('.memberBirthDay');
-                var memberBirthDayComment = $('.memberBirthDayComment');
-                var idCheck = $('.idCheck');
-                var pwCheck2 = $('.pwCheck2');
-                var eMailCheck = $('.eMailCheck');
-
-                memberIdCheck.click(function(){
-                    console.log(memberId.val());
-                    $.ajax({
-                        type: 'post',
-                        dataType: 'json',
-                        url: './memberIdCheck.php',
-                        data: {memberId: memberId.val()},
-
-                        success: function (json) {
-                            if(json.res == 'good') {
-                                console.log(json.res);
-                                memberIdComment.text('사용가능한 아이디 입니다.');
-                                idCheck.val('1');
-                            }else{
-                                memberIdComment.text('다른 아이디를 입력해 주세요.');
-                                memberId.focus();
-                            }
-                        },
-
-                        error: function(){
-                            console.log('failed');
-
-                        }
-                    })
-                });
-
-                //비밀번호 동일 한지 체크
-                memberPw2.blur(function(){
-                    if(memberPw.val() == memberPw2.val()){
-                        memberPw2Comment.text('비밀번호가 일치합니다.');
-                        pwCheck2.val('1');
-                    }else{
-                        memberPw2Comment.text('비밀번호가 일치하지 않습니다.');
-
-                    }
-                });
-
-                //이메일 유효성 검사
-                memberEmailAddress.blur(function(){
-                    var regex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-                    if(regex.test(memberEmailAddress.val()) === false){
-                        memberEmailAddressComment.text('이메일이 유효성에 맞지 않습니다.');
-                        eMailCheck.val('1');
-                    }else{
-                        memberEmailAddressComment.text('올바른 이메일 입니다.');
-                    }
-                });
-
-            });
-
-            function checkSubmit(){
-                var idCheck = $('.idCheck');
-                var pwCheck2 = $('.pwCheck2');
-                var eMailCheck = $('.eMailCheck');
-                var memberBirthDay = $('.memberBirthDay');
-                var memberNickName = $('.memberNickName');
-                var memberName = $('.memberName');
-
-
-                if(idCheck.val() == '1'){
-                    res = true;
-                }else{
-                    res = false;
-                }
-                if(pwCheck2.val() == '1'){
-                    res = true;
-                }else{
-                    res = false;
-                }
-                if(eMailCheck.val() == '1'){
-                    res = true;
-                }else{
-                    res = false;
-                }
-
-                if(memberName.val() != ''){
-                    res = true;
-                }else{
-                    res = false;
-                }
-                if(memberBirthDay.val() != ''){
-                    res = true;
-                }else{
-                    res = false;
-                }
-                if(memberNickName.val() != ''){
-                    res = true;
-                }else{
-                    res = false;
-                }
-
-                if(res == false){
-                    alert('회원가입 폼을 정확히 채워 주세요.');
-                }
-                return res;
-            }
-        </script>
     </body>
 </html>
+
+<script type="text/javascript">
+
+    let isPassUserId = false;
+    let isPassNickName = false;
+    let isPassConfirmPassword = false;
+
+    $(document).on('ready', function(e){
+
+        $("#cancelBtn").on("click", function() {
+            history.back();
+        });
+
+        $("#signUpBtn").on("click", function() {
+            //회원정보 조건이 모두 만족 할 때
+            if(isPassUserId && isPassNickName && isPassConfirmPassword){
+                $("#signForm").trigger("submit");
+                //회원정보 조건이 만족되지 안았을 때
+            }else{
+                alert("회원정보를 알맞게 입력후 회원가입 버튼을 누르세요.");
+            }
+        });
+
+        $("#userId").on("change keyup paste input", function() {
+            //userIdCheck의 id
+            let $userIdCheck = $("#userIdCheck");
+            //현재 userId값
+            let userIdValue = $(this).val();
+
+            //이메일 유효성 검사
+            if(validateEmail(userIdValue)){
+                //DB에서 존재하는 아이디인지 검사
+                $.ajax({
+                    type: "POST",
+                    url : "./userIdCheck.php",
+                    data: {"userId":userIdValue},
+                    dataType:"json",
+                    success : function(data, status, xhr) {
+                        //동일한 아이디가 없을때
+                        if(data.result == 0){
+                            $userIdCheck.show();
+                            $userIdCheck.text("사용 가능한 아이디 입니다.");
+                            $userIdCheck.css("color","green");
+                            isPassUserId = true;
+                            //동일한 아이디가 있을때
+                        }else{
+                            $userIdCheck.show();
+                            $userIdCheck.text("사용할 수 없는 아이디 입니다.");
+                            $userIdCheck.css("color","red");
+                            isPassUserId = false;
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(jqXHR.responseText);
+                    }
+                });
+            }else{
+                $userIdCheck.show();
+                $userIdCheck.text("유효하지 않는 이메일입니다.");
+                $userIdCheck.css("color","red");
+            }
+        });
+
+        $("#nickName").on("change keyup paste input", function() {
+            //nickNameCheck의 id
+            let $nickNameCheck = $("#nickNameCheck");
+            //현재 nickName값
+            let nickNameValue = $(this).val();
+            console.log("nickNameValue:",nickNameValue);
+
+            //DB에서 존재하는 아이디인지 검사
+            $.ajax({
+                type: "POST",
+                url : "./nickNameCheck.php",
+                data: {"nickName":nickNameValue},
+                dataType:"json",
+                success : function(data, status, xhr) {
+                    //동일한 닉네임이 없을때
+                    if(!isEmpty(nickNameValue) && data.result == 0){
+                        $nickNameCheck.show();
+                        $nickNameCheck.text("사용 가능한 닉네임 입니다.");
+                        $nickNameCheck.css("color","green");
+                        isPassNickName = true;
+                        //동일한 닉네임이 있을때
+                    }else{
+                        $nickNameCheck.show();
+                        $nickNameCheck.text("사용할 수 없는 닉네임 입니다.");
+                        $nickNameCheck.css("color","red");
+                        isPassNickName = false;
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.responseText);
+                }
+            });
+
+        });
+
+        $("#confirmUserPassword, #userPassword").on("change keyup paste input", function() {
+            //패스워드체크의 id
+            let $confirmUserPasswordCheck = $("#confirmUserPasswordCheck");
+            //패스워드값
+            let userPasswordValue = $("#userPassword").val();
+            //패스워드체크값
+            let confirmUserPasswordValue = $("#confirmUserPassword").val();
+
+            //비밀번호 같은지 확인
+            //비밀번호 같을때
+            if(!isEmpty(userPasswordValue) && !isEmpty(userPasswordValue) && userPasswordValue == confirmUserPasswordValue){
+                $confirmUserPasswordCheck.show();
+                $confirmUserPasswordCheck.text("비밀번호 확인 완료");
+                $confirmUserPasswordCheck.css("color","green");
+                isPassConfirmPassword = true;
+                //비밀번호 다를때
+            }else{
+                $confirmUserPasswordCheck.show();
+                $confirmUserPasswordCheck.text("비밀번호가 맞지 않습니다.");
+                $confirmUserPasswordCheck.css("color","red");
+                isPassConfirmPassword = false;
+            }
+
+        });
+
+    });
+
+    //이메일 유효성 검사 함수
+    function validateEmail(email) {
+        let re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
+
+</script>

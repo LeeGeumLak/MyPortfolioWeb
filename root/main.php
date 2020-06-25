@@ -1,41 +1,14 @@
 <?php
-   //session_start();
+   session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="ko">
     <head>
         <?php include './header.php'?>
-
-        <script type="text/javascript">
-        <!--
-        function init() {
-         if(notice_getCookie("Notice")!="done")
-          window.open('./notice.html', '', 'width=327, height=392, toolbar=no,resizable=no,scrollbars=no,menubar=no');
-        }
-        //쿠키값 가져오기
-        function notice_getCookie(name) {
-         var nameOfCookie=name+"=";
-         var x=0;
-         while(x<=document.cookie.length) {
-          var y=(x+nameOfCookie.length);
-          if(document.cookie.substring(x,y) == nameOfCookie) {
-           if(endOfCookie=document.cookie.indexOf(";", y) == -1)
-            endOfCookie=document.cookie.length;
-           return unescape(document.cookie.substring(y, endOfCookie));
-          }
-          x=document.cookie.indexOf(" ", x)+1;
-          if(x==0)
-           break
-         }
-         return "";
-        }
-        //-->
-        </script>
     </head>
 
-    <body onload="init()">
-
+    <body>
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 

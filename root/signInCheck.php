@@ -1,22 +1,39 @@
 <?php
-session_start();
-include "../DBConnect.php";
+    include '../DBConnect.php';
 
-$memberId = $_POST['memberId'];
-$memberPw = md5($memberPw = $_POST['password']);
+    header("Content-Type: application/json");
+    $method = $_SERVER['REQUEST_METHOD'];
+    $userId = "";
+    $userPassword = "";
 
-$sql = "SELECT * FROM member WHERE memberId = '{$memberId}' AND password = '{$memberPw}'";
-$res = $db->query($sql);
+    // 로그인 과정은 post 방식으로 진행
+    //자바스크립트 객체 또는 serialize() 로 전달
+    $userId = $_POST['userId'];
+    $userPassword = $_POST['userPassword'];
 
-$row = $res->fetch_array(MYSQLI_ASSOC);
+    $sql = "SELECT * FROM user WHERE userID = '$userId'";
+    $result = $db->query($sql);
 
-if ($row != null) {
-    $_SESSION['sessionUserId'] = $row['memberId'];
-    echo $_SESSION['sessionUserId'].'님 안녕하세요';
-    echo '<a href="./signOut.php">로그아웃 하기</a>';
-}
+    //해당하는 아이디가 존재할경우
+    if ($result->num_rows == 1) {
+        //각행 1개씩 꺼내기
+        while($row = $result->fetch_assoc()) {
+            //로그인 성공(패스워드 일치)
+            if(password_verify($userPassword, $row["userPassword"])){
+                //session 설정
+                session_start();
+                $_SESSION['userId'] = $row["userId"];
+                $_SESSION['nickName'] = $row["nickName"];
+                echo(json_encode(array("result" => true,"userId" => $_SESSION['userId'])));
+            //로그인 실패(패스워드 불일치)
+            }else{
+                echo(json_encode(array("result" => false)));
+            }
+        }
+    //해당하는 아이디가 아예 없을 경우
+    } else {
+        echo(json_encode(array("result" => false)));
+    }
 
-if($row == null){
-    echo '로그인 실패 아이디와 비밀번호가 일치하지 않습니다.';
-}
+    $db->close();
 ?>

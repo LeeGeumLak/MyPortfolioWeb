@@ -1,53 +1,95 @@
-<!doctype html>
+<!--세션확인하기-->
+<?php
+    session_start();
+    //로그인 세션 있을때
+    if(isset($_SESSION['userId'])){
+        alert("로그아웃을 먼저 해야합니다.");
+        echo("<script>location.href='./main.php';</script>");
+    }
+?>
 <html>
     <head>
         <?php include './header.php'?>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     </head>
 
     <body>
-        <!--  최상단 네비게이션바     -->
-        <?php include './topPart.php'?>
+        <div style="position:relative; height: 500px">
+            <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px;">
+                <form id ="loginForm" >
+                    <h1 style="text-align:center" >로그인</h1>
+                    <input type="text" name="userId" class="form-control" id="userId" placeholder="Email address"/><br>
+                    <input type="password" name="userPassword" class="form-control" id="inputPassword" placeholder="Password"/><br>
+                    <div style="text-align:center;">
+                        <label  style="cursor:pointer"><input id="keep_id" type="checkbox" style="cursor:pointer">아이디 임시 저장</label>
+                    </div>
 
-        <div id="wrap">
-            <div id="container">
-                <h1 class="title">어서오세요.</h1>
-                <form name="singIn" action="./signInCheck.php" method="post" onsubmit="return checkSubmit()">
-                    <div class="line">
-                        <p>아이디</p>
-                        <div class="inputArea">
-                            <input type="text" name="memberId" class="memberId" />
-                        </div>
-                    </div>
-                    <div class="line">
-                        <p>비밀번호</p>
-                        <div class="inputArea">
-                            <input type="password" name="memberPw" class="memberPw" />
-                        </div>
-                    </div>
-                    <div class="line">
-                        <input type="submit" value="로그인" class="submit" />
-                    </div>
+                    <button id ="loginBtn" style="display: block; width:100%;" type="button" name="login" class="btn btn-warning">로그인</button><br>
+                    <button id ="signUpBtn" style="display: block; width:100%;" type="button" name="signUp" class="btn ">회원가입</button>
+                    </br>
                 </form>
-                <h1 class="content"><a href="./signUp.php">회원가입 하기</a></h1>
             </div>
         </div>
-
-        <script type="text/javascript">
-            function checkSubmit(){
-                var memberId = $('.memberId');
-                var memberPw = $('.memberPw');
-
-                if(memberId.val() == ''){
-                    alert('아이디를 입력해 주세요.');
-                    return false;
-                }
-                if(memberPw.val() == ''){
-                    alert('비밀번호를 입력해 주세요.');
-                    return false;
-                }
-                return true;
-            }
-        </script>
     </body>
 </html>
+
+<script type="text/javascript">
+    $(document).on('ready', function(e){
+        $("#loginBtn").on("click", function() {
+            let data = $('#loginForm').serialize();
+            console.log("data:",data);
+            $.ajax({
+                type: "POST",
+                url : "./signInCheck.php",
+                data: data,
+                dataType:"json",
+                success : function(data, status, xhr) {
+                    //로그인 성공 했을 경우
+                    if(data.result){
+                        //로그인상태유지 체크박스 확인
+                        if($("#keep_id").prop("checked")){
+                            //쿠키생성
+                            setCookie('userId', $("#userId").val(), 7); /* pop=event0405, 7일 뒤 만료됨 */
+                        }else{
+                            deleteCookie('userId');
+                        }
+
+                    //실패 했을 경우
+                    }else{
+                        alert("아이디와 비밀번호가 맞지 않습니다.");
+                        $("#inputPassword").val("");
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(jqXHR.responseText);
+                }
+            });
+        });
+
+        $("#signUpBtn").on("click", function() {
+            location.href = "./signUp.php";
+        });
+
+        //로그인상태 유지 쿠키가 존재한다면
+        if(getCookie('userId')){
+            $("#keep_id").attr("checked", true);
+            $("#userId").val(getCookie('userId'));
+        }
+
+    });
+
+    //쿠기 생성
+    function setCookie(name, value, exp) {
+        let date = new Date();
+        date.setTime(date.getTime() + exp*24*60*60); // exp * 1일
+        document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+    }
+    //쿠키 가져오기
+    function getCookie(name) {
+        var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+        return value? value[2] : null;
+    }
+    //쿠키 삭제
+    function deleteCookie(name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+</script>

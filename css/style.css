@@ -1011,6 +1011,17 @@ section {
     color:white;
 }
 
+/* 로그인, 회원가입, 유효성 체크 */
+.sign{
+    text-align: center;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 20px;
+    height: 55px;
+    padding: 10px;
+}
+
+
 
 /* FOOTER AREA */
 .footer-area {
