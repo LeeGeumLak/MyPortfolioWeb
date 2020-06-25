@@ -112,8 +112,8 @@
                 data: {"nickName":nickNameValue},
                 dataType:"json",
                 success : function(data, status, xhr) {
-                    //동일한 닉네임이 없을때
-                    if(!isEmpty(nickNameValue) && data.result == 0){
+                    //동일한 닉네임이 없을때 (!isEmpty(nickNameValue) && )
+                    if(data.result == 0){
                         $nickNameCheck.show();
                         $nickNameCheck.text("사용 가능한 닉네임 입니다.");
                         $nickNameCheck.css("color","green");
@@ -142,13 +142,13 @@
             let confirmUserPasswordValue = $("#confirmUserPassword").val();
 
             //비밀번호 같은지 확인
-            //비밀번호 같을때
-            if(!isEmpty(userPasswordValue) && !isEmpty(userPasswordValue) && userPasswordValue == confirmUserPasswordValue){
+            //비밀번호 같을때 (!isEmpty(userPasswordValue) && !isEmpty(userPasswordValue) && )
+            if(userPasswordValue == confirmUserPasswordValue){
                 $confirmUserPasswordCheck.show();
                 $confirmUserPasswordCheck.text("비밀번호 확인 완료");
                 $confirmUserPasswordCheck.css("color","green");
                 isPassConfirmPassword = true;
-                //비밀번호 다를때
+            //비밀번호 다를때
             }else{
                 $confirmUserPasswordCheck.show();
                 $confirmUserPasswordCheck.text("비밀번호가 맞지 않습니다.");
