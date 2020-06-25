@@ -48,7 +48,7 @@
                         //로그인상태유지 체크박스 확인
                         if($("#keep_id").prop("checked")){
                             //쿠키생성
-                            setCookie('userId', $("#userId").val(), 7); /* pop=event0405, 7일 뒤 만료됨 */
+                            setCookie('userId', $("#userId").val(), 1); /* pop=event0405, 1일 뒤 만료됨 */
                         }else{
                             deleteCookie('userId');
                         }
@@ -80,7 +80,7 @@
     //쿠기 생성
     function setCookie(name, value, exp) {
         let date = new Date();
-        date.setTime(date.getTime() + exp*24*60*60); // exp * 1일
+        date.setTime(date.getTime() + exp*24*60*60*1000);
         document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
     }
     //쿠키 가져오기

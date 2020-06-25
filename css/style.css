@@ -732,7 +732,7 @@ section {
 }
 
 .list-table {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 .list-table thead th{
     height:40px;
@@ -758,7 +758,7 @@ section {
 #page_num {
     font-size: 14px;
     margin-left: 260px;
-    margin-top:100px;
+    margin-top:30px;
 }
 #page_num ul li {
     float: left;
