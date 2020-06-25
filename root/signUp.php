@@ -14,6 +14,9 @@
         <?php include './header.php'?>
     </head>
     <body>
+        <!--  최상단 네비게이션바     -->
+        <?php include './topPart.php'?>
+
         <div style="position:relative; height: 500px">
             <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px;">
                 <form id="signForm" action="./signUp_ok.php" method="POST" >
