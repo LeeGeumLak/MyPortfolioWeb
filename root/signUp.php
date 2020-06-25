@@ -49,7 +49,7 @@
             //회원정보 조건이 모두 만족 할 때
             if(isPassUserId && isPassNickName && isPassConfirmPassword){
                 $("#signForm").trigger("submit");
-                //회원정보 조건이 만족되지 안았을 때
+            //회원정보 조건이 만족되지 않았을 때
             }else{
                 alert("회원정보를 알맞게 입력후 회원가입 버튼을 누르세요.");
             }
