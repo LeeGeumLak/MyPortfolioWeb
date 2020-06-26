@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="10fabfc1-47d6-4b46-817c-2249ffa9e2fe" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="b30beed4-4491-4a73-a763-82ed575b2b02" name="CodeTestServer" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1dD65mU4ZkBPit9ZQQNxsTJ5dlP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\root" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\js" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\img" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\get_post_test_code" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\css" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\img" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\js" />
+      <recent name="D:\A\자료\TeamNova\PHP\MyPortfolioWeb\html_test_code" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10fabfc1-47d6-4b46-817c-2249ffa9e2fe" name="Default Changelist" comment="" />
+      <created>1591947135248</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591947135248</updated>
+      <workItem from="1591947137497" duration="3786000" />
+      <workItem from="1591972961103" duration="6000" />
+      <workItem from="1592027549132" duration="3062000" />
+      <workItem from="1592193682523" duration="9162000" />
+      <workItem from="1592212105226" duration="3563000" />
+      <workItem from="1592283237253" duration="1569000" />
+      <workItem from="1592369872928" duration="24892000" />
+      <workItem from="1592531465426" duration="329000" />
+      <workItem from="1592542399398" duration="20843000" />
+      <workItem from="1592622883603" duration="23239000" />
+      <workItem from="1592792685120" duration="29365000" />
+      <workItem from="1592884113358" duration="129168000" />
+      <workItem from="1593061720165" duration="5090000" />
+      <workItem from="1593142586422" duration="1603000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="867" y="179" key="#CLI_Interpreters" timestamp="1592218794005">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="867" y="179" key="#CLI_Interpreters/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592218794005" />
+    <state x="1052" y="166" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1592199044171" />
+    <state x="973" y="263" key="#Deployment" timestamp="1592890347847">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="973" y="263" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592221447702" />
+    <state x="973" y="263" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1592890347847" />
+    <state x="181" y="162" key="#PHP" timestamp="1592195913059">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="181" y="162" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1592195913059" />
+    <state x="2273" y="357" key="#SQL_Dialects" timestamp="1593046873663">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2273" y="357" key="#SQL_Dialects/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593046873663" />
+    <state x="353" y="357" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1592903834357" />
+    <state x="536" y="165" key="#SSH_Configurations" timestamp="1592221446334">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592221446334" />
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040@0.0.1920.1040" timestamp="1591947335174" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592455864443">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592455864443" />
+    <state x="2610" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593011331367">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593011331367" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592550580727" />
+    <state x="2551" y="273" key="FileChooserDialogImpl" timestamp="1593012710985">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2551" y="273" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593012710985" />
+    <state x="1213" y="238" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592902818579" />
+    <state width="622" height="281" key="GridCell.Tab.0.bottom" timestamp="1592889440419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592889440419" />
+    <state width="622" height="281" key="GridCell.Tab.0.center" timestamp="1592889440419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592889440419" />
+    <state width="622" height="281" key="GridCell.Tab.0.left" timestamp="1592889440416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592889440416" />
+    <state width="622" height="281" key="GridCell.Tab.0.right" timestamp="1592889440419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="622" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592889440419" />
+    <state width="207" height="477" key="HiddenNamespacesPopup" timestamp="1592545032478">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="207" height="477" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1592545032478" />
+    <state x="766" y="240" key="NewPhpClassDialog" timestamp="1592544686376">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="766" y="240" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592544686376" />
+    <state x="2924" y="216" key="NewPhpFileDialog" timestamp="1593046589004">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1004" y="216" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592929440483" />
+    <state x="2924" y="216" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593046589004" />
+    <state x="1004" y="216" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592987599644" />
+    <state x="794" y="154" key="SettingsEditor" timestamp="1593142690113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="154" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1592531797479" />
+    <state x="794" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593142690113" />
+    <state x="859" y="391" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1592545026784">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="391" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1920.1040@0.0.1920.1040" timestamp="1592545026784" />
+    <state x="3206" y="403" width="322" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1593053659349">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3206" y="403" width="322" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593053659349" />
+    <state x="1286" y="403" width="322" height="252" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040@0.0.1920.1040" timestamp="1592887884089" />
+    <state x="1170" y="328" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1592975871097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1170" y="328" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592975871097" />
+    <state x="2671" y="333" width="417" height="370" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1593052014318">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2671" y="333" width="417" height="370" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593052014318" />
+    <state x="635" y="151" width="848" height="574" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1593063959418">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2396" y="253" width="848" height="574" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593052992264" />
+    <state x="635" y="151" width="762" height="574" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593063959418" />
+    <state x="765" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592899005198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2685" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1592438482327" />
+    <state x="765" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592899005198" />
+    <state x="1186" y="335" key="ftp.server.browser" timestamp="1592890346129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1186" y="335" key="ftp.server.browser/0.0.1920.1040@0.0.1920.1040" timestamp="1592890346129" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592905795061">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592905795061" />
+  </component>
+</project>

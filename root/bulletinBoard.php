@@ -82,7 +82,7 @@
                     $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'"); //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
                     $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
                     ?>
-
+<!---->
                     <tbody>
                         <tr>
                             <td width="70"><?php echo $board['idxNum']; ?></td>
