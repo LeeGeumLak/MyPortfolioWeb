@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a1bebb5b-ff69-48cb-97c3-e943f86065de" name="AWS_Ubuntu" url="http://ec2-52-79-250-52.ap-northeast-2.compute.amazonaws.com/MyPortfolioWeb">
+        <fileTransfer rootFolder="/var/www/html/MyPortfolioWeb" accessType="SFTP" host="52.79.250.52" port="22" sshConfigId="943bf68f-8588-4960-8411-0a3bd6d7722d" sshConfig="ubuntu@52.79.250.52:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
