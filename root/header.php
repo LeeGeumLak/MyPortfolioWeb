@@ -1,4 +1,3 @@
-<meta name="google-site-verification" content="avUJ1EXVTYeClRcjbyA9wQy3jAghkCv-ILIzAYtIQKo" />
 <title>개발자 이금락의 포트폴리오</title>
 
 <meta charset="UTF-8">
