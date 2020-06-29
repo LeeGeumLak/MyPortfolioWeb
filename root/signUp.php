@@ -176,7 +176,7 @@
         return re.test(email);
     }
 
-    //회원 가입시, 닉네임/비밀번호 빈값 체크 함수
+    //빈값 체크 함수
     var isEmpty = function(value){
         if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
             return true

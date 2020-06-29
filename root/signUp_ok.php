@@ -1,7 +1,7 @@
 <meta charset="utf-8" />
 <?php
     include '../DBConnect.php';
-//    include '../password.php';
+    include '../password.php';
 
     //Post로 받은 데이터 가져오기
     $userId = $_POST['userId'];
