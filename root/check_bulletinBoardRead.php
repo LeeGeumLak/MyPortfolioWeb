@@ -27,21 +27,34 @@
 </div>
 
 <?php
-    $bpw = $board['password'];
+    session_start();
+    //로그인 세션 있을때
+    if(isset($_SESSION['userId'])){
+        if($_SESSION['userId'] == 'admin') {?>
+            <script type="text/javascript">
+                location.replace("./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>");
+            </script> <?php
+        }
+    }
+    else {
+        $bpw = $board['password'];
 
-    if(isset($_POST['passwordCheck'])) { //만약 password_check POST값이 있다면
-        $pwk = $_POST['passwordCheck']; // $pwk변수에 POST값으로 받은 password_check 을 넣습니다.
-        if(password_verify($pwk,$bpw)) { //다시 if문으로 DB의 password와 입력하여 받아온 bpw와 값이 같은지 비교를 하고
-            $pwk == $bpw;
-?>
-        <!-- pwk와 bpw값이 같으면 bulletinBoardRead.php로 전송 -->
-        <script type="text/javascript">
-            location.replace("./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>");
-        </script>
-        <?php
-    } else{ ?>
-        <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
-        <script type="text/javascript">
-            alert('비밀번호가 틀립니다');
-        </script>
-    <?php } } ?>
+        if(isset($_POST['passwordCheck'])) { //만약 password_check POST값이 있다면
+            $pwk = $_POST['passwordCheck']; // $pwk변수에 POST값으로 받은 password_check 을 넣습니다.
+            if(password_verify($pwk,$bpw)) { //다시 if문으로 DB의 password와 입력하여 받아온 bpw와 값이 같은지 비교를 하고
+                $pwk == $bpw;
+                ?>
+                <!-- pwk와 bpw값이 같으면 bulletinBoardRead.php로 전송 -->
+                <script type="text/javascript">
+                    location.replace("./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>");
+                </script>
+                <?php
+            } else { ?>
+                <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
+                <script type="text/javascript">
+                    alert('비밀번호가 틀립니다');
+                </script>
+                <?php
+            }
+        }
+    }?>

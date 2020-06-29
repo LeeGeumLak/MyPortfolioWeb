@@ -2,8 +2,11 @@
 <?php
     session_start();
     //로그인 세션 있을때
-    if(isset($_SESSION['userId'])){
-        alert("로그아웃을 먼저 해야합니다.");
+    if(isset($_SESSION['userId'])){ ?>
+        <script type="text/javascript">
+            alert("이미 로그인 중입니다.");
+        </script>
+        <?php
         echo("<script>location.href='./main.php';</script>");
     }
 ?>
