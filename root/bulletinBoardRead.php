@@ -1,5 +1,5 @@
 <?php
-    //include "../DBConnect.php"; /* db load */
+    include "../DBConnect.php"; /* db load */
 ?>
 
 <!doctype html>
@@ -56,11 +56,11 @@
                 ?>
                 <div class="dap_lo">
                     <div><b style="font-size: 20px"><?php echo $comment['name'];?></b></div>
-                    <div class="dap_to comment_edit" style="font-size: 20px"><?php echo nl2br("$comment[content]"); ?></div>
-                    <div class="comment_me dap_to" style="font-size: 15px"><?php echo $comment['writeDate']; ?></div>
+                    <div class="dap_to comment_edit"><?php echo nl2br("$comment[content]"); ?></div>
+                    <div class="comment_me dap_to"><?php echo $comment['writeDate']; ?></div>
                     <div class="comment_me comment_menu">
-                        <a class="dat_edit_bt" href="#" style="font-size: 15px">수정</a>
-                        <a class="dat_delete_bt" href="#" style="font-size: 15px">삭제</a>
+                        <a class="dat_edit_bt" href="#">수정</a>
+                        <a class="dat_delete_bt" href="#">삭제</a>
                     </div>
                     <!-- 댓글 수정 폼 dialog -->
                     <div class="dat_edit">
