@@ -211,7 +211,7 @@
                 addClass(document.getElementById(id), 'active');
 
                 x = document.getElementsByClassName('filterItem');
-                if(id == 'all') id = '';
+                if(id === 'all') id = '';
                 for(i=0;i<x.length;i++){
                     removeClass(x[i], 'show');
                     if(x[i].className.indexOf(id) > -1)
@@ -244,7 +244,7 @@
             function viewPortfolio(event) {
                 var polyNode = event.target;
 
-                if(polyNode.tagName.toLowerCase() == 'i') { polyNode = polyNode.parentNode; }
+                if(polyNode.tagName.toLowerCase() === 'i') { polyNode = polyNode.parentNode; }
 
                 var overlayNode = polyNode;
                 var imageNode = overlayNode.nextElementSibling;
