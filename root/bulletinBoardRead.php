@@ -35,16 +35,15 @@
                 <?php echo nl2br("$board[content]"); ?>
                 <div id="bo_line"></div>
             </div>
-            <div style="font-size: 18px">
+            <div style="font-size: 18px; margin-top: 30px">
                 파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
             </div>
             <!-- 목록, 수정, 삭제 -->
             <div id="bo_ser">
-                <div id="bo_line"></div>
                 <ul>
-                    <li><a href="./bulletinBoard.php">[목록으로]</a></li>
-                    <li><a href="./bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>">[수정]</a></li>
-                    <li><a href="./bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>">[삭제]</a></li>
+                    <li><a href="./bulletinBoard.php" style="font-size: 18px">[목록으로]</a></li>
+                    <li><a href="./bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>" style="font-size: 18px">[수정]</a></li>
+                    <li><a href="./bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>" style="font-size: 18px">[삭제]</a></li>
                 </ul>
             </div>
         </div>

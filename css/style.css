@@ -855,6 +855,7 @@ section {
     margin-top:20px;
 }
 #bo_ser {
+    text-align: right;
     margin-top: 30px;
     font-size:18px;
     color:#333;

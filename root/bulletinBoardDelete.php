@@ -2,6 +2,11 @@
     include "../DBConnect.php";
 
     $bno = $_GET['idxNum'];
+
+    // 삭제하는 게시판에 달린 댓글 삭제
+    $sql = mq("delete from comment where bulletinNum='$bno';");
+
+    // 게시판 글 삭제
     $sql = mq("delete from bulletinBoard where idxNum='$bno';");
 ?>
 
