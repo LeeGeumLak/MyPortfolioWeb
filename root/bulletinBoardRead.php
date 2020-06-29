@@ -34,9 +34,13 @@
             <div id="bo_content" style="font-size: 40px">
                 <?php echo nl2br("$board[content]"); ?>
             </div>
-            <div>
-                <br><br>파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
+            <br><br><br>
+            <div id="bo_line"></div>
+            <div style="font-size: 18px">
+                <br><br><br>
+                파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
             </div>
+            <div id="bo_line"></div>
             <!-- 목록, 수정, 삭제 -->
             <div id="bo_ser">
                 <ul>
@@ -46,6 +50,7 @@
                 </ul>
             </div>
         </div>
+        <div id="bo_line"></div>
 
         <!--- 댓글 불러오기 -->
         <div class="comment_view">
@@ -55,12 +60,12 @@
             while($comment = $sql_comment->fetch_array()){
                 ?>
                 <div class="dap_lo">
-                    <div><b style="font-size: 20px"><?php echo $comment['name'];?></b></div>
-                    <div class="dap_to comment_edit"><?php echo nl2br("$comment[content]"); ?></div>
-                    <div class="comment_me dap_to"><?php echo $comment['writeDate']; ?></div>
-                    <div class="comment_me comment_menu">
-                        <a class="dat_edit_bt" href="#">수정</a>
-                        <a class="dat_delete_bt" href="#">삭제</a>
+                    <div><b style="font-size: 17px"><?php echo $comment['name'];?></b></div>
+                    <div class="dap_to comment_edit" style="font-size: 20px"><?php echo nl2br("$comment[content]"); ?></div>
+                    <div class="comment_me dap_to" style="text-align: right; font-size: 17px"><?php echo $comment['writeDate']; ?></div>
+                    <div class="comment_me comment_menu " style="text-align: right">
+                        <a class="dat_edit_bt" href="#" style="font-size: 17px">수정</a>
+                        <a class="dat_delete_bt" href="#" style="font-size: 17px">삭제</a>
                     </div>
                     <!-- 댓글 수정 폼 dialog -->
                     <div class="dat_edit">
@@ -84,10 +89,10 @@
             <!--- 댓글 입력 폼 -->
             <div class="dap_ins">
                 <form action="comment_ok.php?idxNum=<?php echo $bno; ?>" method="post">
-                    <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디">
-                    <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">
-                    <div style="margin-top:10px; ">
-                        <textarea name="content" class="comment_content" id="comment_content" ></textarea>
+                    <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" style="font-size: 17px" placeholder="아이디">
+                    <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" style="font-size: 17px" placeholder="비밀번호">
+                    <div style="margin-top:10px; font-size: 17px">
+                        <textarea name="content" class="comment_content" id="comment_content"></textarea>
                         <button id="comment_bt" class="comment_btn">댓글</button>
                     </div>
                 </form>
