@@ -82,15 +82,14 @@
                     $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'"); //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
                     $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
                     ?>
-<!---->
                     <tbody>
                         <tr>
                             <td width="70"><?php echo $board['idxNum']; ?></td>
                             <td width="500"><?php
                                 $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' style='width: 20px; height: 20px'/>";
                                 if($board['lock_post']=="1") {
-                                ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
-                                    } else {
+                                ?> <a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
+                                } else {
                                     $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
 
                                     date_default_timezone_set("Asia/Seoul");
@@ -100,7 +99,8 @@
                                     }else{
                                         $img ="";
                                     }  ?>
-                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;}?>
+                                    <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'>
+                                        <?php echo $title;}?>
                                         <span class="re_ct">[<?php echo $comment_count; ?>]</span></a>
                             </td>
                             <td width="120"><?php echo $board['name']?></td>
