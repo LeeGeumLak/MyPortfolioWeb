@@ -17,6 +17,6 @@
 ?>
 
 <script type="text/javascript">
-    alert('수정되었습니다.');
+    // alert('수정되었습니다.');
     location.replace("./bulletinBoardRead.php?idxNum=<?php echo $bno; ?>");
 </script>

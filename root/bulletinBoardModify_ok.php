@@ -9,8 +9,8 @@
     $sql = mq("update bulletinBoard set name='".$username."',password='".$userpassword."',title='".$title."',content='".$content."' where idxNum='".$bno."'");
 ?>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     alert("수정되었습니다.");
-</script>
+</script>-->
 
 <meta http-equiv="refresh" content="0 url=./bulletinBoardRead.php?idxNum=<?php echo $bno; ?>">

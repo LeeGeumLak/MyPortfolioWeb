@@ -1,6 +1,6 @@
 <?php
     include '../DBConnect.php';
-//    include '../password.php';
+    include '../password.php';
 
     header("Content-Type: application/json");
     $method = $_SERVER['REQUEST_METHOD'];

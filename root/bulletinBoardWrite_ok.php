@@ -29,12 +29,12 @@
     if($username && $userpassword && $title && $content){
         $sql = mq("insert into bulletinBoard (name, password, title, content, writeDate, lock_post, file) values('".$username."','".$userpassword."','".$title."','".$content."','".$date."','".$lock_post."','".$o_name."')");
 
-        echo "<script>
+        /*echo "<script>
         alert('글쓰기 완료되었습니다.');
-        location.href='./bulletinBoard.php';</script>";
-    }else{
+        location.href='./bulletinBoard.php';</script>";*/
+    } else{
         echo "<script>
-        alert('글쓰기에 실패했습니다.');
+        alert('오류로 인해 글쓰기에 실패했습니다. 다시 시도해주세요.');
         history.back();</script>";
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-    include "../DBConnect.php"; /* db load */
+    //include "../DBConnect.php"; /* db load */
 ?>
 
 <!doctype html>
@@ -35,7 +35,7 @@
                 <?php echo nl2br("$board[content]"); ?>
             </div>
             <div>
-                파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
+                <br><br>파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
             </div>
             <!-- 목록, 수정, 삭제 -->
             <div id="bo_ser">
@@ -56,11 +56,11 @@
                 ?>
                 <div class="dap_lo">
                     <div><b style="font-size: 20px"><?php echo $comment['name'];?></b></div>
-                    <div class="dap_to comment_edit"><?php echo nl2br("$comment[content]"); ?></div>
-                    <div class="comment_me dap_to"><?php echo $comment['writeDate']; ?></div>
+                    <div class="dap_to comment_edit" style="font-size: 20px"><?php echo nl2br("$comment[content]"); ?></div>
+                    <div class="comment_me dap_to" style="font-size: 15px"><?php echo $comment['writeDate']; ?></div>
                     <div class="comment_me comment_menu">
-                        <a class="dat_edit_bt" href="#">수정</a>
-                        <a class="dat_delete_bt" href="#">삭제</a>
+                        <a class="dat_edit_bt" href="#" style="font-size: 15px">수정</a>
+                        <a class="dat_delete_bt" href="#" style="font-size: 15px">삭제</a>
                     </div>
                     <!-- 댓글 수정 폼 dialog -->
                     <div class="dat_edit">
@@ -84,10 +84,10 @@
             <!--- 댓글 입력 폼 -->
             <div class="dap_ins">
                 <form action="comment_ok.php?idxNum=<?php echo $bno; ?>" method="post">
-                    <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디">
-                    <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">
+                    <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" style="font-size: 20px" placeholder="아이디">
+                    <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" style="font-size: 20px" placeholder="비밀번호">
                     <div style="margin-top:10px; ">
-                        <textarea name="content" class="comment_content" id="comment_content" ></textarea>
+                        <textarea name="content" class="comment_content" id="comment_content" style="font-size: 20px"></textarea>
                         <button id="comment_bt" class="comment_btn">댓글</button>
                     </div>
                 </form>
