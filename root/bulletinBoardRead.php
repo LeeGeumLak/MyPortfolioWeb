@@ -33,16 +33,14 @@
             </div>
             <div id="bo_content" style="font-size: 40px">
                 <?php echo nl2br("$board[content]"); ?>
+                <div id="bo_line"></div>
             </div>
-            <br><br><br>
-            <div id="bo_line"></div>
             <div style="font-size: 18px">
-                <br><br><br>
                 파일 : <a href="../upload/<?php echo $board['file'];?>" type="text/html" download><?php echo $board['file']; ?></a>
             </div>
-            <div id="bo_line"></div>
             <!-- 목록, 수정, 삭제 -->
             <div id="bo_ser">
+                <div id="bo_line"></div>
                 <ul>
                     <li><a href="./bulletinBoard.php">[목록으로]</a></li>
                     <li><a href="./bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>">[수정]</a></li>
@@ -50,7 +48,6 @@
                 </ul>
             </div>
         </div>
-        <div id="bo_line"></div>
 
         <!--- 댓글 불러오기 -->
         <div class="comment_view">
