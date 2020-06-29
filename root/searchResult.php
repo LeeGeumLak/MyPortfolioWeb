@@ -38,7 +38,7 @@
                     $page = 1;
                 }
 
-                $sql_bulletinBoard = mq("select * from bulletinBoard where $catagory like '%$searchKeyword%' order by idxNum desc");
+                $sql = mq("select * from bulletinBoard where $catagory like '%$searchKeyword%' order by idxNum desc");
                 $rowNum = mysqli_num_rows($sql); // 총 게시판 글 수
                 $list = 5; // 한 페이지에 보여줄 개수
                 $paginationCnt = 5; // 하나의 pagination 당 보여줄 페이지의 개수
@@ -56,7 +56,7 @@
                 // pagination 의 총 개수
                 $totalPagination = ceil($totalPage / $paginationCnt);
                 $startNum = ($page - 1) * $list;
-                $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
+                $sql_bulletinBoard = mq("select * from bulletinBoard where $catagory like '%$searchKeyword%' order by idxNum desc limit $startNum, $list");
 
                 while($board = $sql_bulletinBoard->fetch_array()){
                     //title변수에 DB에서 가져온 title을 선택
