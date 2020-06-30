@@ -17,7 +17,7 @@
             ?>
 
             <h1 style="font-size: 20px; margin-top: 20px">
-                <?php echo $catagory; ?>에서 '<?php echo $searchKeyword; ?>'검색결과
+                <?php echo $catagory; ?>에서 '<?php echo $searchKeyword; ?>' 검색결과
             </h1>
             <h4 style="margin-top:30px;"><a href="./bulletinBoard.php">홈으로</a></h4>
             <table class="list-table">
@@ -77,8 +77,8 @@
                             <td width="500">
                                 <?php
                                 $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' style='width: 20px; height: 20px'/>";
-                                if($board['lock_post']=="1") {
-                                    ?><a href='./searchResult.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
+                                if($board['lock_post']=="1") { ?>
+                                    <a href='./searchResult.php?catgo=<?php echo $catagory;?>&search=<?php echo $searchKeyword;?>&idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
                                 } else{
                                     $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
 
