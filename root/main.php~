@@ -22,7 +22,7 @@
         <!--  메인화면에 표시될 이미지 슬라이더   -->
         <!--  자신의 사진이나 관심있는 분야 사진 등을 표시  -->
         <div class="section-container">
-            <div class="main-area" style="background-color: #f9f9ff">
+            <div class="main-area">
                 <div class="container">
 
                     <div class="title">
