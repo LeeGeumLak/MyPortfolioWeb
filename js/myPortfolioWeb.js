@@ -1,4 +1,5 @@
 /* HEADER */
+/*
 window.onload = function() {scrollFunction()};
 window.onscroll = function() {scrollFunction()};
 
@@ -27,6 +28,7 @@ function menuToggle(){
 }
 
 document.getElementById('toggleBtn').addEventListener('click', menuToggle);
+*/
 
 
 /*/!* MAIN AREA  *!/
