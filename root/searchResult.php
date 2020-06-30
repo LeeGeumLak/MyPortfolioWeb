@@ -102,6 +102,8 @@
                 <?php } ?>
             </table>
 
+            <!--catgo=$catagory&search$searchKeyword&-->
+
             <!---페이징 넘버 --->
             <div id="page_num">
                 <ul>
@@ -111,7 +113,7 @@
                         echo "<li class='fo_re'>처음</li>";
                     } else{
                         // 현재 page가 가장 처음 페이지가 아니면, '처음' 글자에 가장 처음 페이지로 갈 수 있게 링크
-                        echo "<li><a href='?catgo=$catagory&search$searchKeyword&page=1'>처음</a></li>";
+                        echo "<li><a href='?page=1'>처음</a></li>";
                     }
 
                     if($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
@@ -119,7 +121,7 @@
                     } else {
                         $pre = $page - 1; //pre 변수에 page-1을 해준다(이전 페이지로 이동할 수 있도록)
                         // '이전' 글자에 pre 변수를 링크. '이전' 버튼을 클릭시, 현재 페이지 -1
-                        echo "<li><a href='?catgo=$catagory&search$searchKeyword&page=$pre'>이전</a></li>";
+                        echo "<li><a href='?page=$pre'>이전</a></li>";
                     }
 
                     //for문 반복문을 한 pagination 시작부터 마지막까지 반복
@@ -127,7 +129,7 @@
                         if($page == $i){
                             echo "<li class='fo_re'>[$i]</li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
                         }else{
-                            echo "<li><a href='?catgo=$catagory&search$searchKeyword&page=$i'>[$i]</a></li>"; //아니라면 아무런 표시 X
+                            echo "<li><a href='?page=$i'>[$i]</a></li>"; //아니라면 아무런 표시 X
                         }
                     }
 
@@ -135,13 +137,13 @@
                         // 현재 pagination 이 총 개수보다 크거나 같으면,
                     } else { //만약 현재 pagination 이 총 개수보다 작으면,
                         $next = $page + 1; //next변수에 page + 1을 해준다.
-                        echo "<li><a href='?catgo=$catagory&search$searchKeyword&page=$next'>다음</a></li>"; // '다음' 글자에 next 변수를 링크. '다음' 버튼 클릭시, 현재 페이지 + 1
+                        echo "<li><a href='?page=$next'>다음</a></li>"; // '다음' 글자에 next 변수를 링크. '다음' 버튼 클릭시, 현재 페이지 + 1
                     }
 
                     if($page >= $totalPage){ // 현재 페이지가 마지막이면
                         echo "<li class='fo_re'>마지막</li>"; // '마지막' 글자에 긁은 빨간색을 적용한다.
                     } else{ // 마지막 페이지가 아니면
-                        echo "<li><a href='?catgo=$catagory&search$searchKeyword&page=$totalPage'>마지막</a></li>"; // '마지막' 글자에 totalPage를 링크.
+                        echo "<li><a href='?page=$totalPage'>마지막</a></li>"; // '마지막' 글자에 totalPage를 링크.
                     }
                     ?>
                 </ul>
