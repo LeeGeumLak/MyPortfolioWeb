@@ -57,7 +57,7 @@
             $.ajax({
                 type: "POST",
                 url : "./signInCheck.php",
-                data: data
+                data: data,
                 dataType:"json",
                 success : function(data, status, xhr) {
                     //로그인 성공 했을 경우
