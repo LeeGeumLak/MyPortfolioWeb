@@ -8,13 +8,13 @@
         <?php include './header.php'?>
     </head>
 
-    <body>
+    <body style="background-image: url('/img/mainBackground.jpg')">
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
         <!--  간단한 소개 및 신상정보, 연락처 등을 표시  -->
         <div class="section-container">
-            <div class="about-area" id="about">
+            <div class="about-area" id="about" style="background-color: #f9f9ff">
                 <div class="title">
                     ABOUT
                 </div>

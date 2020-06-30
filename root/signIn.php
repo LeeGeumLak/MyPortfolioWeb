@@ -31,7 +31,7 @@
         <?php include './topPart.php'?>
 
         <div style="position:relative; height: 500px;">
-            <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px; background-color: #ffffff;">
+            <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px; background-color: #f9f9ff;">
                 <form id ="loginForm" >
                     <h1 style="text-align:center" >로그인</h1>
                     <input type="text" name="userId" class="form-control" id="userId" placeholder="Email address"/><br>
