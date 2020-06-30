@@ -134,7 +134,7 @@
                             포트 폴리오 상세 설명
                         </div>
                     </div>
-                    <div class="filterItem android">
+                    <div class="filterItem android" style="ma">
                         <div class="image">
                             <div class="overlay"><i class="far fa-image"></i></div>
                             <img src="../img/imgSlider2.jpg">
@@ -182,6 +182,7 @@
                 </div>
             </div>
         </div>
+        <br><br><br>
 
         <?php include './footer.php'?>
 
