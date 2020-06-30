@@ -397,7 +397,7 @@ section {
 
 /* ABOUT AREA */
 .about-area {
-    height: auto;
+    height: 750px;
     position: relative;
     font-size: 0;
 }
