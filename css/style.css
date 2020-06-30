@@ -231,7 +231,7 @@ ul li {
 }
 
 .header-area > .navbar > .navbar-menu.show {
-    height: 200px;
+    height: auto;
 }
 
 .header-area > .navbar > .navbar-menu > .nav-item {

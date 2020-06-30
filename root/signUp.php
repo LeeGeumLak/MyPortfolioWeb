@@ -64,7 +64,7 @@
             let userIdValue = $(this).val();
 
             //이메일 유효성 검사
-            if(validateEmail(userIdValue)){
+            if(/*validateEmail(userIdValue)*/true){
                 //DB에서 존재하는 아이디인지 검사
                 $.ajax({
                     type: "POST",
@@ -170,7 +170,7 @@
         if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
             return true
         }else{
-            return true//false
+            return false
         }
     };
 
