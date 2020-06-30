@@ -25,25 +25,25 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
 
-    <body>
+    <body style="background-image: url('/img/mainBackground.jpg')">
+
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
-        <div style="background-image: url('/img/mainBackground.jpg')">
-            <div style="position:relative; height: 500px; background-color: #ffffff">
-                <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px;">
-                    <form id ="loginForm" >
-                        <h1 style="text-align:center" >로그인</h1>
-                        <input type="text" name="userId" class="form-control" id="userId" placeholder="Email address"/><br>
-                        <input type="password" name="userPassword" class="form-control" id="inputPassword" placeholder="Password"/><br>
-                        <div style="text-align:center;">
-                            <label  style="cursor:pointer"><input id="keep_id" type="checkbox" style="cursor:pointer">아이디 임시 저장</label>
-                        </div>
 
-                        <button id ="loginBtn" style="display: block; width:100%;" type="button" name="login" class="btn btn-warning">로그인</button><br>
-                        <button id ="signUpBtn" style="display: block; width:100%;" type="button" name="signUp" class="btn ">회원가입</button>
-                        </br>
-                    </form>
-                </div>
+        <div style="position:relative; height: 500px; background-color: #ffffff">
+            <div class="container" style="position: absolute; top:50%; left:50%; transform: translateX(-50%) translateY(-50%) ;width:400px;">
+                <form id ="loginForm" >
+                    <h1 style="text-align:center" >로그인</h1>
+                    <input type="text" name="userId" class="form-control" id="userId" placeholder="Email address"/><br>
+                    <input type="password" name="userPassword" class="form-control" id="inputPassword" placeholder="Password"/><br>
+                    <div style="text-align:center;">
+                        <label  style="cursor:pointer"><input id="keep_id" type="checkbox" style="cursor:pointer">아이디 임시 저장</label>
+                    </div>
+
+                    <button id ="loginBtn" style="display: block; width:100%;" type="button" name="login" class="btn btn-warning">로그인</button><br>
+                    <button id ="signUpBtn" style="display: block; width:100%;" type="button" name="signUp" class="btn ">회원가입</button>
+                    </br>
+                </form>
             </div>
         </div>
     </body>
