@@ -548,7 +548,9 @@ section {
 
 /* PROJECTS AREA */
 .projects-area {
+    width: 1200px;
     height: auto;
+    background-color: #f9f9ff;
 }
 
 .projects-area > .filter > .list {
@@ -712,8 +714,8 @@ section {
 
 /* BULLETIN BOARD AREA */
 .bulletinBoard-area {
-    width: 900px;
-    height: auto;
+    width: 1000px;
+    height: 800px;
     background-color: #f9f9ff;
 }
 
