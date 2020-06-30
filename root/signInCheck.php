@@ -20,12 +20,12 @@
             //각행 1개씩 꺼내기
             while ($row = $sql->fetch_assoc()) {
                 //로그인 성공(패스워드 일치)
-                if (password_verify($userPassword, $row["userPassword"])) {
+                if (password_verify($userPassword, $row['userPassword'])) {
                     //session 설정
                     session_start();
-                    $_SESSION['userId'] = $row["userId"];
-                    $_SESSION['nickName'] = $row["nickName"];
-                    echo(json_encode(array("result" => true, "userId" => $_SESSION['userId'])));
+                    $_SESSION['userId'] = $row['userId'];
+                    $_SESSION['nickName'] = $row['nickName'];
+                    echo(json_encode(array("result" => true, 'userId' => $_SESSION['userId'])));
                 //로그인 실패(패스워드 불일치)
                 } else {
                     echo(json_encode(array("result" => false)));
@@ -35,5 +35,7 @@
         } else {
             echo(json_encode(array("result" => false)));
         }
+    } else {
+        console.log("signInCheck.php :: 로그인 체크 오류(POST 방식이 아님)");
     }
 ?>
