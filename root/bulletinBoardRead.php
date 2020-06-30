@@ -24,7 +24,7 @@
             $board = $sql->fetch_array();
         ?>
 
-        <div style="background-color: #f9f9ff">
+        <div style="background-color: #f9f9ff; margin-left: 100px; margin-right: 100px; height: 1000px">
             <!-- 글 불러오기 -->
             <div id="board_read">
                 <h2 style="font-size: 50px"><br><?php echo $board['title'];?></h2>
