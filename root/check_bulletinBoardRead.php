@@ -30,7 +30,7 @@
     session_start();
     //로그인 세션 있을때
     if(isset($_SESSION['userId'])){
-        if($_SESSION['userId'] == 'admin') {?>
+        if($_SESSION['userId'] == 'admin@naver.com') {?>
             <script type="text/javascript">
                 location.replace("./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>");
             </script> <?php

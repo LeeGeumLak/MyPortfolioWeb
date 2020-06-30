@@ -8,7 +8,7 @@
         <?php include './header.php'?>
     </head>
 
-    <body style="background-image: url('/img/mainBackground.jpg'); background-size: cover">
+    <body>
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
