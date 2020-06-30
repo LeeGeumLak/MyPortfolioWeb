@@ -242,6 +242,7 @@
             document.getElementById('html_css_javascript').addEventListener('click', filterSelection.bind(null, 'html_css_javascript'));
             document.getElementById('java').addEventListener('click', filterSelection.bind(null, 'java'));
             document.getElementById('android').addEventListener('click', filterSelection.bind(null, 'android'));
+            document.getElementById('c/c++').addEventListener('click', filterSelection.bind(null, 'c/c++'));
 
             function viewPortfolio(event) {
                 var polyNode = event.target;
