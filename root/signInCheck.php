@@ -1,5 +1,6 @@
 <?php
     include '../DBConnect.php';
+    include '../password.php';
 
     header("Content-Type: application/json");
     $method = $_SERVER['REQUEST_METHOD'];
@@ -37,5 +38,6 @@
         }
     } else {
         console.log("signInCheck.php :: 로그인 체크 오류(POST 방식이 아님)");
+        echo(json_encode(array("result" => false)));
     }
 ?>

@@ -53,6 +53,7 @@
                 <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
                 <script type="text/javascript">
                     alert('비밀번호가 틀립니다');
+                    history.back();
                 </script>
                 <?php
             }
