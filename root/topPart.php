@@ -15,7 +15,7 @@
             <?php
                 session_start();
                 //로그인 세션 없을때, sign in 으로 표시
-                if(!isset($_SESSION['memberId'])){ ?>
+                if(!isset($_SESSION['userId'])){ ?>
                     <div class="nav-item"><a class="nav-link" href="./signIn.php">sign in</a></div>
                 <?php //로그인 세션 있을때, sign out 으로 표시
                 } else { ?>
