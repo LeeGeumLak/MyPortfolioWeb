@@ -41,6 +41,7 @@
                 $sql = mq("select * from bulletinBoard where $catagory like '%$searchKeyword%' order by idxNum desc");
                 $rowNum = mysqli_num_rows($sql); // 총 게시판 글 수
                 $list = 5; // 한 페이지에 보여줄 개수
+
                 $paginationCnt = 5; // 하나의 pagination 당 보여줄 페이지의 개수
                 $paginationNum = ceil($page/$paginationCnt);
                 $paginationStart = (($paginationNum-1) * $paginationCnt) + 1; // 한 pagination 시작
@@ -56,9 +57,9 @@
                 // pagination 의 총 개수
                 $totalPagination = ceil($totalPage / $paginationCnt);
                 $startNum = ($page - 1) * $list;
-                $sql_bulletinBoard = mq("select * from bulletinBoard where $catagory like '%$searchKeyword%' order by idxNum desc limit $startNum, $list");
 
-                while($board = $sql->fetch_array()){
+                $sql_bulletinBoard = mq("select * from bulletinBoard where $catagory like '%$searchKeyword%' order by idxNum desc limit $startNum, $list");
+                while($board = $sql_bulletinBoard->fetch_array()){
                     //title변수에 DB에서 가져온 title을 선택
                     $title = $board["title"];
                     if(strlen($title)>30) {
@@ -77,7 +78,7 @@
                                 <?php
                                 $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' style='width: 20px; height: 20px'/>";
                                 if($board['lock_post']=="1") {
-                                    ?><a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
+                                    ?><a href='./searchResult.php?idxNum=<?php echo $board["idxNum"];?>'><?php echo $title, $lockimg;
                                 } else{
                                     $boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
 
@@ -88,14 +89,14 @@
                                     } else {
                                         $img ="";
                                     } ?>
-                                    <a href='./bulletinBoardRead.php?idx=<?php echo $board["idxNum"]; ?>'>
+                                    <a href='./searchResult.php?idxNum=<?php echo $board["idxNum"]; ?>'>
                                         <span style="background:yellow;"><?php echo $title; }?></span>
                                         <span class="re_ct">[<?php echo $comment_count;?>]<?php echo $img; ?> </span></a>
                             </td>
 
                             <td width="120"><?php echo $board['name']?></td>
-                            <td width="100"><?php echo $board['date']?></td>
-                            <td width="100"><?php echo $board['hit']; ?></td>
+                            <td width="100"><?php echo $board['writeDate']?></td>
+                            <td width="100"><?php echo $board['hitNum']; ?></td>
                         </tr>
                     </tbody>
                 <?php } ?>
@@ -113,9 +114,12 @@
                         echo "<li><a href='?page=1'>처음</a></li>";
                     }
 
-                    if($page > 1) {
+                    if($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
+
+                    } else {
                         $pre = $page - 1; //pre 변수에 page-1을 해준다(이전 페이지로 이동할 수 있도록)
-                        echo "<li><a href='?page=$pre'>이전</a></li>"; // '이전' 글자에 pre 변수를 링크. '이전' 버튼을 클릭시, 현재 페이지 -1
+                        // '이전' 글자에 pre 변수를 링크. '이전' 버튼을 클릭시, 현재 페이지 -1
+                        echo "<li><a href='?page=$pre'>이전</a></li>";
                     }
 
                     //for문 반복문을 한 pagination 시작부터 마지막까지 반복
@@ -127,7 +131,9 @@
                         }
                     }
 
-                    if($paginationNum < $totalPagination){ //만약 현재 pagination 이 총 개수보다 작으면,
+                    if($paginationNum >= $totalPagination) {
+                        // 현재 pagination 이 총 개수보다 크거나 같으면,
+                    } else { //만약 현재 pagination 이 총 개수보다 작으면,
                         $next = $page + 1; //next변수에 page + 1을 해준다.
                         echo "<li><a href='?page=$next'>다음</a></li>"; // '다음' 글자에 next 변수를 링크. '다음' 버튼 클릭시, 현재 페이지 + 1
                     }
