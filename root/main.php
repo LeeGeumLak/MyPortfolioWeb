@@ -14,10 +14,9 @@
 
         <?php
             session_start();
-        if(isset($_SESSION['userid'])) //세션이 존재
-        {
-            echo "<a href=./signOut.php>로그아웃</a>";
-        }
+            if(isset($_SESSION['userid'])) { //세션이 존재
+                echo "<a href=./signOut.php>로그아웃</a>";
+            }
         ?>
 
         <!--  메인화면에 표시될 이미지 슬라이더   -->

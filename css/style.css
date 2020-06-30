@@ -115,6 +115,8 @@ body {
     -moz-box-sizing: border-box;
     word-break: break-all;
     font-family: 'Heebo', sans-serif;
+    background-image: url('../img/mainBackground.jpg');
+    background-size: cover;
 }
 
 img {
