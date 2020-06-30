@@ -176,7 +176,7 @@
         return re.test(email);
     }
 
-    //빈값 체크 함수
+    //빈값 체크 함수 (비밀번호/닉네임)
     var isEmpty = function(value){
         if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
             return true
