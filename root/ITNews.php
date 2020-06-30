@@ -14,7 +14,7 @@
 
     <!-- IT에 관련된 뉴스 크롤링하여 무한 스크롤링으로 표시 -->
     <div class="section-container">
-        <div class="projects-area" id="projects">
+        <div class="projects-area" id="projects" style="background-color: #f9f9ff">
             <div class="title">
                 IT NEWS
             </div>

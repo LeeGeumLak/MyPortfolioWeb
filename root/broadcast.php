@@ -26,7 +26,7 @@
 
     <!--  방송 화면을 넣을 예정  -->
     <div class="section-container">
-        <div class="about-area" id="about">
+        <div class="about-area" id="about" style="background-color: #f9f9ff">
             <div class="title">
                 BROADCAST
             </div>
