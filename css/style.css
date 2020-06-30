@@ -548,9 +548,7 @@ section {
 
 /* PROJECTS AREA */
 .projects-area {
-    width: 1200px;
     height: auto;
-    background-color: #f9f9ff;
 }
 
 .projects-area > .filter > .list {

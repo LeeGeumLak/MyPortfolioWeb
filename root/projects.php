@@ -13,7 +13,7 @@
         <?php include './topPart.php'?>
 
         <!--  포트폴리오 카테고리화 시켜서 리스트 및 클릭시 창 팝업  -->
-        <div class="section-container">
+        <div class="section-container" style="background-color: #f9f9ff">
             <div class="projects-area" id="projects">
                 <div class="title">
                     PROJECTS
