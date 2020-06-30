@@ -1,13 +1,12 @@
 <meta charset="utf-8" />
 <?php
     include '../DBConnect.php';
-    include '../password.php';
 
     //Post로 받은 데이터 가져오기
     $userId = $_POST['userId'];
     $nickName = $_POST['nickName'];
     //$userPassword = $_POST['userPassword'];
-    $userPassword = password_hash($_POST['userPassword'], PASSWORD_DEFAULT);
+    $userPassword = password_hash( $_POST['userPassword'], PASSWORD_DEFAULT);
 
     // auto_increment 값 초기화
     $sql_InitIncrement = mq("alter table userInfo auto_increment =1");

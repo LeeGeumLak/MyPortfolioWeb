@@ -11,17 +11,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-        <script type="text/javascript">
-            //빈값 체크 함수
-            var isEmpty = function(value){
-                if( value == "" || value == null || value == undefined || ( value != null && typeof value == "object" && !Object.keys(value).length ) ){
-                    return true
-                } else{
-                    return false
-                }
-            };>
-        </script>
     </head>
     <body>
         <!--  최상단 네비게이션바     -->
@@ -63,8 +52,8 @@
             if(isPassUserId && isPassNickName && isPassConfirmPassword){
                 $("#signForm").trigger("submit");
             //회원정보 조건이 만족되지 않았을 때
-            }else{
-                alert("회원정보를 알맞게 입력후 회원가입 버튼을 누르세요.");
+            } else{
+                alert("회원정보를 알맞게 입력해야 합니다.");
             }
         });
 
@@ -153,7 +142,7 @@
 
             //비밀번호 같은지 확인
             //비밀번호 같을때 (!isEmpty(userPasswordValue) && !isEmpty(userPasswordValue) && )
-            if( !isEmpty(userPasswordValue) && !isEmpty(userPasswordValue) && (userPasswordValue == confirmUserPasswordValue) ){
+            if( !isEmpty(userPasswordValue) && !isEmpty(confirmUserPasswordValue) && (userPasswordValue == confirmUserPasswordValue) ){
                 $confirmUserPasswordCheck.show();
                 $confirmUserPasswordCheck.text("비밀번호 확인 완료");
                 $confirmUserPasswordCheck.css("color","green");
