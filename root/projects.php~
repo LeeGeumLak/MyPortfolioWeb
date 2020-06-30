@@ -25,7 +25,8 @@
                         <li class="listItem" id="html_css_javascript">HTML/CSS/JAVASCRIPT</li>
                         <li class="listItem" id="java">JAVA</li>
                         <li class="listItem" id="android">ANDROID</li>
-                        <li class="listItem" id="c/c++">C/C++</li>
+                        <li class="listItem" id="android">C/C++</li>
+                        <li class="listItem" id="android">ANDROID</li>
                     </ul>
                 </div>
 
