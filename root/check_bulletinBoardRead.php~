@@ -16,7 +16,6 @@
 </script>
 <?php
     $bno = $_GET['idxNum']; /* bno함수에 idx값을 받아와 넣음*/
-    $page = $_GET['page'];
     $sql = mq("select * from bulletinBoard where idxNum='".$bno."'"); /* 받아온 idxNum값을 선택 */
     $board = $sql->fetch_array();
 ?>
@@ -54,7 +53,7 @@
                 <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
                 <script type="text/javascript">
                     alert('비밀번호가 틀립니다');
-                    location.replace("./bulletinBoard.php?page=<?php$page?>");
+                    location.replace("./bulletinBoard.php?page=<?php echo $board["idxNum"]; ?>");
                 </script>
                 <?php
             }
