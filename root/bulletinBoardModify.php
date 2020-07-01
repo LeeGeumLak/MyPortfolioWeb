@@ -8,7 +8,7 @@
     $board = $sql->fetch_array();
 
     $pwk = $_POST['password'];
-    $bpw = $comment['password'];
+    $bpw = $board['password'];
 
     if(password_verify($pwk, $bpw)) { ?>
         <!doctype html>

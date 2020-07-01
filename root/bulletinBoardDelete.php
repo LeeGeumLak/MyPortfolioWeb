@@ -8,7 +8,7 @@
     $board = $sql->fetch_array();
 
     $pwk = $_POST['password'];
-    $bpw = $comment['password'];
+    $bpw = $board['password'];
 
     if(password_verify($pwk, $bpw)) {
         // 삭제하는 게시판에 달린 댓글 삭제
