@@ -26,7 +26,6 @@
     </head>
 
     <body>
-
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
@@ -46,6 +45,9 @@
                 </form>
             </div>
         </div>
+
+        <?php include './footer.php'?>
+
     </body>
 </html>
 
@@ -69,7 +71,6 @@
                         }else{
                             deleteCookie('userId');
                         }
-                        history.back();
 
                     //실패 했을 경우
                     }else{

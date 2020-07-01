@@ -22,13 +22,13 @@
 
 <div id='writepass'>
     <form action="" method="post">
-        <p>비밀번호<input type="password" name="passwordCheck" /> <input type="submit" value="확인" /></p>
+        <p>비밀번호<input type="password" name="passwordCheck" /> <input type="submit" value="확인" /> <input type="cancel" value="취소" /> </p>
     </form>
 </div>
 
 <?php
     session_start();
-    //로그인 세션 있을때
+    // admin 로그인 세션 있을때
     if(isset($_SESSION['userId'])){
         if($_SESSION['userId'] == 'admin@naver.com') {?>
             <script type="text/javascript">
@@ -53,7 +53,7 @@
                 <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
                 <script type="text/javascript">
                     alert('비밀번호가 틀립니다');
-                    history.back();
+                    location.replace("./bulletinBoard.php?page=<?php echo $board["idxNum"]; ?>");
                 </script>
                 <?php
             }

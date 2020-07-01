@@ -37,7 +37,6 @@
 
     <?php include './footer.php'?>
 
-
     <script src="../js/myPortfolioWeb.js"></script>
     </body>
 </html>
