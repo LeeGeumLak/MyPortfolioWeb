@@ -45,29 +45,31 @@
                         <li><a href="./bulletinBoard.php" style="font-size: 18px">[목록으로]</a></li>
                         <!--<li><a href="./bulletinBoardModify.php?idxNum=<?php /*echo $board['idxNum']; */?>" style="font-size: 18px">[수정]</a></li>
                         <li><a href="./bulletinBoardDelete.php?idxNum=<?php /*echo $board['idxNum']; */?>" style="font-size: 18px">[삭제]</a></li>-->
+                        <li>
+                            <div class="dap_lo">
+                                <div class="comment_me comment_menu " style="text-align: right">
+                                    <a class="dat_edit_bt" href="#" style="font-size: 18px">[수정]</a>
+                                    <a class="dat_delete_bt" href="#" style="font-size: 18px">[삭제]</a>
+                                </div>
+                                <!-- 댓글 수정 폼 dialog -->
+                                <div class="dat_edit">
+                                    <form method="post" action="bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>">
+                                        <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
+                                        <input type="password" name="password" class="dap_sm" placeholder="비밀번호" />
+                                        <textarea name="content" class="dap_edit_t"><?php echo $comment['content']; ?></textarea>
+                                        <input type="submit" value="수정하기" class="comment_modify_btn">
+                                    </form>
+                                </div>
+                                <!-- 댓글 삭제 비밀번호 확인 -->
+                                <div class="dat_delete">
+                                    <form action="bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>" method="post">
+                                        <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
+                                        <p>비밀번호<input type="password" name="password" /><input type="submit" value="확인"></p>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
-                </div>
-                <div class="dap_lo">
-                    <div class="comment_me comment_menu " style="text-align: right">
-                        <a class="dat_edit_bt" href="#" style="font-size: 18px">[수정]</a>
-                        <a class="dat_delete_bt" href="#" style="font-size: 18px">[삭제]</a>
-                    </div>
-                    <!-- 댓글 수정 폼 dialog -->
-                    <div class="dat_edit">
-                        <form method="post" action="bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>">
-                            <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
-                            <input type="password" name="password" class="dap_sm" placeholder="비밀번호" />
-                            <textarea name="content" class="dap_edit_t"><?php echo $comment['content']; ?></textarea>
-                            <input type="submit" value="수정하기" class="comment_modify_btn">
-                        </form>
-                    </div>
-                    <!-- 댓글 삭제 비밀번호 확인 -->
-                    <div class="dat_delete">
-                        <form action="bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>" method="post">
-                            <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
-                            <p>비밀번호<input type="password" name="password" /><input type="submit" value="확인"></p>
-                        </form>
-                    </div>
                 </div>
             </div>
 
