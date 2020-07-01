@@ -64,6 +64,7 @@
 
         <div class="typer" id="h">
             <h1 class="typer-text">개발자 이금락의 포트폴리오입니다</h1>
+            <h1 class="typing"></h1>
         </div>
 
         <?php
@@ -135,46 +136,24 @@
         </script>
 
         <script type="text/javascript">
-            import React,{Component} from 'react';
-            import  '../css/style.css';
-            class main extends Component{
+            let typingBool = false;
+            let typingIdx=0;
+            let typingTxt = $(".typer-text").text(); // 타이핑될 텍스트를 가져온다
+            typingTxt=typingTxt.split(""); // 한글자씩 자른다.
+            if(typingBool==false){ // 타이핑이 진행되지 않았다면
+                typingBool=true;
 
-                constructor(props){
-                    super(props);
-                    this.state = {
-                        text:""
-                    }
-                };
-
-                componentDidMount() {
-                    let i =0;
-
-                    const typing = setInterval(() =>{
-                        const typed = this.state.text;
-                        const finalText= "개발자 이금락의 포트폴리오입니다";
-
-                        if(i<finalText.length) {
-                            this.setState ({
-                                text: typed + finalText[i]
-                            });
-                            i++
-
-                        } else {
-                            clearInterval(typing);
-                        }
-                    },178);
-                }
-
-                render(){
-                    return (
-                        <div className="typer" id="h">
-                            <h1 className="typer-text">{this.state.text}</h1>
-                        </div>
-                    );
-                }
+                let tyInt = setInterval(typing,100); // 반복동작
             }
 
-            export default Home;
+            function typing(){
+                if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복
+                    $(".typer-text").append(typingTxt[typingIdx]); // 한글자씩 이어준다.
+                    typingIdx++;
+                } else{
+                    clearInterval(tyInt); //끝나면 반복종료
+                }
+            }
         </script>
     </body>
 </html>
