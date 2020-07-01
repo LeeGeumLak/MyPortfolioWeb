@@ -21,11 +21,10 @@
                     <div id="in_name">
                         <?php
                         session_start();
-
                         if(isset($_SESSION['userId'])) {
                             $sql = mq("select nickName from userInfo where userId='".$_SESSION['userId']."'");
                             $nickName = $sql->fetch_array(); ?>
-                            <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" required><?php echo $nickName['nickName'] ?></textarea>
+                            <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" readonly="readonly" required><?php echo $nickName['nickName'] ?></textarea>
                             <?php
                         } else { ?>
                             <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" required></textarea>
