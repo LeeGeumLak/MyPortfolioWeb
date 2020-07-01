@@ -16,11 +16,15 @@
         echo "<script>console.log( 'PHP_Console: " . $userId . "' );</script>";
         echo "<script>console.log( 'PHP_Console: " . $userPassword . "' );</script>";
 
-        $sql = mq("SELECT * FROM userInfo WHERE userId =='".$userId."')");
+        $sql = "SELECT COUNT(*) FROM userInfo WHERE userId = '{$userId}'";
+        $result = $db->query($sql);
+
+        //$sql = mq("SELECT * FROM userInfo WHERE userId =='".$userId."')");
         //$result = $db->query($sql);
 
         //해당하는 아이디가 존재할경우
-        if ($sql->num_rows == 1) {
+        //if ($sql->num_rows == 1) {
+        if($result == 1) {
             //각행 1개씩 꺼내기
             while ($row = $sql->fetch_assoc()) {
                 //로그인 성공(패스워드 일치)
