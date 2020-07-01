@@ -7,7 +7,7 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <div id="board_write" style="background-color: #f9f9ff; height: 850px">
+        <div id="board_write" style="background-color: #f9f9ff; height: 750px">
             <h1><a href="/"></a></h1>
             <div id="write_area">
                 <form action="bulletinBoardWrite_ok.php" method="post" enctype="multipart/form-data">
