@@ -26,6 +26,17 @@
     // auto_increment 값 초기화
     $sql_InitIncrement = mq("alter table bulletinBoard auto_increment =1");
 
+    // client 단에서 입력한 작성자 명이 db 에 저장된 닉네임에 있으면, 다시 입력
+    $sql = mq("select nickName from userInfo");
+    while($nickName = $sql->fetch_array()) {
+        if($username == 'admin') {
+            echo "<script> alert('admin 은 작성자명으로 사용할 수 없습니다. 다른 작성자명으로 입력해주세요.'); </script>";
+        }
+        if($username == $nickName['nickName']) {
+            echo "<script> alert('$username 은 회원의 닉네임입니다. 다른 작성자명으로 입력해주세요.'); </script>";
+        }
+    }
+
     if($username && $userpassword && $title && $content){
         $sql = mq("insert into bulletinBoard (name, password, title, content, writeDate, lock_post, file) values('".$username."','".$userpassword."','".$title."','".$content."','".$date."','".$lock_post."','".$o_name."')");
 
