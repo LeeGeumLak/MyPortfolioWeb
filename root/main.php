@@ -62,9 +62,10 @@
             </div>
         </div>-->
 
-        <div class="typer" id="h">
-            <h1 style="text-align: center; font-family: Noto Sans KR,sans-serif; font-size: 4vw; white-space: pre; line-height: 1; letter-spacing: .1rem; padding-top: .2em;">환영합니다.</h1>
-        </div>
+        <h1 style="text-align: center; font-family: Noto Sans KR,sans-serif;
+                   font-size: 4vw; white-space: pre; line-height: 1; letter-spacing: .1rem;
+                   padding-top: .2em; display: flex; justify-content: center;
+                   align-items: center; height: 100vh; color: #fff; width: 100%;">환영합니다.</h1>
         <br><br>
         <div class="typer" id="h">
             <h1 class="typer-text" style="text-align: center">개발자 이금락의 포트폴리오입니다.</h1>
