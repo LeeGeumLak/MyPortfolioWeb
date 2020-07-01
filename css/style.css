@@ -307,7 +307,18 @@ ul li {
     width: 100%;
 }*/
 
-p.typing-txt{display: none;}
+p.typing-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/img/mainBackground.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+}
 
 .typing {
     /*       position: absolute;*/
@@ -322,6 +333,7 @@ p.typing-txt{display: none;}
     -webkit-animation: blink 1s step-end infinite;
     animation: cursor 1s step-end infinite;
 }
+
 @keyframes cursor{
     from,to {
         border-color: transparent
