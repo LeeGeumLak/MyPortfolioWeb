@@ -136,7 +136,7 @@
 
         <script type="text/javascript">
             import React,{Component} from 'react';
-            import  './Home.css';
+            import  '../css/style.css';
             class Home extends Component{
 
                 constructor(props){
