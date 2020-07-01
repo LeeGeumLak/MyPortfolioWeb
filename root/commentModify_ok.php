@@ -12,11 +12,20 @@
     $sql_bulletinBoard = mq("select * from bulletinBoard where idxNum='".$bno."'");
     $board = $sql_bulletinBoard->fetch_array();
 
-    //comment 테이블의 idxNum가 rno변수에 저장된 값의 content를 선택해서 값 저장
-    $sql_comment = mq("update comment set content='".$_POST['content']."' where idxNum = '".$rno."'");
-?>
+    $pwk = $_POST['password'];
+    $bpw = $comment['password'];
 
-<script type="text/javascript">
-    // alert('수정되었습니다.');
-    location.replace("./bulletinBoardRead.php?idxNum=<?php echo $bno; ?>");
-</script>
+    if(password_verify($pwk, $bpw)) {
+        //comment 테이블의 idxNum가 rno변수에 저장된 값의 content를 선택해서 값 저장
+        $sql_comment = mq("update comment set content='" . $_POST['content'] . "' where idxNum = '" . $rno . "'");
+        ?>
+        <script type="text/javascript">
+            // alert('수정되었습니다.');
+            location.replace("./bulletinBoardRead.php?idxNum=<?php echo $bno; ?>");
+        </script>
+        <?php
+    } else { ?>
+        <script type="text/javascript">
+            alert('비밀번호가 틀립니다'); history.back();
+        </script>
+    <?php } ?>

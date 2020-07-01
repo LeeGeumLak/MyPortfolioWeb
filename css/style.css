@@ -731,6 +731,7 @@ section {
 #board_area {
     width: 900px;
     position: relative;
+    height: 800px
 }
 
 .list-table {
@@ -872,8 +873,8 @@ section {
 
 /* 댓글 */
 .comment_view {
-    width:900px;
     margin-top:100px;
+    width:900px;
     word-break:break-all;
 }
 .dap_lo {
@@ -920,8 +921,8 @@ section {
     height: 56px;
 }
 .dap_ins {
-
-    margin-top:50px;
+    width:900px;
+    margin-top:100px;
 }
 .comment_btn {
     position: absolute;

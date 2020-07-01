@@ -49,6 +49,18 @@
                 </div>
             </div>
 
+            <!--- 댓글 입력 폼 -->
+            <div class="dap_ins">
+                <form action="comment_ok.php?idxNum=<?php echo $bno; ?>" method="post">
+                    <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" style="font-size: 17px" placeholder="아이디">
+                    <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" style="font-size: 17px" placeholder="비밀번호">
+                    <div style="margin-top:10px; font-size: 17px">
+                        <textarea name="content" class="comment_content" id="comment_content"></textarea>
+                        <button id="comment_bt" class="comment_btn">댓글</button>
+                    </div>
+                </form>
+            </div>
+
             <!--- 댓글 불러오기 -->
             <div class="comment_view">
                 <h3 style="font-size: 30px">댓글목록</h3>
@@ -82,18 +94,6 @@
                         </div>
                     </div>
                 <?php } ?>
-
-                <!--- 댓글 입력 폼 -->
-                <div class="dap_ins">
-                    <form action="comment_ok.php?idxNum=<?php echo $bno; ?>" method="post">
-                        <input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" style="font-size: 17px" placeholder="아이디">
-                        <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" style="font-size: 17px" placeholder="비밀번호">
-                        <div style="margin-top:10px; font-size: 17px">
-                            <textarea name="content" class="comment_content" id="comment_content"></textarea>
-                            <button id="comment_bt" class="comment_btn">댓글</button>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
 

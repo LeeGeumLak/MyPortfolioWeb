@@ -4,10 +4,13 @@
     $bno = $_GET['idxNum'];
 
     // 삭제하는 게시판에 달린 댓글 삭제
-    $sql = mq("delete from comment where bulletinNum='$bno';");
+    $sql_comment = mq("delete from comment where bulletinNum='$bno';");
 
     // 게시판 글 삭제
-    $sql = mq("delete from bulletinBoard where idxNum='$bno';");
+    $sql_bulletinBoard = mq("delete from bulletinBoard where idxNum='$bno';");
+
+    // auto_increment 값 초기화
+    $sql_InitIncrement = mq("alter table bulletinBoard auto_increment =1");
 ?>
 
 <!--<script type="text/javascript">
