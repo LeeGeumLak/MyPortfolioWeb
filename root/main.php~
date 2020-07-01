@@ -12,17 +12,10 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <?php
-            session_start();
-            if(isset($_SESSION['userid'])) { //세션이 존재
-                echo "<a href=./signOut.php>로그아웃</a>";
-            }
-        ?>
-
         <!--  메인화면에 표시될 이미지 슬라이더   -->
         <!--  자신의 사진이나 관심있는 분야 사진 등을 표시  -->
-        <div class="section-container">
-            <div class="main-area">
+        <!--<div class="section-container">
+            <div class="main-area" style="background-color: #f9f9ff">
                 <div class="container">
 
                     <div class="title">
@@ -67,6 +60,10 @@
                     </div>
                 </div>
             </div>
+        </div>-->
+
+        <div class="typer" id="h">
+            <h1 class="typer-text">개발자 이금락의 포트폴리오입니다</h1>
         </div>
 
         <?php
@@ -135,6 +132,49 @@
             document.getElementById('forthSlide').addEventListener('click', currentImageSlide.bind(null,4));
             document.getElementById('fifthSlide').addEventListener('click', currentImageSlide.bind(null,5));
             document.getElementById('sixthSlide').addEventListener('click', currentImageSlide.bind(null,6));
+        </script>
+
+        <script type="text/javascript">
+            import React,{Component} from 'react';
+            import  './Home.css';
+            class Home extends Component{
+
+                constructor(props){
+                    super(props);
+                    this.state = {
+                        text:""
+                    }
+                };
+
+                componentDidMount() {
+                    let i =0;
+
+                    const typing = setInterval(() =>{
+                        const typed = this.state.text;
+                        const finalText= "Developer 이규한의 포트폴리오입니다";
+
+                        if(i<finalText.length) {
+                            this.setState ({
+                                text: typed + finalText[i]
+                            });
+                            i++
+
+                        } else {
+                            clearInterval(typing);
+                        }
+                    },178);
+                }
+
+                render(){
+                    return (
+                        <div className="typer" id="h">
+                            <h1 className="typer-text">{this.state.text}</h1>
+                        </div>
+                    );
+                }
+            }
+
+            export default Home;
         </script>
     </body>
 </html>

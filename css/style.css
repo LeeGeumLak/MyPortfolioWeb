@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:700');
+
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -294,6 +296,39 @@ ul li {
 }
 
 /* MAIN AREA */
+@keyframes blink {
+    from,to {
+        border-color: transparent
+    }
+
+    50%{
+        border-color: white;
+    }
+}
+.typer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/img/mainBackground.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+}
+.typer-text {
+    font-family: Noto Sans KR,sans-serif;
+    border-right: .1em solid #fff;
+    font-size: 4vw;
+    white-space: pre;
+    line-height: 1;
+    letter-spacing: .1rem;
+    padding-top: .2em;
+    -webkit-animation: blink 1s step-end infinite;
+    animation: blink 1s step-end infinite;
+}
+
 .main-area {
     height: auto;
 }
