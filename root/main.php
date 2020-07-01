@@ -62,10 +62,9 @@
             </div>
         </div>-->
 
-        <div class="typer" id="h">
-            <!--<h1 class="typer-text">개발자 이금락의 포트폴리오입니다</h1>-->
-
-        </div>
+        <!--<div class="typer" id="h">
+            <h1 class="typer-text">개발자 이금락의 포트폴리오입니다</h1>
+        </div>-->
         <p class="typing-txt">개발자 이금락의 포트폴리오입니다</p>
         <p class="typing"></p>
 

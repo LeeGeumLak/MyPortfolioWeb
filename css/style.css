@@ -294,7 +294,7 @@ ul li {
 }
 
 /* MAIN AREA */
-.typer {
+/*.typer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,7 +305,7 @@ ul li {
     background-size: cover;
     color: #fff;
     width: 100%;
-}
+}*/
 
 p.typing-txt{display: none;}
 
