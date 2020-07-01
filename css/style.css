@@ -869,6 +869,11 @@ section {
     float:left;
     margin-left:10px;
 }
+
+.bo_lo {
+    font-size: 14px;
+}
+
 .re_ct {font-weight:bold; color:blue;}
 
 /* 댓글 */
