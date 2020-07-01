@@ -86,7 +86,7 @@
                             </form>
                         </div>
                         <!-- 댓글 삭제 비밀번호 확인 -->
-                        <div class='dat_delete'>
+                        <div class="dat_delete">
                             <form action="commentDelete.php" method="post">
                                 <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
                                 <p>비밀번호<input type="password" name="password" /> <input type="submit" value="확인"></p>

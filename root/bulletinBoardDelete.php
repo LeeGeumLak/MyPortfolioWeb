@@ -8,9 +8,6 @@
 
     // 게시판 글 삭제
     $sql_bulletinBoard = mq("delete from bulletinBoard where idxNum='$bno';");
-
-    // auto_increment 값 초기화
-    $sql_InitIncrement = mq("alter table bulletinBoard auto_increment =1");
 ?>
 
 <!--<script type="text/javascript">
