@@ -873,7 +873,7 @@ section {
 
 /* 댓글 */
 .comment_view {
-    margin-top:100px;
+    margin-top:50px;
     width:900px;
     word-break:break-all;
 }
@@ -922,7 +922,7 @@ section {
 }
 .dap_ins {
     width:900px;
-    margin-top:100px;
+    margin-top:150px;
 }
 .comment_btn {
     position: absolute;
