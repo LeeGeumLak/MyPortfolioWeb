@@ -330,7 +330,7 @@ p.typing-txt{
     line-height: 1;
     letter-spacing: .1rem;
     padding-top: .2em;
-    -webkit-animation: blink 1s step-end infinite;
+    -webkit-animation: cursor 1s step-end infinite;
     animation: cursor 1s step-end infinite;
 }
 
