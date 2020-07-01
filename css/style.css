@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:700');
+
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -294,20 +296,16 @@ ul li {
 }
 
 /* MAIN AREA */
-/*.typer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('/img/mainBackground.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    width: 100%;
-}*/
+@keyframes blink {
+    from,to {
+        border-color: transparent
+    }
 
-p.typing-txt{
+    50%{
+        border-color: white;
+    }
+}
+.typer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,10 +317,7 @@ p.typing-txt{
     color: #fff;
     width: 100%;
 }
-
-.typing {
-    /*       position: absolute;*/
-    display: inline-block;
+.typer-text {
     font-family: Noto Sans KR,sans-serif;
     border-right: .1em solid #fff;
     font-size: 4vw;
@@ -330,18 +325,10 @@ p.typing-txt{
     line-height: 1;
     letter-spacing: .1rem;
     padding-top: .2em;
-    -webkit-animation: cursor 1s step-end infinite;
-    animation: cursor 1s step-end infinite;
+    -webkit-animation: blink 1s step-end infinite;
+    animation: blink 1s step-end infinite;
 }
 
-@keyframes cursor{
-    from,to {
-        border-color: transparent
-    }
-    50%{
-        border-color: white;
-    }
-}
 
 .main-area {
     height: auto;

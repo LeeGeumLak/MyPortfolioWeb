@@ -62,11 +62,9 @@
             </div>
         </div>-->
 
-        <!--<div class="typer" id="h">
+        <div class="typer" id="h">
             <h1 class="typer-text">개발자 이금락의 포트폴리오입니다</h1>
-        </div>-->
-        <p class="typing-txt">개발자 이금락의 포트폴리오입니다</p>
-        <p class="typing"></p>
+        </div>
 
         <?php
             include './footer.php'
@@ -137,19 +135,19 @@
         </script>
 
         <script type="text/javascript">
-            var typingBool = false;
-            var typingIdx=0;
-            var typingTxt = $(".typing-txt").text(); // 타이핑될 텍스트를 가져온다
+            let typingBool = false;
+            let typingIdx=0;
+            let typingTxt = $(".typer-text").text(); // 타이핑될 텍스트를 가져온다
             typingTxt=typingTxt.split(""); // 한글자씩 자른다.
             if(typingBool==false){ // 타이핑이 진행되지 않았다면
                 typingBool=true;
 
-                var tyInt = setInterval(typing,100); // 반복동작
+                let tyInt = setInterval(typing,100); // 반복동작
             }
 
             function typing(){
                 if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복
-                    $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다.
+                    $(".typer-text").append(typingTxt[typingIdx]); // 한글자씩 이어준다.
                     typingIdx++;
                 } else{
                     clearInterval(tyInt); //끝나면 반복종료
