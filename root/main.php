@@ -63,7 +63,7 @@
         </div>-->
 
         <div class="typer" id="h">
-            <h1 class="typer-text">개발자 이금락의 포트폴리오입니다</h1>
+            <h1 class="typer-text">환영합니다.<br>개발자 이금락의 포트폴리오입니다.</h1>
         </div>
 
         <?php
