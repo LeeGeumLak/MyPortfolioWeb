@@ -37,7 +37,7 @@
                             <textarea name="content" id="ucontent" placeholder="내용" required><?php echo $board['content']; ?></textarea>
                         </div>
                         <div id="in_pw">
-                            <textarea type="password" name="password" id="upassword"  placeholder="비밀번호" required wrap="hard">암호를 입력해주세요.(입력한 암호로 변경됩니다.)</textarea>
+                            <textarea type="password" name="password" id="upassword"  placeholder="비밀번호" required></textarea>
                         </div>
                         <div class="bt_se">
                             <button type="submit">글 작성</button>
