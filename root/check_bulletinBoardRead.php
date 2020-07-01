@@ -15,6 +15,9 @@
     });
 </script>
 <?php
+    // 이전페이지 정보를 저장
+    $prevPage = $_SERVER['HTTP_REFERER'];
+
     $bno = $_GET['idxNum']; /* bno함수에 idx값을 받아와 넣음*/
     $sql = mq("select * from bulletinBoard where idxNum='".$bno."'"); /* 받아온 idxNum값을 선택 */
     $board = $sql->fetch_array();
@@ -53,8 +56,9 @@
                 <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
                 <script type="text/javascript">
                     alert('비밀번호가 틀립니다');
-                    history.back();
-                    //location.replace("./bulletinBoard.php?page=<?php echo $board["idxNum"]; ?>");
+                    <?php
+                        header('location:'.$prevPage);
+                    ?>
                 </script>
                 <?php
             }
