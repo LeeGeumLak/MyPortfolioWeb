@@ -54,7 +54,7 @@
                 <!--- 아니면 비밀번호가 틀리다는 메시지 표시 -->
                 <script type="text/javascript">
                     alert('비밀번호가 틀립니다');
-                    location.replace("./bulletinBoard.php?page=<?php$page?>");
+                    location.replace("./bulletinBoard.php?page=<?php echo $page?>");
                 </script>
                 <?php
             }

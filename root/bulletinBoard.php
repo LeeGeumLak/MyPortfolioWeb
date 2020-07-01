@@ -87,7 +87,7 @@
                                 <td width="500"><?php
                                     $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' style='width: 20px; height: 20px'/>";
                                     if($board['lock_post']=="1") { ?>
-                                        <a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>&page=<?php $page?>'><?php echo $title, $lockimg;
+                                        <a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>&page=<?php echo $page?>'><?php echo $title, $lockimg;
                                     } else {
                                         /*$boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
 
