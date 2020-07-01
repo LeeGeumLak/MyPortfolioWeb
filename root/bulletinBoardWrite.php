@@ -1,3 +1,6 @@
+<?php
+    include "../DBConnect.php"; /* db load */
+?>
 <!doctype html>
     <head>
         <?php include './header.php'?>
@@ -16,7 +19,18 @@
                     </div>
                     <div class="wi_line"></div>
                     <div id="in_name">
-                        <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" required></textarea>
+                        <?php
+                        session_start();
+
+                        if(isset($_SESSION['userId'])) {
+                            $sql = mq("select nickName from userInfo where userId='".$_SESSION['userId']."'");
+                            $nickName = $sql->fetch_array(); ?>
+                            <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" required><?php echo $nickName ?></textarea>
+                            <?php
+                        } else { ?>
+                            <textarea name="name" id="uname" rows="1" cols="55" placeholder="작성자" maxlength="100" required></textarea>
+                        <?php
+                        } ?>
                     </div>
                     <div class="wi_line"></div>
                     <div id="in_content">
