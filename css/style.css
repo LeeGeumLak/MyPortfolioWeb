@@ -310,10 +310,6 @@ ul li {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/img/mainBackground.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: #fff;
     width: 100%;
 }
