@@ -32,15 +32,11 @@
                     echo(json_encode(array("result" => true, 'userId' => $_SESSION['userId'])));
                 //로그인 실패(패스워드 불일치)
                 } else {
-                    echo "<script>console.log( 'PHP_Console: 패스워드 불일치' );</script>";
-
                     echo(json_encode(array("result" => false)));
                 }
             }
             //해당하는 아이디가 아예 없을 경우
         } else {
-            echo "<script>console.log( 'PHP_Console: 아이디 없음' );</script>";
-
             echo(json_encode(array("result" => false)));
         }
     } else {
