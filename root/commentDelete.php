@@ -16,7 +16,7 @@
     $bpw = $comment['password'];
 
 if(password_verify($pwk, $bpw)) {
-    $sql = mq("delete from comment where idxNum='".$rno."'"); ?>
+    $sql = mq("delete from comment where idxNum='$rno'"); ?>
     <script type="text/javascript">
         //alert('댓글이 삭제되었습니다.');
         location.replace("./bulletinBoardRead.php?idxNum=<?php echo $bno; ?>");
