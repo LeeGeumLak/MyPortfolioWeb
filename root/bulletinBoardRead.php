@@ -99,6 +99,8 @@
 
         <div id="foot_box"></div>
 
+        <?php include './footer.php'?>
+
         </div>
     </body>
 </html>
