@@ -5,5 +5,6 @@
 
 <meta charset="utf-8">
 <script>
-    location.href = "./main.php";
+    //location.href = "./main.php";
+    history.back();
 </script>

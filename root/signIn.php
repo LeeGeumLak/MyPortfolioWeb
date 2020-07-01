@@ -69,6 +69,7 @@
                         }else{
                             deleteCookie('userId');
                         }
+                        history.back();
 
                     //실패 했을 경우
                     }else{
