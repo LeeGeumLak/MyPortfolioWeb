@@ -873,6 +873,19 @@ section {
 .bo_lo {
     font-size: 14px;
 }
+.bo_me {
+    font-size:12px;
+}
+.bo_me ul li {
+    float:left;
+    width: 30px;
+}
+.bo_delete {
+    display: none;
+}
+.bo_edit {
+    display:none;
+}
 
 .re_ct {font-weight:bold; color:blue;}
 
