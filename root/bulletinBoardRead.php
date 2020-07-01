@@ -43,8 +43,22 @@
                 <div id="bo_ser">
                     <ul>
                         <li><a href="./bulletinBoard.php" style="font-size: 18px">[목록으로]</a></li>
-                        <li><a href="./bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>" style="font-size: 18px">[수정]</a></li>
-                        <li><a href="./bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>" style="font-size: 18px">[삭제]</a></li>
+
+                        <li><a class="dat_edit_bt" href="#" style="font-size: 18px">[수정]</a></li>
+                        <li><a class="dat_delete_bt" href="#" style="font-size: 18px">[삭제]</a></li>
+
+                        <div class="modify_confirm">
+                            <form action="bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>" method="post" style="font-size: 18px">
+                                <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
+                                <p>비밀번호<input type="password" name="password" /> <input type="submit" value="확인"></p>
+                            </form>
+                        </div>
+                        <div class="delete_confirm">
+                            <form action="bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>" method="post" style="font-size: 18px">
+                                <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
+                                <p>비밀번호<input type="password" name="password" /> <input type="submit" value="확인"></p>
+                            </form>
+                        </div>
                     </ul>
                 </div>
             </div>
