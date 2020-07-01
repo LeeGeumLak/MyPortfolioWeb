@@ -13,6 +13,9 @@
         $userId = $_POST['userId'];
         $userPassword = $_POST['userPassword'];
 
+        echo "<script>console.log( 'PHP_Console: " . $userId . "' );</script>";
+        echo "<script>console.log( 'PHP_Console: " . $userPassword . "' );</script>";
+
         $sql = mq("SELECT * FROM userInfo WHERE userId =='".$userId."')");
         //$result = $db->query($sql);
 

@@ -5,5 +5,5 @@
 
 <meta charset="utf-8">
 <script>
-    location.href = "./signIn.php";
+    location.href = "./main.php";
 </script>

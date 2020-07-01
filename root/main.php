@@ -83,7 +83,7 @@
         <!-- 메인 js 파일 스크립트 추가 -->
         <script src="../js/myPortfolioWeb.js"></script>
 
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             var imageSlideIndex = 1;
             showImageSlides(imageSlideIndex);
 
@@ -132,7 +132,7 @@
             document.getElementById('forthSlide').addEventListener('click', currentImageSlide.bind(null,4));
             document.getElementById('fifthSlide').addEventListener('click', currentImageSlide.bind(null,5));
             document.getElementById('sixthSlide').addEventListener('click', currentImageSlide.bind(null,6));
-        </script>
+        </script>-->
 
         <script type="text/javascript">
             let typingBool = false;
