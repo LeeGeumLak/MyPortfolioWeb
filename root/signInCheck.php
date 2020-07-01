@@ -16,14 +16,18 @@
         //echo "<script>console.log( 'PHP_Console: " . $userId . "' );</script>";
         //echo "<script>console.log( 'PHP_Console: " . $userPassword . "' );</script>";
 
-        $sql = mq("SELECT COUNT(*) FROM userInfo WHERE userId =='$userId')");
+        //$sql = mq("SELECT COUNT(*) FROM userInfo WHERE userId =='".$userId."')");
         //$result = $db->query($sql);
+
+        $sql = "SELECT COUNT(*) FROM userInfo WHERE userId = '{$userId}'";
+        $result = $db->query($sql);
+        $row = $result->fetch_assoc();
 
         //해당하는 아이디가 존재할경우
         //if ($sql->num_rows == 1) {
-        if($sql == 1) {
+        if($row != 0) {
             //각행 1개씩 꺼내기
-            while ($row = $sql->fetch_assoc()) {
+            //while ($row = $sql->fetch_assoc()) {
                 //로그인 성공(패스워드 일치)
                 if (password_verify($userPassword, $row['userPassword'])) {
                     //session 설정
@@ -37,7 +41,7 @@
                     //echo "<script>console.log( 'PHP_Console: 패스워드 불일치' );</script>";
                     echo(json_encode(array("result" => false)));
                 }
-            }
+            //}
         //해당하는 아이디가 아예 없을 경우
         } else {
             //echo "<script>console.log( 'PHP_Console: 아이디 없음' );</script>";
