@@ -31,13 +31,17 @@
     $writePossible = 'true';
     while($nickName = $sql->fetch_array()) {
         if( ($username == 'admin') || ($username == '어드민') || ($username == '운영자') ) {
-            echo "<script> alert('$username 은 작성자명으로 사용할 수 없습니다. 다른 작성자명으로 입력해주세요.'); </script>";
             $writePossible = 'false';
+            echo "<script> 
+                    alert('$username 은 작성자명으로 사용할 수 없습니다. 다른 작성자명으로 입력해주세요.');
+                    history.back(); </script>";
             break;
         }
         else if($username == $nickName['nickName']) {
-            echo "<script> alert('$username 은 회원의 닉네임입니다. 다른 작성자명으로 입력해주세요.'); </script>";
             $writePossible = 'false';
+            echo "<script> 
+                    alert('$username 은 회원의 닉네임입니다. 다른 작성자명으로 입력해주세요.'); 
+                    history.back(); </script>";
             break;
         }
     }
