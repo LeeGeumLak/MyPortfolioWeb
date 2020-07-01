@@ -90,7 +90,7 @@
                 $sql_comment = mq("select * from comment where bulletinNum='".$bno."' order by idxNum asc");
                 while($comment = $sql_comment->fetch_array()){
                     ?>
-                    <div class="dap_lo">
+                    <div class="dap_lo" style="padding:10px 0 15px 0; border-bottom: solid 1px gray;">
                         <div><b style="font-size: 17px"><?php echo $comment['name'];?></b></div>
                         <div class="dap_to comment_edit" style="font-size: 20px"><?php echo nl2br("$comment[content]"); ?></div>
                         <div class="comment_me dap_to" style="text-align: right; font-size: 17px"><?php echo $comment['writeDate']; ?></div>
