@@ -46,20 +46,20 @@
                         <!--<li><a href="./bulletinBoardModify.php?idxNum=<?php /*echo $board['idxNum']; */?>" style="font-size: 18px">[수정]</a></li>
                         <li><a href="./bulletinBoardDelete.php?idxNum=<?php /*echo $board['idxNum']; */?>" style="font-size: 18px">[삭제]</a></li>-->
                         <li>
-                            <div class="bo_lo">
-                                <div class="bo_me bo_menu " style="text-align: right">
-                                    <a class="bo_edit_bt" href="#" style="font-size: 18px">[수정]</a>
-                                    <a class="bo_delete_bt" href="#" style="font-size: 18px">[삭제]</a>
+                            <div class="dap_lo">
+                                <div class="comment_me comment_menu " style="text-align: right">
+                                    <a class="dat_edit_bt" href="#" style="font-size: 18px">[수정]</a>
+                                    <a class="dat_delete_bt" href="#" style="font-size: 18px">[삭제]</a>
                                 </div>
                                 <!-- 게시판 수정 폼 dialog -->
-                                <div class="bo_edit">
+                                <div class="dat_edit">
                                     <form method="post" action="bulletinBoardModify.php?idxNum=<?php echo $board['idxNum']; ?>">
                                         <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
                                         <p>비밀번호<input type="password" name="password" /><input type="submit" value="확인"></p>
                                     </form>
                                 </div>
                                 <!-- 게시판 삭제 비밀번호 확인 -->
-                                <div class="bo_delete">
+                                <div class="dat_delete">
                                     <form action="bulletinBoardDelete.php?idxNum=<?php echo $board['idxNum']; ?>" method="post">
                                         <input type="hidden" name="rno" value="<?php echo $comment['idxNum']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
                                         <p>비밀번호<input type="password" name="password" /><input type="submit" value="확인"></p>
