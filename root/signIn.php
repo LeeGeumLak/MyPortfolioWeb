@@ -71,6 +71,8 @@
                         }else{
                             deleteCookie('userId');
                         }
+                        location.replace("./main.php");
+
 
                     //실패 했을 경우
                     }else{
