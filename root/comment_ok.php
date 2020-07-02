@@ -5,6 +5,9 @@
     $userpassword = password_hash($_POST['dat_pw'], PASSWORD_DEFAULT);
 
     if($bno && $_POST['dat_user'] && $userpassword && $_POST['content']){
+        // auto_increment 값 초기화
+        $sql_InitIncrement = mq("alter table comment auto_increment =1");
+
         $sql = mq("insert into comment (bulletinNum, name, password, content) values ('".$bno."','".$_POST['dat_user']."','".$userpassword."','".$_POST['content']."')");
         echo "<script>
                 /*alert('댓글이 작성되었습니다.');*/
