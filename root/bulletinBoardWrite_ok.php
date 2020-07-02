@@ -26,11 +26,11 @@
     // auto_increment 값 초기화
     $sql_InitIncrement = mq("alter table bulletinBoard auto_increment =1");
 
+    $writePossible = 'true';
     session_start();
     if(!isset($_SESSION['userId'])) {
         // client 단에서 입력한 작성자 명이 db 에 저장된 닉네임에 있으면, 다시 입력
         $sql = mq("select nickName from userInfo");
-        $writePossible = 'true';
         while($nickName = $sql->fetch_array()) {
             if( ($username == 'admin') || ($username == '어드민') || ($username == '운영자') ) {
                 $writePossible = 'false';
