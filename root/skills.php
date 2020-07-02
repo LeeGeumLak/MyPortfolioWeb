@@ -53,7 +53,6 @@
                     </div>
 
                     <div class="item">
-                        <div class="icon"><span><i class="fab fa-android"></i></span></div>
                         <div class="skills">C/C++</div>
                         <div class="content">C 언어는 UNIX OS 개발을 위해 처음 만들어졌으며, 가장 오래된 언어중 하나이지만 여전히 다양한 분야에서 사용되는 언어
                             입니다. 또한 C++는 C 언어에서 발전한 언어로 C언어의 특징을 살려 절자 지향적인 동시에 객체 지향적이기도 하여, 다양한 방식으로 프로그램을 만들 수 있습니다.
