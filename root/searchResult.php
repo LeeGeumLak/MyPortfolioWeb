@@ -9,7 +9,7 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <div id="board_area">
+        <div id="board_area" style="background-color: #f9f9ff">
             <?php
                 /* 검색 변수 */
                 $catagory = $_GET['catgo'];
