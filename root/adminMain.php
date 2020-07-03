@@ -4,14 +4,14 @@
         if(!($_SESSION['userId'] == 'admin@naver.com')) {?>
             <script type="text/javascript">
                 alert("관리자만 접근할 수 있습니다.");
-                <?php echo("<script>location.href='./main.php';</script>");?>
+                location.replace("./main.php");
         </script> <?php
         }
     }
     else {?>
         <script type="text/javascript">
             alert("관리자만 접근할 수 있습니다.");
-            <?php echo("<script>location.href='./main.php';</script>");?>
+            location.replace("./main.php");
         </script> <?php
     }
 ?>
@@ -28,9 +28,7 @@
 
 
 
-        <?php
-            include './footer.php'
-        ?>
+        <?php include './footer.php' ?>
 
         <!-- 메인 js 파일 스크립트 추가 -->
         <script src="../js/myPortfolioWeb.js"></script>
