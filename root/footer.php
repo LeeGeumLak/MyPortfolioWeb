@@ -6,7 +6,16 @@
     </div>-->
 
     <div class="info" style="font-size: 12px">
-        <button type="button" class="navyBtn" style="float: left; color: #ffffff; background-color: #000000;" onClick="location.href='./adminMain.php'">관리자 페이지</button>
+        <?php
+            session_start();
+            if(isset($_SESSION['userId'])){
+                if($_SESSION['userId'] == 'admin@naver.com') {?>
+                    <button type="button" class="navyBtn" style="float: left; color: #ffffff; background-color: #000000;"
+                            onClick="location.href='./adminMain.php'">관리자 페이지</button>
+                    <?php
+                }
+            }
+        ?>
         <p>Copyright © 2020 LGL Corp. All rights reserved.</p>
     </div>
 </footer>
