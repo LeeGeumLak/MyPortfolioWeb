@@ -46,11 +46,6 @@
             $block_end_page = $block_start_page + $block_page_num_list - 1; //현재 블럭에서 마지막 페이지 번호
         ?>
 
-        <div class="container" style="min-width:550px;">
-            <!-- 상단 부분 -->
-            <?php include './topPart.php'?>
-        </div>
-
         <div class="container_big" style="height: 100%; margin:20px;">
             <nav class="side_bar fl">
                 <div class="sign">네비게이션</div>
