@@ -22,7 +22,7 @@
         <?php include './header.php'?>
     </head>
 
-    <body>
+    <body style="background-image: none">
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
@@ -74,48 +74,50 @@
                         <col width="15%">
                         <col width="10%">
                     </colgroup>
+
                     <thead>
-                    <tr>
-                        <th style="text-align: center;">번호</th>
-                        <th style="text-align: center;">아이디</th>
-                        <th style="text-align: center;">IP</th>
-                        <th style="text-align: center;">국가</th>
-                        <th style="text-align: center;">이전경로</th>
-                        <th style="text-align: center;">들어온경로</th>
-                        <th style="text-align: center;">날짜</th>
-                    </tr>
+                        <tr>
+                            <th style="text-align: center;">번호</th>
+                            <th style="text-align: center;">아이디</th>
+                            <th style="text-align: center;">IP</th>
+                            <th style="text-align: center;">국가</th>
+                            <th style="text-align: center;">이전경로</th>
+                            <th style="text-align: center;">들어온경로</th>
+                            <th style="text-align: center;">날짜</th>
+                        </tr>
                     </thead>
+
                     <tbody style="text-align: center;">
-                    <!-- userLog 목록 가져오기 -->
-                    <?php
-                        include '../DBConnect.php';
+                        <!-- userLog 목록 가져오기 -->
+                        <?php
+                            include '../DBConnect.php';
 
-                        //게시글 시작위치
-                        $limit = ($page_num-1)*$list;
+                            //게시글 시작위치
+                            $limit = ($page_num-1)*$list;
 
-                        $sql = "select * from userLog order by idxNum desc limit $limit,$list";
-                        $result = $db->query($sql);
-                        while($row = $result->fetch_assoc()) {
-                            $datetime = explode(' ', $row['date']);
-                            $date = $datetime[0];
-                            $time = $datetime[1];
-                            if($date == Date('Y-m-d')) {
-                                $row['date'] = $time;
-                            } else {
-                                $row['date'] = $date;
-                            }
-                            ?>
-                            <tr class="freeBoardHover" onclick="goFreeBoardView(<?php echo $row['idxNum'] ?>)">
-                                <td><?php echo $row['idx']?></td>
-                                <td><div style="max-height:17px;overflow: hidden"; ><?php echo $row['userId']?></div></td>
-                                <td><div style="max-height:17px;overflow: hidden"; ><?php echo $row['ip']?></div></td>
-                                <td><?php echo $row['country']?></td>
-                                <td><?php echo $row['previousUrl']?></td>
-                                <td><?php echo $row['currentUrl']?></td>
-                                <td><?php echo $row['date']?></td>
-                            </tr>
-                            <?php
-                        } ?>
+                            $sql = "select * from userLog order by idxNum desc limit $limit,$list";
+                            $result = $db->query($sql);
+                            while($row = $result->fetch_assoc()) {
+                                $datetime = explode(' ', $row['date']);
+                                $date = $datetime[0];
+                                $time = $datetime[1];
+                                if($date == Date('Y-m-d')) {
+                                    $row['date'] = $time;
+                                } else {
+                                    $row['date'] = $date;
+                                }
+                                ?>
+                                <tr class="freeBoardHover" onclick="goFreeBoardView(<?php echo $row['idxNum'] ?>)">
+                                    <td><?php echo $row['idx']?></td>
+                                    <td><div style="max-height:17px;overflow: hidden"; ><?php echo $row['userId']?></div></td>
+                                    <td><div style="max-height:17px;overflow: hidden"; ><?php echo $row['ip']?></div></td>
+                                    <td><?php echo $row['country']?></td>
+                                    <td><?php echo $row['previousUrl']?></td>
+                                    <td><?php echo $row['currentUrl']?></td>
+                                    <td><?php echo $row['date']?></td>
+                                </tr>
+                                <?php
+                            } ?>
                     </tbody>
                 </table>
 
