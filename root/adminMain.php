@@ -41,10 +41,10 @@
         </div>
 
         <!--  유저의 로그를 볼 수 있는 게시판   -->
-        <div class="section-container" style="max-width: 880px">
-            <div class="bulletinBoard-area" id="bulletinBoard">
+        <div class="section-container">
+            <div class="bulletinBoard-area" id="bulletinBoard" style="width: unset">
                 <div id="board_area">
-                    <table class="list-table">
+                    <table class="list-table" style="">
                         <thead>
                             <tr>
                                 <th width="80">번호</th>
