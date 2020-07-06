@@ -6,6 +6,8 @@
                 alert("관리자만 접근할 수 있습니다.");
                 location.replace("./main.php");
         </script> <?php
+        } else {
+            include '../DBConnect.php';
         }
     }
     else {?>
@@ -41,19 +43,19 @@
         </div>
 
         <!--  유저의 로그를 볼 수 있는 게시판   -->
-        <div class="section-container">
+        <div class="section-container" style="max-width: unset">
             <div class="bulletinBoard-area" id="bulletinBoard" style="width: unset">
-                <div id="board_area">
-                    <table class="list-table" style="">
+                <div id="board_area" style="width: unset">
+                    <table class="list-table" style="width: unset">
                         <thead>
                             <tr>
-                                <th width="80">번호</th>
-                                <th width="100">아이디</th>
-                                <th width="100">IP</th>
-                                <th width="80">국가</th>
-                                <th width="120">이전경로</th>
-                                <th width="120">들어온 경로</th>
-                                <th width="100">날짜</th>
+                                <th width="150">번호</th>
+                                <th width="300">아이디</th>
+                                <th width="300">IP</th>
+                                <th width="150">국가</th>
+                                <th width="250">이전경로</th>
+                                <th width="250">들어온 경로</th>
+                                <th width="200">날짜</th>
                             </tr>
                         </thead>
 
