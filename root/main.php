@@ -12,56 +12,10 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <!--  메인화면에 표시될 이미지 슬라이더   -->
-        <!--  자신의 사진이나 관심있는 분야 사진 등을 표시  -->
-        <!--<div class="section-container">
-            <div class="main-area" style="background-color: #f9f9ff">
-                <div class="container">
+        <!--  유저로그를 db에 저장하는 파일  -->
+        <? include './userLog.php'; ?>
 
-                    <div class="title">
-                        환영합니다.<br>개발자 이금락의 포트폴리오 입니다.
-                    </div>
-
-                    <div class="image-slide fade">
-                        <img src="../img/imgSlider1.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="../img/imgSlider2.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="../img/imgSlider3.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="../img/imgSlider4.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="../img/imgSlider5.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-                    <div class="image-slide fade">
-                        <img src="../img/imgSlider6.jpg">
-                        <div class="numbertext"></div>
-                    </div>
-
-                    <a class="image-prev" id="imagePrev">&#10094;</a>
-                    <a class="image-next" id="imageNext">&#10095;</a>
-
-                    <div class="slide">
-                        <span class="slide" id="firstSlide"></span>
-                        <span class="slide" id="secondSlide"></span>
-                        <span class="slide" id="thirdSlide"></span>
-                        <span class="slide" id="forthSlide"></span>
-                        <span class="slide" id="fifthSlide"></span>
-                        <span class="slide" id="sixthSlide"></span>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
+        <!--  메인화면에 표시될 텍스트 타이퍼 -->
         <div class="typer" id="h">
             <h1 class="typer-text" style="text-align: center">환영합니다. 개발자 이금락의 포트폴리오입니다.</h1>
         </div>

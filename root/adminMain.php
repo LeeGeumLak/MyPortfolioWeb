@@ -43,8 +43,8 @@
         </div>
 
         <!--  유저의 로그를 볼 수 있는 게시판   -->
-        <div class="section-container" style="max-width: unset">
-            <div class="bulletinBoard-area" id="bulletinBoard" style="width: unset">
+        <div class="section-container" style="max-width: 1500px">
+            <div class="bulletinBoard-area" id="bulletinBoard" style="width: unset; height: 600px">
                 <div id="board_area" style="width: unset">
                     <table class="list-table" style="width: unset">
                         <thead>
