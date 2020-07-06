@@ -1124,7 +1124,8 @@ section {
 }
 
 .side_bar{
-    height: 400px;
+    height: auto;
+    background-color: #f9f9ff;
 }
 
 .side_bar ul li {
