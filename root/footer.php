@@ -5,7 +5,7 @@
         <div class="item" id="instagram"><i class="fab fa-instagram"></i></div>
     </div>-->
 
-    <div class="info" style="font-size: 12px">
+    <div class="info" style="font-size: 12px; cursor:pointer">
         <?php
             session_start();
             if(isset($_SESSION['userId'])){
