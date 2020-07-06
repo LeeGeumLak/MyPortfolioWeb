@@ -26,7 +26,7 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <div class="container_big" style="height: 100%; margin:20px;">
+        <div class="container_big" style="height: 100%; margin:20px; margin-top: 100px">
             <nav class="side_bar fl">
                 <div class="sign">네비게이션</div>
                 <ul>
@@ -40,32 +40,21 @@
             </nav>
         </div>
 
-        <!--  소통할 수 있는 게시판   -->
-        <div class="section-container">
+        <!--  유저의 로그를 볼 수 있는 게시판   -->
+        <div class="section-container" style="max-width: 880px">
             <div class="bulletinBoard-area" id="bulletinBoard">
-                <div class="title">Bulletin Board<br>자유롭게 이야기하는 공간입니다.</div>
-
                 <div id="board_area">
-                    <div id="search_box_top">
-                        <form action="./searchResult.php" method="get">
-                            <select name="catgo">
-                                <option value="title">제목</option>
-                                <option value="name">작성자</option>
-                                <option value="content">내용</option>
-                            </select>
-                            <input type="text" name="search" size="40" required="required" /> <button>검색</button>
-                        </form>
-                    </div>
-
                     <table class="list-table">
                         <thead>
-                        <tr>
-                            <th width="70">번호</th>
-                            <th width="500">제목</th>
-                            <th width="120">작성자</th>
-                            <th width="100">작성 날짜</th>
-                            <th width="100">조회수</th>
-                        </tr>
+                            <tr>
+                                <th width="80">번호</th>
+                                <th width="100">아이디</th>
+                                <th width="100">IP</th>
+                                <th width="80">국가</th>
+                                <th width="120">이전경로</th>
+                                <th width="120">들어온 경로</th>
+                                <th width="100">날짜</th>
+                            </tr>
                         </thead>
 
                         <?php
@@ -76,9 +65,9 @@
                         }
 
                         // bulletinBoard 테이블에서 idxNum를 기준으로 내림차순해서 5개까지 표시
-                        $sql = mq("select * from bulletinBoard");
+                        $sql = mq("select * from userLog");
                         $rowNum = mysqli_num_rows($sql); // 총 게시판 글 수
-                        $list = 5; // 한 페이지에 보여줄 개수
+                        $list = 10; // 한 페이지에 보여줄 개수
 
                         $paginationCnt = 5; // 하나의 pagination 당 보여줄 페이지의 개수
                         $paginationNum = ceil($page / $paginationCnt);
@@ -96,44 +85,18 @@
                         $totalPagination = ceil($totalPage / $paginationCnt);
                         $startNum = ($page - 1) * $list;
 
-                        $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
-                        while($board = $sql_bulletinBoard->fetch_array()) {
-                            //title변수에 DB에서 가져온 title을 선택
-                            $title=$board["title"];
-                            if(strlen($title)>30) {
-                                //title이 30을 넘어서면 생략(...)표시
-                                $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
-                            }
-
-                            // 댓글의 개수 카운트
-                            $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'"); //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
-                            $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
-                            ?>
+                        $sql_userLog = mq("select * from userLog order by idxNum desc limit $startNum, $list");
+                        while($userLog = $sql_userLog->fetch_array()) { ?>
                             <tbody>
-                            <tr>
-                                <td width="70"><?php echo $board['idxNum']; ?></td>
-                                <td width="500"><?php
-                                    $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' style='width: 20px; height: 20px'/>";
-                                    if($board['lock_post']=="1") { ?>
-                                    <a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>&page=<?php echo $page?>'><?php echo $title, $lockimg;
-                                        } else {
-                                        /*$boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
-
-                                        date_default_timezone_set("Asia/Seoul");
-                                        $timeNow = date('Y-m-d H:i:s'); //$timenow변수에 현재 시간 Y-M-D를 넣음
-                                        if($boardTime == $timeNow) {
-                                            $img = "<img src='../img/new.png' alt='new' title='new' />";
-                                        } else {
-                                            $img ="";
-                                        }*/  ?>
-                                        <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;
-                                            } ?>
-                                            <span class="re_ct">[<?php echo $comment_count; ?>]<?php /*echo $img;*/ ?></span></a>
-                                </td>
-                                <td width="120"><?php echo $board['name']?></td>
-                                <td width="100"><?php echo $board['writeDate']?></td>
-                                <td width="100"><?php echo $board['hitNum']; ?></td>
-                            </tr>
+                                <tr>
+                                    <td width="80"><?php echo $userLog['idxNum']; ?></td>
+                                    <td width="100"><?php echo $userLog['userId']?></td>
+                                    <td width="100"><?php echo $userLog['ip']?></td>
+                                    <td width="80"><?php echo $userLog['country']?></td>
+                                    <td width="120"><?php echo $userLog['previousUrl']; ?></td>
+                                    <td width="120"><?php echo $userLog['currentUrl']; ?></td>
+                                    <td width="100"><?php echo $userLog['accessDate']; ?></td>
+                                </tr>
                             </tbody>
                         <?php } ?>
                     </table>
@@ -182,10 +145,6 @@
                             ?>
                         </ul>
                     </div>
-
-                    <div id="write_btn">
-                        <a href="./bulletinBoardWrite.php"><button>글쓰기</button></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -195,13 +154,13 @@
         <!-- 메인 js 파일 스크립트 추가 -->
         <script src="../js/myPortfolioWeb.js"></script>
 
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             $(document).on('ready', function(e){ });
 
             function goFreeBoardView(idxNum) {
                 console.log("idxNum:",idxNum);
                 location.href='./freeBoardView.php?idxNum='+idxNum;
             }
-        </script>
+        </script>-->
     </body>
 </html>
