@@ -784,7 +784,7 @@ section {
     font-size: 14px;
 }
 
-.list-table tbody td:hover {
+.list-table tbody:hover {
     background-color: #ffe8d6;
 }
 
