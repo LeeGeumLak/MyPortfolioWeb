@@ -32,7 +32,7 @@
                     <?php echo $board['name']; ?>    ( <?php echo $board['writeDate']; ?> / 조회 : <?php echo $board['hitNum']; ?> )
                     <div id="bo_line"></div>
                 </div>
-                <div id="bo_content" style="font-size: 40px">
+                <div id="bo_content" style="font-size: 25px">
                     <?php echo nl2br("$board[content]"); ?>
                     <div id="bo_line"></div>
                 </div>
