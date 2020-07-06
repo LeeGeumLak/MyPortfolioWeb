@@ -26,26 +26,6 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <?php
-            function pre_dump($array){
-                echo "<pre>";
-                echo var_dump($array);
-                echo "</pre>";
-            }
-
-            //페이징 관련 변수들 지정
-            $page_num = ($_GET['page']) ? $_GET['page'] : 1; //page : default = 1
-            $list = ($_GET['list']) ? $_GET['list'] : 10; //page : default = 10
-
-
-            $block_page_num_list = 10; //블럭에 나타낼 페이지 번호 갯수
-            $block = ceil($page_num/$block_page_num_list); //현재 리스트의 블럭 구하기
-
-
-            $block_start_page = ( ($block - 1) * $block_page_num_list ) + 1; //현재 블럭에서 시작페이지 번호
-            $block_end_page = $block_start_page + $block_page_num_list - 1; //현재 블럭에서 마지막 페이지 번호
-        ?>
-
         <div class="container_big" style="height: 100%; margin:20px;">
             <nav class="side_bar fl">
                 <div class="sign">네비게이션</div>
@@ -56,118 +36,157 @@
                     <li>
                         <a href="./adminGraph.php">그래프</a>
                     </li>
-                    <li>
-                        <a href="./adminMain.php">DAY3</a>
-                    </li>
                 </ul>
             </nav>
+        </div>
 
-            <!-- 유저로그 테이블 -->
-            <div class="user_log fl">
-                <table class="table">
-                    <colgroup>
-                        <col width="8%">
-                        <col width="10%">
-                        <col width="10%">
-                        <col width="15%">
-                        <col width="15%">
-                        <col width="15%">
-                        <col width="10%">
-                    </colgroup>
+        <!--  소통할 수 있는 게시판   -->
+        <div class="section-container">
+            <div class="bulletinBoard-area" id="bulletinBoard">
+                <div class="title">Bulletin Board<br>자유롭게 이야기하는 공간입니다.</div>
 
-                    <thead>
+                <div id="board_area">
+                    <div id="search_box_top">
+                        <form action="./searchResult.php" method="get">
+                            <select name="catgo">
+                                <option value="title">제목</option>
+                                <option value="name">작성자</option>
+                                <option value="content">내용</option>
+                            </select>
+                            <input type="text" name="search" size="40" required="required" /> <button>검색</button>
+                        </form>
+                    </div>
+
+                    <table class="list-table">
+                        <thead>
                         <tr>
-                            <th style="text-align: center;">번호</th>
-                            <th style="text-align: center;">아이디</th>
-                            <th style="text-align: center;">IP</th>
-                            <th style="text-align: center;">국가</th>
-                            <th style="text-align: center;">이전경로</th>
-                            <th style="text-align: center;">들어온경로</th>
-                            <th style="text-align: center;">날짜</th>
+                            <th width="70">번호</th>
+                            <th width="500">제목</th>
+                            <th width="120">작성자</th>
+                            <th width="100">작성 날짜</th>
+                            <th width="100">조회수</th>
                         </tr>
-                    </thead>
+                        </thead>
 
-                    <tbody style="text-align: center;">
-                        <!-- userLog 목록 가져오기 -->
                         <?php
-                            include '../DBConnect.php';
+                        if(isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        } else {
+                            $page = 1;
+                        }
 
-                            //게시글 시작위치
-                            $limit = ($page_num-1)*$list;
+                        // bulletinBoard 테이블에서 idxNum를 기준으로 내림차순해서 5개까지 표시
+                        $sql = mq("select * from bulletinBoard");
+                        $rowNum = mysqli_num_rows($sql); // 총 게시판 글 수
+                        $list = 5; // 한 페이지에 보여줄 개수
 
-                            $sql = "select * from userLog order by idxNum desc limit $limit,$list";
-                            $result = $db->query($sql);
-                            while($row = $result->fetch_assoc()) {
-                                $datetime = explode(' ', $row['date']);
-                                $date = $datetime[0];
-                                $time = $datetime[1];
-                                if($date == Date('Y-m-d')) {
-                                    $row['date'] = $time;
-                                } else {
-                                    $row['date'] = $date;
+                        $paginationCnt = 5; // 하나의 pagination 당 보여줄 페이지의 개수
+                        $paginationNum = ceil($page / $paginationCnt);
+                        $paginationStart = (($paginationNum-1) * $paginationCnt) + 1; // 한 pagination 시작
+                        $paginationEnd = $paginationStart + $paginationCnt - 1; // 한 pagination 끝
+                        $totalPage = ceil($rowNum / $list); // 페이징한 페이지의 총 개수
+
+                        // 한 pagination의 끝 번호가 totalPage 보다 클 때, 끝 번호를 지정할 수 있다.
+                        //(총 페이지 개수로)
+                        if($paginationEnd > $totalPage) {
+                            $paginationEnd = $totalPage;
+                        }
+
+                        // pagination 의 총 개수
+                        $totalPagination = ceil($totalPage / $paginationCnt);
+                        $startNum = ($page - 1) * $list;
+
+                        $sql_bulletinBoard = mq("select * from bulletinBoard order by idxNum desc limit $startNum, $list");
+                        while($board = $sql_bulletinBoard->fetch_array()) {
+                            //title변수에 DB에서 가져온 title을 선택
+                            $title=$board["title"];
+                            if(strlen($title)>30) {
+                                //title이 30을 넘어서면 생략(...)표시
+                                $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
+                            }
+
+                            // 댓글의 개수 카운트
+                            $sql_comment = mq("select * from comment where bulletinNum='".$board['idxNum']."'"); //comment 테이블에서 bulletinNum이 board의 idxNum와 같은 것을 선택
+                            $comment_count = mysqli_num_rows($sql_comment); //num_rows로 정수형태로 출력
+                            ?>
+                            <tbody>
+                            <tr>
+                                <td width="70"><?php echo $board['idxNum']; ?></td>
+                                <td width="500"><?php
+                                    $lockimg = "<img src='../img/lock.png' alt='lock' title='lock' style='width: 20px; height: 20px'/>";
+                                    if($board['lock_post']=="1") { ?>
+                                    <a href='./check_bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"];?>&page=<?php echo $page?>'><?php echo $title, $lockimg;
+                                        } else {
+                                        /*$boardTime = $board['writeDate']; //$boardTime변수에 board['writeDate']값을 넣음
+
+                                        date_default_timezone_set("Asia/Seoul");
+                                        $timeNow = date('Y-m-d H:i:s'); //$timenow변수에 현재 시간 Y-M-D를 넣음
+                                        if($boardTime == $timeNow) {
+                                            $img = "<img src='../img/new.png' alt='new' title='new' />";
+                                        } else {
+                                            $img ="";
+                                        }*/  ?>
+                                        <a href='./bulletinBoardRead.php?idxNum=<?php echo $board["idxNum"]; ?>'><?php echo $title;
+                                            } ?>
+                                            <span class="re_ct">[<?php echo $comment_count; ?>]<?php /*echo $img;*/ ?></span></a>
+                                </td>
+                                <td width="120"><?php echo $board['name']?></td>
+                                <td width="100"><?php echo $board['writeDate']?></td>
+                                <td width="100"><?php echo $board['hitNum']; ?></td>
+                            </tr>
+                            </tbody>
+                        <?php } ?>
+                    </table>
+
+                    <!---페이징 넘버 --->
+                    <div id="page_num">
+                        <ul>
+                            <?php
+                            if($page <= 1) {
+                                // 현재 page가 가장 처음 페이지이면, '처음' 글자에 빨간색 표시
+                                echo "<li class='fo_re'>처음</li>";
+                            } else{
+                                // 현재 page가 가장 처음 페이지가 아니면, '처음' 글자에 가장 처음 페이지로 갈 수 있게 링크
+                                echo "<li><a href='?page=1'>처음</a></li>";
+                            }
+
+                            if($page <= 1) { //만약 page가 1보다 크거나 같다면 빈값
+
+                            } else {
+                                $pre = $page - 1; //pre 변수에 page-1을 해준다(이전 페이지로 이동할 수 있도록)
+                                // '이전' 글자에 pre 변수를 링크. '이전' 버튼을 클릭시, 현재 페이지 -1
+                                echo "<li><a href='?page=$pre'>이전</a></li>";
+                            }
+
+                            //for문 반복문을 한 pagination 시작부터 마지막까지 반복
+                            for($i = $paginationStart; $i <= $paginationEnd; $i++){
+                                if($page == $i){
+                                    echo "<li class='fo_re'>[$i]</li>"; //현재 페이지에 해당하는 번호에 굵은 빨간색을 적용한다
+                                }else{
+                                    echo "<li><a href='?page=$i'>[$i]</a></li>"; //아니라면 아무런 표시 X
                                 }
-                                ?>
-                                <tr class="freeBoardHover" onclick="goFreeBoardView(<?php echo $row['idxNum'] ?>)">
-                                    <td><?php echo $row['idx']?></td>
-                                    <td><div style="max-height:17px;overflow: hidden"; ><?php echo $row['userId']?></div></td>
-                                    <td><div style="max-height:17px;overflow: hidden"; ><?php echo $row['ip']?></div></td>
-                                    <td><?php echo $row['country']?></td>
-                                    <td><?php echo $row['previousUrl']?></td>
-                                    <td><?php echo $row['currentUrl']?></td>
-                                    <td><?php echo $row['date']?></td>
-                                </tr>
-                                <?php
-                            } ?>
-                    </tbody>
-                </table>
-
-                <!-- 페이징 처리 -->
-                <nav aria-label="Page navigation" style="text-align: center;">
-                    <ul class="pagination">
-                        <?php
-                            //DB에서 총 데이터 개수 가져오기
-                            $sql = "SELECT COUNT(*) FROM userLog";
-                            $result = $db->query($sql);
-                            $row = $result->fetch_assoc();
-                            $total_count = $row["COUNT(*)"];
-
-                            $total_page =  ceil($total_count/$list); //총 페이지 수
-
-                            if ($block_end_page > $total_page) {
-                                $block_end_page = $total_page;
                             }
 
-                            $before = $block_start_page-1;
-                            //페이징 block단위로 뒤로가기
-                            if($block != 1){?>
-                                <li><a href="./adminMain.php?page=<?=$before?>">이전</a></li>
-                                <?php
+                            if($paginationNum >= $totalPagination) {
+                                // 현재 pagination 이 총 개수보다 크거나 같으면,
+                            } else { //만약 현재 pagination 이 총 개수보다 작으면,
+                                $next = $page + 1; //next변수에 page + 1을 해준다.
+                                echo "<li><a href='?page=$next'>다음</a></li>"; // '다음' 글자에 next 변수를 링크. '다음' 버튼 클릭시, 현재 페이지 + 1
                             }
 
-                            //페이징 숫자부분
-                            for($i = $block_start_page; $i <=$block_end_page; $i++) {
-                                if($page_num == $i){?>
-                                    <li><a style="background: silver;"><?=$i?></a></li>
-                                    <?php
-                                } else{?>
-                                    <li><a href="./adminMain.php?page=<?=$i?>"><?=$i?></a></li>
-                                    <?php
-                                }
+                            if($page >= $totalPage){ // 현재 페이지가 마지막이면
+                                echo "<li class='fo_re'>마지막</li>"; // '마지막' 글자에 긁은 빨간색을 적용한다.
+                            } else{ // 마지막 페이지가 아니면
+                                echo "<li><a href='?page=$totalPage'>마지막</a></li>"; // '마지막' 글자에 totalPage를 링크.
                             }
+                            ?>
+                        </ul>
+                    </div>
 
-                            $next = $block_end_page+1;
-                            if($next>=$total_page){
-                                $next = $total_page;
-                            }
-                            $total_block = ceil($total_page/$block_page_num_list);
-                            //페이징 block단위로 다음으로
-                            if($block != $total_block){?>
-                                <li><a href="./adminMain.php?page=<?=$next?>">다음</a></li>
-                                <?php
-                            }
-                        ?>
-                    </ul>
-                </nav>
+                    <div id="write_btn">
+                        <a href="./bulletinBoardWrite.php"><button>글쓰기</button></a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -178,6 +197,11 @@
 
         <script type="text/javascript">
             $(document).on('ready', function(e){ });
+
+            function goFreeBoardView(idxNum) {
+                console.log("idxNum:",idxNum);
+                location.href='./freeBoardView.php?idxNum='+idxNum;
+            }
         </script>
     </body>
 </html>
