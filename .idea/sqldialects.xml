@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/root/adminMain.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/root/broadcast.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoard.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardDelete.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/root/bulletinBoardModify.php" dialect="GenericSQL" />
