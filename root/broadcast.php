@@ -80,7 +80,7 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
                 <script>
-                    var serverURL = 'https://lglportfolioweb.tk/broadcast.php';
+                    var serverURL = 'https://lglportfolioweb.tk/root/broadcast.php';
 
                     var name = <? echo $nickName['nickName']; ?> ;
                     var room = '100';
