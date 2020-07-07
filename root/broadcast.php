@@ -32,8 +32,20 @@
             </div>
 
 
+
         </div>
     </div>
+
+    <?php
+        if($_SESSION['userId'] == 'admin@naver.com') {?>
+            <div style="position: fixed; bottom: 100px; right: -100px; cursor: pointer; color: #ffffff;">
+                <a href="#"><img style="width: 30%; height: 30%" src="../img/broadcast.png" title="방송하기"></a>
+            </div>
+            <?php
+        }
+    ?>
+
+
 
     <?php include './footer.php'?>
 
