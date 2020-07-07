@@ -20,5 +20,9 @@
     <orderEntry type="library" name="highslide-full" level="application" />
     <orderEntry type="library" name="highslide.config" level="application" />
     <orderEntry type="library" name="highslide" level="application" />
+    <orderEntry type="library" name="video.js" level="application" />
+    <orderEntry type="library" name="videojs-flash" level="application" />
+    <orderEntry type="library" name="socket.io" level="application" />
+    <orderEntry type="library" name="jquery-1.11.1" level="application" />
   </component>
 </module>

@@ -21,61 +21,40 @@
 
         <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
         <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
-        <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="https://unpkg.com/video.js/dist/video.js"></script>
         <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script>
 
         <style>
-            #container {
-                width: 400px;
-                border: 1px dotted #000;
-                padding: 10px;
-                height: 328px;
-            }
-            #chatBox {
-                border: 1px solid #000;
-                width: 400px;
-                height: 300px;
-                margin-bottom: 5px;
-            }
-            #chat li {
-                padding: 5px 0px;
-            }
-            #name {
-                width: 78px;
-            }
-            #msg {
-                width: 256px;
-            }
+            .chat{position:relative;border:1px solid #ddd;height:500px;}
+            .chat form{position:absolute;bottom:0;left:0;width:100%;padding:10px;box-sizing:border-box;}
+            .chat form input[type="text"]{border:0;padding:0 15px;height:35px;line-height:35px;width:calc(100% - 140px);box-sizing:border-box;outline:none;border-bottom:1px solid #ddd;}
+            .chat form button{border:1px solid #ddd;background-color:#fff;color:#333;width:100px;height:35px;line-height:33px;margin-left:20px;}
+            #messages{height:calc(500px - 58px);overflow-y:scroll;}
+            #messages li{}
         </style>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
-        <script type="text/javascript">
-            window.onload = function(){
-                var socket = io.connect();
-                if(socket != null && socket != undefined){
-                    var welcome = document.createElement('li');
-                    welcome.innerHTML = '<system> Start Chatting';
-                    document.getElementById('chat').appendChild(welcome);
+        <script src="../node_modules/socket.io/lib/socket.js"></script>
+        <script>
+            var socket = io();
+        </script>
 
-                    socket.on('rMsg', function(data){
-                        var li = document.createElement('li');
-                        li.innerHTML = data.name + ' : ' + data.msg;
-                        document.getElementById('chat').appendChild(li);
-                    });
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+            $(function () {
+                var socket = io();
 
-                    document.getElementById('submit').onclick = function(){
-                        var val = document.getElementById('msg').value;
-                        var name = document.getElementById('name').value;
-                        socket.emit('sMsg', {
-                            name : name,
-                            msg : val
-                        });
-                        document.getElementById('msg').value = '';
-                    };
+                $('form').submit(function(e){
+                    e.preventDefault(); // prevents page reloading ( 페이지 새로고침 막기 )
+                    socket.emit('chat message', $('#m').val()); // "chat message"라는 이벤트 생성
+                    $('#m').val(''); // 보낸 메세지 초기화
+                    return false;
+                });
 
-                }
-            };
+                socket.on('chat message', function(msg){
+                    var tag = "<li>" + msg + "</li>";
+                    $('#messages').append(tag);
+                });
+            });
         </script>
 
     </head>
@@ -91,13 +70,11 @@
                     BROADCAST
                 </div>
 
-                <div id="container">
-                    <div id="chatBox">
-                        <ul id="chat"></ul>
-                    </div>
-                    <input type="text" id="name"/>
-                    <input type="text" id="msg"/>
-                    <button id="submit">Chat</button>
+                <div class="chat">
+                    <ul id="messages"></ul>
+                    <form action="">
+                        <input type="text" id="m" autocomplete="off" placeholder="입력해주세요 :D" /><button>전송</button>
+                    </form>
                 </div>
 
             </div>
