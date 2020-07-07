@@ -25,7 +25,7 @@
     <?php include './topPart.php'?>
 
     <!--  방송 화면을 넣을 예정  -->
-    <div class="section-container">
+    <div class="section-container" style="max-width: 1300px">
         <div class="about-area" id="about" style="background-color: #f9f9ff">
             <div class="title">
                 BROADCAST
@@ -38,8 +38,8 @@
 
     <?php
         if($_SESSION['userId'] == 'admin@naver.com') {?>
-            <div style="position: fixed; bottom: 100px; right: -100px; cursor: pointer; color: #ffffff;">
-                <a href="#"><img style="width: 30%; height: 30%" src="../img/broadcast.png" title="방송하기"></a>
+            <div style="position: fixed; bottom: 100px; right: -100px; color: #ffffff;">
+                <a href="#"><img style="width: 30%; height: 30%; cursor: pointer" src="../img/broadcast.png" title="방송하기"></a>
             </div>
             <?php
         }

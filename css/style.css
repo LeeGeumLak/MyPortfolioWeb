@@ -987,7 +987,6 @@ section {
 }
 
 /* 검색 */
-
 .fo_re {
     font-weight: bold;
     color:red;
@@ -1002,6 +1001,11 @@ section {
     margin-top: 30px;
 
 }
+
+/* IT News */
+/* 인피티트 스크롤링 */
+
+
 
 /* signUpForm */
 #wrap {
