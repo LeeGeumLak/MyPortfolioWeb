@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{accessibility, all, bootstrap, bootstrap-theme, data, export-data, exporting, font-awesome, highcharts, highslide, highslide-full, highslide.config, jquery, jquery-1.11.1, jquery-3.2.1, paginationjs, series-label, socket.io, video.js, videojs-flash}" />
+    <file url="PROJECT" libraries="{accessibility, all, bootstrap, bootstrap-theme, data, export-data, exporting, font-awesome, highcharts, highslide, highslide-full, highslide.config, jquery, jquery-1.11.1, jquery-3.2.1, paginationjs, series-label, socket.io, socket.io-1.4.0, video.js, videojs-flash}" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>

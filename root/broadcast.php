@@ -22,7 +22,28 @@
     <head>
         <?php include './header.php'?>
 
-        <script src="../node_modules/socket.io-client/dist/socket.io.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        <style>
+            .j-message {
+                margin-bottom:50px;
+            }
+            .j-footer {
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                bottom: 0;
+                background-color:white;
+                border-top:1px solid black;
+            }
+            table {
+                height: 100%;
+            }
+        </style>
     </head>
 
     <body>
@@ -36,22 +57,105 @@
                     BROADCAST
                 </div>
 
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-auto offset-2">
-                            <input type="text" id="name"><?php echo $nickName['nickName'] ?><br>
-                            <textarea rows="20" cols="40" id="chatRoom"></textarea><br>
-                            <input type="text" class="col-9" id="chatInput">
-                            <input type="button" class="btn btn-sm btn-info" value="보내기" onclick="sendMsg()">
-                        </div>
-                        <!-- 접속자 명단 -->
-                        <div class="col col-lg-2">
-                            <label for="userlist">접속자 목록</label>
-                            <div id="userlist" class="bg-white" style="height: 400px; border:1px solid black; overflow: auto"></div>
-                        </div>
-                    </div>
+                <div class="j-message">
+
+                </div>
+                <div class="j-footer">
+
+                    <table>
+                        <tr>
+                            <td width="100%">
+                                <input id="message-input" class="form-control" type="text">
+                            </td>
+                            <td width="20%">
+                                <button id="message-button" class="btn btn-default" type="submit">SEND</button>
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
 
+                <script type="text/javascript" src="http://cdn.socket.io/socket.io-1.4.0.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                <script>
+                    var serverURL = 'https://lglportfolioweb.tk/broadcast.php';
+
+                    var name = <? echo $nickName['nickName']; ?> ;
+                    var room = '100';
+
+                    var socket = null;
+
+                    function writeMessage(type, name, message) {
+                        var html = '<div>{MESSAGE}</div>';
+
+                        var printName = '';
+                        if(type === 'me') {
+                            printName = name + ' : ';
+                        }
+
+                        html = html.replace('{MESSAGE}', printName + message);
+
+                        $(html).appendTo('.j-message');
+                        $('body').stop();
+                        $('body').animate({scrollTop:$('body').height()}, 500);
+
+                    }
+
+                    function sender(text) {
+                        socket.emit('user', {
+                            name : name,
+                            message : text
+                        });
+                        writeMessage('me', name, text);
+                    }
+
+                    $(document).ready(function() {
+                        socket = io.connect(serverURL);
+
+                        socket.on('connection', function(data) {
+                            console.log('connect');
+                            if(data.type === 'connected') {
+                                socket.emit('connection', {
+                                    type : 'join',
+                                    name : name,
+                                    room : room
+                                });
+                            }
+                        });
+                        socket.on('system', function(data) {
+                            writeMessage('system', 'system', data.message);
+                        });
+
+                        socket.on('message', function(data) {
+                            writeMessage('other', data.name, data.message);
+                        });
+
+                        $('#message-button').click(function() {
+
+                            var $input = $('#message-input');
+
+                            var msg = $input.val();
+                            sender(msg);
+                            $input.val('');
+                            $input.focus();
+                        });
+
+                        $('#message-input').on('keypress', function(e) {
+
+                            if(e.keyCode === 13) {
+
+                                var $input = $('#message-input');
+
+                                var msg = $input.val();
+                                sender(msg);
+                                $input.val('');
+                                $input.focus();
+                            }
+                        });
+                    });
+                </script>
             </div>
         </div>
 
@@ -68,45 +172,5 @@
 
         <script src="../js/myPortfolioWeb.js"></script>
 
-        <script type="text/javascript">
-            // 소켓을 연결
-            const socket = io.connect(':3000');
-
-            // 서버에서 전달한 데이터가 있을 때 실행되는 이벤트 리스너
-            //receiveMessage 이벤트를 전달받으면 msg.comment를 클라이언트 콘솔에 출력+chatRoom(textarea)에 누적 출럭
-            socket.on('receiveMessage', function (msg) {
-                console.log(msg.comment)
-                $('#chatRoom').append(msg.comment);
-                // TODO: 스크롤 자동으로 내려가도록 하기
-                // $('#chatRoom').scrollTop($('#chatRoom')[0].scrollHeight);
-            });
-            // 새로 접속한 유저에게 user+n 의 새 이름을 배정한다
-            socket.on('changeName', function(name){
-                let userName = name;
-                console.log('name: ', userName);
-                $('#name').val(userName);
-
-            });
-
-            let userList = [];
-            socket.on('update', function(users){
-                userList = users;
-                console.log('userList: ', userList);
-                // 업데이트를 하기 전 중첩을 방지하기 위해서 이미 출력되어있던 텍스트를 지운다
-                $('#userlist').empty();
-                for(let i=0; i < userList.length; i++){
-                    $('#userlist').append(userList[i].name +'</br>')
-                }
-            });
-
-            // 보내기 버튼의 클릭이벤트. 소켓의 데이터를 보낸다.
-            // comment라는 변수에 input태그(채팅입력창)값을 담아서 전송한 뒤 입력창 내용은 지운다
-            function sendMsg() {
-                socket.emit('sendMessage', { comment: $('#chatInput').val() });
-                console.log(comment);
-                $('#chatInput').empty();
-                $('#chatInput').focus();
-            }
-        </script>
     </body>
 </html>
