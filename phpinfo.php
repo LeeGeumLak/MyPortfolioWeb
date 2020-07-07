@@ -7,7 +7,7 @@
 
 <?php
 echo '<p>Hello PHP</p>';
-echo "phpstorm 에서 수정함(2020.06.11 14:47)";
+echo "aws 연동 후, phpstorm 에서 수정함(2020.06.26 17:20)";
 echo "PHP 버전은 : " . phpversion();
 phpinfo();
 ?>

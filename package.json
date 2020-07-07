@@ -1,0 +1,24 @@
+{
+  "name": "myportfolioweb",
+  "version": "1.0.0",
+  "description": "포트폴리오 웹",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeeGeumLak/MyPortfolioWeb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeeGeumLak/MyPortfolioWeb/issues"
+  },
+  "homepage": "https://github.com/LeeGeumLak/MyPortfolioWeb#readme"
+}
