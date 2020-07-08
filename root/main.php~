@@ -12,6 +12,7 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
+        <?php $prevUrl = $_GET['previousUrl'] ?>
         <!--  유저로그를 db에 저장하는 파일  -->
         <?php include './userLog.php' ?>
 
