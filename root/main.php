@@ -13,7 +13,7 @@
         <?php include './topPart.php'?>
 
         <!--  유저로그를 db에 저장하는 파일  -->
-        <? include './userLog.php' ?>
+        <?php include './userLog.php' ?>
 
         <!--  메인화면에 표시될 텍스트 타이퍼 -->
         <div class="typer" id="h">
