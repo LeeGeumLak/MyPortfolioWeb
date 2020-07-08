@@ -1,14 +1,20 @@
 <?php
     //쿠키가 존재하지 않는다면
-    if(!isset($_COOKIE['user_log_cookie'])){
+    //if(!isset($_COOKIE['user_log_cookie'])){
         //쿠키생성
-        setcookie('user_log_cookie', true, time() + 60*30);
+        //setcookie('user_log_cookie', true, time() + 60*30);
 
-        //user_log정보 insert
+        //userLog정보 insert
         include '../DBConnect.php';
 
         //Post로 받은 데이터 가져오기
-        $userId = $_SESSION['userId'];
+        session_start();
+        //로그인 세션 없을때, 로그인 페이지로 이동
+        if(isset($_SESSION['userId'])) {
+            $userId = $_SESSION['userId'];
+        } else {
+            $userId = '';
+        }
         $ip = $_SERVER["REMOTE_ADDR"];
         $previousUrl = $_SERVER['HTTP_REFERER'];
 
@@ -20,7 +26,7 @@
         //들어온 ip의 국가 가져오기
         $key = "2020070616035390754922";
         $data_format = "json";
-        $url = "http://whois.kisa.or.kr/openapi/ipascc.jsp?query=$ip&key=$key&answer=$data_format";
+        $url = "http://whois.kisa.or.kr/openapi/ipascc.jsp?query=".$ip."&key=".$key."&answer=".$data_format."";
 
         $ch = curl_init();                                              //curl 초기화
         curl_setopt($ch, CURLOPT_URL, $url);                      //URL 지정하기
@@ -29,6 +35,8 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);    //원격 서버의 인증서가 유효한지 검사 안함
 
         $data = curl_exec($ch);
+        $curl_errno = curl_errno($ch);
+        $curl_error = curl_error($ch);
 
         $decodeJsonData = json_decode($data, true);
         $country = $decodeJsonData["whois"]["countryCode"];
@@ -37,9 +45,7 @@
         // auto_increment 값 초기화
         $sql_autoIncrement = mq("alter table userLog auto_increment =1");
 
-        $sql = "INSERT INTO userLog (userId, ip, country, previousUrl, currentUrl, accessDate) 
-                VALUES ('$userId', '$ip', '$country', '$previousUrl', '$currentUrl', now())";
-
-        $db->query($sql);
-    }
+        $sql = mq("INSERT INTO userLog (userId, ip, country, previousUrl, currentUrl, accessDate) 
+                VALUES ('$userId', '$ip', '$country', '$previousUrl', '$currentUrl', now())");
+    //}
 ?>
