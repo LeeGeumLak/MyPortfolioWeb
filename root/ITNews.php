@@ -19,9 +19,7 @@
                 IT NEWS
             </div>
 
-            <article>
 
-            </article>
 
         </div>
     </div>

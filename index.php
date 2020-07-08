@@ -6,6 +6,9 @@
     </head>
 
     <body>
-        <?php echo("<script>location.href='./root/main.php';</script>"); ?>
+        <?php
+            $previousUrl = $_SERVER['HTTP_REFERER'];
+            echo("<script>location.href='./root/main.php?previousUrl=$previousUrl';</script>");
+        ?>
     </body>
 </html>
