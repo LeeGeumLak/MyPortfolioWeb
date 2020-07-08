@@ -8,6 +8,8 @@
     <body>
         <?php
             $prevUrl = $_SERVER['HTTP_REFERER'];
+        echo "<script> console.log('prevUrl :  ".$prevUrl."') </script>";
+
         ?>
         <script> location.href='./root/main.php'; </script>;
     </body>
