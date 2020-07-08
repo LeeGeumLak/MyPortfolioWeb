@@ -48,7 +48,9 @@
         // auto_increment 값 초기화
         $sql_autoIncrement = mq("alter table userLog auto_increment =1");
 
-        $date = now();
+        date_default_timezone_set("Asia/Seoul");
+        $date = date('Y-m-d H:i:s');
+
         $sql = mq("INSERT INTO userLog(userId, ip, country, previousUrl, currentUrl, accessDate) 
                 VALUES ('".$userId."', '".$ip."', '".$country."', '".$previousUrl."', '".$currentUrl."', '".$date."' )");
 
