@@ -8,7 +8,7 @@
     <body>
         <?php
             global $previousUrl;
-            $previousUrl = $_SERVER['HTTP_REFERER'];
+            $prevUrl = $_SERVER['HTTP_REFERER'];
         ?>
         <script> location.href='./root/main.php'; </script>;
     </body>
