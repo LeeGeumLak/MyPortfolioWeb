@@ -662,6 +662,9 @@ section {
 
 .projects-area > .container > .filterItem > .image > img {
     border-radius: 5px;
+    width: inherit;
+    max-width: 100%;
+    height: inherit;
 }
 
 .projects-area > .container > .filterItem > .main {
