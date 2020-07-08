@@ -37,9 +37,17 @@
                         </div>
                         <div class="main">
                             카메라 필터 어플
+                            <a href="https://github.com/LeeGeumLak/opencv_camera_app">
+                                <i class="fab fa-github" style="margin-left: 10px; font-size:40px; background-color: #f9f9ff"></i>
+                            </a>
                         </div>
                         <div class="sub">
                             openCV를 활용하여 카메라에 필터를 씌울 수 있는 어플입니다.
+<!--                            <div class="sns" style="margin-left: 5px">-->
+<!--                                <a href="https://github.com/LeeGeumLak/opencv_camera_app">-->
+<!--                                    <i class="fab fa-github" style="font-size:40px; background-color: #f9f9ff"></i>-->
+<!--                                </a>-->
+<!--                            </div>-->
                         </div>
                         <div class="text">
                             * opencv 사진 필터 앱<br>
@@ -51,7 +59,7 @@
                             (4) 스위치 버튼으로 알람을 on/off 하며, 일정한 시간 간격으로 notification을 보냅니다. (broadcast receiver, service)<br>
                             (5) 사진 속의 영어 문장을 찍고, 번역하기 버튼을 클릭하면, 한국어 텍스트로 번역됩니다. (tesseract)<br>
                             (6) 1:1 영상통화가 가능합니다. (WebRtc)<br>
-                            (7) 처음 앱 실행시, Lottie api를 사용하여 애니메이션 효과를 주었습니다.<br>
+                            (7) 처음 앱 실행시, Lottie api를 사용하여 애니메이션 효과를 주었습니다.
                         </div>
                     </div>
                     <div class="filterItem java">
@@ -61,6 +69,9 @@
                         </div>
                         <div class="main">
                             RPG GAME
+                            <a href="https://github.com/LeeGeumLak/Java_text_game">
+                                <i class="fab fa-github" style="margin-left: 10px; font-size:40px; background-color: #f9f9ff"></i>
+                            </a>
                         </div>
                         <div class="sub">
                             자바로 구현한 텍스트 기반 rpg 게임입니다.
@@ -88,6 +99,9 @@
                         </div>
                         <div class="main">
                             포트폴리오 사이트
+                            <a href="https://github.com/LeeGeumLak/MyPortfolioWeb">
+                                <i class="fab fa-github" style="margin-left: 10px; font-size:40px; background-color: #f9f9ff"></i>
+                            </a>
                         </div>
                         <div class="sub">
                             php를 이용해 제 개인 포트폴리오 사이트를 만들었습니다.
@@ -95,7 +109,7 @@
                         <div class="text">
                             php 와 html, css, javascript를 이용해 제 개인 포트폴리오 사이트를 만들었습니다.<br>
                             이 외에도 가입한 회원끼리 채팅이 가능하며, it에 관련된 뉴스를 크롤링하여 한눈에 볼 수 있도록 만들었습니다.<br>
-                            관리자 페이지를 구현하여, 접속자의 id, ip, 국가, 이전 페이지 등을 볼 수 있습니다.<br>
+                            관리자 페이지를 구현하여, 접속자의 id, ip, 국가, 이전 페이지 등을 볼 수 있습니다.
                         </div>
                     </div>
                     <div class="filterItem android java">
@@ -105,6 +119,9 @@
                         </div>
                         <div class="main">
                             두더지 잡기 게임
+                            <a href="https://github.com/LeeGeumLak/Whack-a-mole_java_ver">
+                                <i class="fab fa-github" style="margin-left: 10px; font-size:40px; background-color: #f9f9ff"></i>
+                            </a>
                         </div>
                         <div class="sub">
                             오락실에서만 즐기던 두더지 잡기 게임을 앱으로 즐기기 위해 간단한 형태로 만들었습니다.
