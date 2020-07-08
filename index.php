@@ -7,7 +7,6 @@
 
     <body>
         <?php
-            global $prevUrl;
             $prevUrl = $_SERVER['HTTP_REFERER'];
         ?>
         <script> location.href='./root/main.php'; </script>;
