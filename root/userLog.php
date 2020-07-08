@@ -1,8 +1,31 @@
+<script type="text/javascript">
+    //쿠기 생성
+    function setCookie(name, value, exp) {
+        let date = new Date();
+        date.setTime(date.getTime() + exp*30*60*1000);
+        document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+    }
+    //쿠키 가져오기
+    function getCookie(name) {
+        var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+        return value? value[2] : null;
+    }
+    //쿠키 삭제
+    function deleteCookie(name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+</script>
+
 <?php
     //쿠키가 존재하지 않는다면
     if(!isset($_COOKIE['user_log_cookie'])){
         //쿠키생성
-        setcookie('user_log_cookie', true, time() + 60*30, "/");
+        //setcookie('user_log_cookie', true, time() + 60*30);
+        ?>
+        <script type="text/javascript">
+            setCookie('user_log_cookie', true, 1);
+        </script>
+        <?php
 
         //userLog정보 insert
         include '../DBConnect.php';
