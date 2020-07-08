@@ -16,7 +16,6 @@
         }
 
         $ip = $_SERVER['REMOTE_ADDR'];
-        $previousUrl = $_GET['previousUrl'];
         //$previousUrl = $_SERVER['HTTP_REFERER'];
 
         //현재 url 가져오기
