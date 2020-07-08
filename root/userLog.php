@@ -23,15 +23,10 @@
         $requestUri = $_SERVER['REQUEST_URI'];
         $currentUrl = 'https://' . $httpHost . $requestUri;
 
-        //들어온 ip의 국가 가져오기
+        /*//들어온 ip의 국가 가져오기
         $key = "2020070816443623534404";
         $data_format = "json";
         $url = "http://whois.kisa.or.kr/openapi/ipascc.jsp?query=$ip&key=$key&answer=$data_format";
-
-        echo "<script> console.log('id :  ".$userId."') </script>";
-        echo "<script> console.log('ip :  ".$ip."') </script>";
-        echo "<script> console.log('prevUrl :  ".$previousUrl."') </script>";
-        echo "<script> console.log('curUrl :  ".$currentUrl."') </script>";
 
         $ch = curl_init();                                              //curl 초기화
         curl_setopt($ch, CURLOPT_URL, $url);                      //URL 지정하기
@@ -43,7 +38,10 @@
 
         $decodeJsonData = json_decode($data, true);
         $country = $decodeJsonData['whois']['countryCode'];
-        curl_close($ch);
+        curl_close($ch);*/
+
+        $details = json_decode(file_get_contents("http://ipinfo.io/"));
+        $country = $details->country;
 
         echo "<script> console.log('country :  ".$country."') </script>";
 
