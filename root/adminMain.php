@@ -28,7 +28,7 @@
         <!--  최상단 네비게이션바     -->
         <?php include './topPart.php'?>
 
-        <div class="container_big" style="height: 100%; margin:20px; margin-top: 100px">
+        <!--<div class="container_big" style="height: 100%; margin:20px; margin-top: 100px">
             <nav class="side_bar fl">
                 <div class="sign">네비게이션</div>
                 <ul>
@@ -40,7 +40,7 @@
                     </li>
                 </ul>
             </nav>
-        </div>
+        </div>-->
 
         <!--  유저의 로그를 볼 수 있는 게시판   -->
         <div class="section-container" style="max-width: 1500px">
