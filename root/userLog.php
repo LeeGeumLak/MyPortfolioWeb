@@ -1,8 +1,8 @@
 <?php
     //쿠키가 존재하지 않는다면
-    //if(!isset($_COOKIE['user_log_cookie'])){
+    if(!isset($_COOKIE['user_log_cookie'])){
         //쿠키생성
-        //setcookie('user_log_cookie', true, time() + 60*30);
+        setcookie('user_log_cookie', true, time() + 60*30);
 
         //userLog정보 insert
         include '../DBConnect.php';
@@ -12,7 +12,7 @@
         if(isset($_SESSION['userId'])) {
             $userId = $_SESSION['userId'];
         } else {
-            $userId = '';
+            $userId = '-';
         }
 
         $ip = $_SERVER["REMOTE_ADDR"];
@@ -54,5 +54,5 @@
         $sql = mq("INSERT INTO userLog(userId, ip, country, previousUrl, currentUrl, accessDate) 
                 VALUES ('".$userId."', '".$ip."', '".$country."', '".$previousUrl."', '".$currentUrl."', '".$date."' )");
 
-    //}
+    }
 ?>
