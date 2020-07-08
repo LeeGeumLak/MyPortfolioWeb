@@ -1,5 +1,3 @@
-<?php $prevUrl = $_SERVER['HTTP_REFERER']; ?>
-
 <!doctype html>
     <head>
         <?php include './root/header.php' ?>
@@ -8,9 +6,6 @@
     </head>
 
     <body>
-        <?php
-            echo "<script> console.log('prevUrl : ".$prevUrl."') </script>";
-        ?>
-<!--        <script> location.href='./root/main.php'; </script>;-->
+        <script> location.href='./root/main.php'; </script>;
     </body>
 </html>
