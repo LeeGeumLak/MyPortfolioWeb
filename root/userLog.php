@@ -28,10 +28,10 @@
         $data_format = "json";
         $url = "http://whois.kisa.or.kr/openapi/ipascc.jsp?query=".$ip."&key=".$key."&answer=".$data_format."";
 
-        echo "<script> console.log('id : ' .$userId) </script>";
-        echo "<script> console.log('ip : ' .$ip) </script>";
-        echo "<script> console.log('prevUrl : ' .$previousUrl) </script>";
-        echo "<script> console.log('curUrl : ' .$currentUrl) </script>";
+        echo "<script> console.log('id :  ".$userId."') </script>";
+        echo "<script> console.log('ip :  ".$ip."') </script>";
+        echo "<script> console.log('prevUrl :  ".$previousUrl."') </script>";
+        echo "<script> console.log('curUrl :  ".$currentUrl."') </script>";
 
         $ch = curl_init();                                              //curl 초기화
         curl_setopt($ch, CURLOPT_URL, $url);                      //URL 지정하기
@@ -45,7 +45,7 @@
         $country = $decodeJsonData['whois']['countryCode'];
         curl_close($ch);
 
-        echo "<script> console.log('country : ' .$country) </script>";
+        echo "<script> console.log('country :  ".$country."') </script>";
 
         // auto_increment 값 초기화
         $sql_autoIncrement = mq("alter table userLog auto_increment =1");
