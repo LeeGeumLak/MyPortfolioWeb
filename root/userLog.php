@@ -15,7 +15,7 @@
             $userId = '';
         }
 
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = $_SERVER["REMOTE_ADDR"];
         //$previousUrl = $_SERVER['HTTP_REFERER'];
         global $prevUrl;
         $previousUrl = $prevUrl;
@@ -28,7 +28,7 @@
         //들어온 ip의 국가 가져오기
         $key = "2020070816443623534404";
         $data_format = "json";
-        $url = "http://whois.kisa.or.kr/openapi/ipascc.jsp?query=".$ip."&key=".$key."&answer=".$data_format."";
+        $url = "http://whois.kisa.or.kr/openapi/ipascc.jsp?query=$ip&key=$key&answer=$data_format";
 
         echo "<script> console.log('id :  ".$userId."') </script>";
         echo "<script> console.log('ip :  ".$ip."') </script>";
