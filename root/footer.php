@@ -16,6 +16,7 @@
                 }
             }
         ?>
-        <p>Copyright © 2020 LGL Corp. All rights reserved.</p>
+        <p>Copyright © 2020 LGL Corp. All rights reserved.<br></p>
+        <p>본 사이트는 상업적 목적이 없는 개인 포트폴리오 사이트입니다.</p>
     </div>
 </footer>
