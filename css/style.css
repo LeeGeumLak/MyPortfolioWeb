@@ -1006,12 +1006,26 @@ section {
 }
 
 /* IT News */
-.article_title {
+.article:hover {
+    background: #FFEEE4;
+}
 
+.article_title {
+    font-size: 30px;
+    color: #F15B25;
+    margin-top: 10px;
+}
+
+.article_image {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    clear: both;
 }
 
 .article_content {
-
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 /* 인피티트 스크롤링 */
