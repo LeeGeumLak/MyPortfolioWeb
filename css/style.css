@@ -1006,9 +1006,9 @@ section {
 }
 
 /* IT News */
-.article:hover {
+/*.article:hover {
     background: #FFEEE4;
-}
+}*/
 
 .article_title {
     font-size: 30px;
