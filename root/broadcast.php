@@ -27,23 +27,6 @@
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-
-        <style>
-            .j-message {
-                margin-bottom:50px;
-            }
-            .j-footer {
-                width: 100%;
-                height: 50px;
-                position: fixed;
-                bottom: 0;
-                background-color:white;
-                border-top:1px solid black;
-            }
-            table {
-                height: 100%;
-            }
-        </style>
     </head>
 
     <body>
@@ -57,105 +40,8 @@
                     BROADCAST
                 </div>
 
-                <div class="j-message">
-
-                </div>
-                <div class="j-footer">
-
-                    <table>
-                        <tr>
-                            <td width="100%">
-                                <input id="message-input" class="form-control" type="text">
-                            </td>
-                            <td width="20%">
-                                <button id="message-button" class="btn btn-default" type="submit">SEND</button>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-
-                <script type="text/javascript" src="http://cdn.socket.io/socket.io-1.4.0.js"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-                <script>
-                    var serverURL = 'https://lglportfolioweb.tk/root/broadcast.php';
-
-                    var name = <? echo $nickName['nickName']; ?> ;
-                    var room = '100';
-
-                    var socket = null;
-
-                    function writeMessage(type, name, message) {
-                        var html = '<div>{MESSAGE}</div>';
-
-                        var printName = '';
-                        if(type === 'me') {
-                            printName = name + ' : ';
-                        }
-
-                        html = html.replace('{MESSAGE}', printName + message);
-
-                        $(html).appendTo('.j-message');
-                        $('body').stop();
-                        $('body').animate({scrollTop:$('body').height()}, 500);
-
-                    }
-
-                    function sender(text) {
-                        socket.emit('user', {
-                            name : name,
-                            message : text
-                        });
-                        writeMessage('me', name, text);
-                    }
-
-                    $(document).ready(function() {
-                        socket = io.connect(serverURL);
-
-                        socket.on('connection', function(data) {
-                            console.log('connect');
-                            if(data.type === 'connected') {
-                                socket.emit('connection', {
-                                    type : 'join',
-                                    name : name,
-                                    room : room
-                                });
-                            }
-                        });
-                        socket.on('system', function(data) {
-                            writeMessage('system', 'system', data.message);
-                        });
-
-                        socket.on('message', function(data) {
-                            writeMessage('other', data.name, data.message);
-                        });
-
-                        $('#message-button').click(function() {
-
-                            var $input = $('#message-input');
-
-                            var msg = $input.val();
-                            sender(msg);
-                            $input.val('');
-                            $input.focus();
-                        });
-
-                        $('#message-input').on('keypress', function(e) {
-
-                            if(e.keyCode === 13) {
-
-                                var $input = $('#message-input');
-
-                                var msg = $input.val();
-                                sender(msg);
-                                $input.val('');
-                                $input.focus();
-                            }
-                        });
-                    });
-                </script>
+                <div id="root"></div>
+                <script src="/root/bundle.js"></script>
             </div>
         </div>
 
