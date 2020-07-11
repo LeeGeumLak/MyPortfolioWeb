@@ -40,8 +40,15 @@
                     BROADCAST
                 </div>
 
-                <div id="root"></div>
-                <script src="/root/bundle.js"></script>
+                <div class="app__wrap">
+                    <div id="info" class="app__info"></div>
+                    <div id="chatWindow" class="app__window"></div>
+                    <div class="app__input__wrap">
+                        <input id="chatInput" type="text" class="app__input" autofocus placeholder="대화를 입력해주세요.">
+                        <button id="chatMessageSendBtn" class="app__button">전송</button>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -57,6 +64,8 @@
         <?php include './footer.php'?>
 
         <script src="../js/myPortfolioWeb.js"></script>
+        <script src="../js/broadcast.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
 
     </body>
 </html>
