@@ -1,49 +1,43 @@
-const express = require('express');
-const http = require('http');
-const app = express();
-const server = http.createServer(app);
-const fs = require('fs');
-const io = require('socket.io')(server);
+// server.js
 
-app.use(express.static('root'));
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var path = require('path');
 
-app.get('/root/broadcast.php', function(req, res){
-    fs.readFile('./root/broadcast.php', (err, data) => {
-        if(err) throw err;
+app.set('src', './root');
+app.set('view engine', 'pug');
+app.use(express.static(path.join(__dirname, 'css')));
 
-        res.writeHead(200, {
-            'Content-Type' : 'text/html'
-        })
-            .write(data)
-            .end();
-    });
+app.get('/', (req, res) => {
+    res.render('chat');
 });
 
-io.sockets.on('connection', function(socket){
-    socket.on('newUserConnect', function(name){
-        socket.name = name;
-
-        var message = name + '님이 접속했습니다';
-        io.sockets.emit('updateMessage', {
-            name : 'SERVER',
-            message : message
-        });
-    });
+var count=1;
+io.on('connection', function(socket){
+    console.log('user connected: ', socket.id);
+    var name = "익명" + count++;
+    socket.name = name;
+    io.to(socket.id).emit('create name', name);
+    io.emit('new_connect', name);
 
     socket.on('disconnect', function(){
-        var message = socket.name + '님이 퇴장했습니다';
-        socket.broadcast.emit('updateMessage', {
-            name : 'SERVER',
-            message : message });
+        console.log('user disconnected: '+ socket.id + ' ' + socket.name);
+        io.emit('new_disconnect', socket.name);
     });
 
-    socket.on('sendMessage', function(data){
-        data.name = socket.name;
-        io.sockets.emit('updateMessage', data);
+    socket.on('send message', function(name, text){
+        var msg = name + ' : ' + text;
+        if(name != socket.name)
+            io.emit('change name', socket.name, name);
+        socket.name = name;
+        console.log(msg);
+        io.emit('receive message', msg);
     });
 
 });
 
-server.listen(8080, function(){
-    console.log('서버 실행중...');
+http.listen(3000, function(){
+    console.log('server on..');
 });

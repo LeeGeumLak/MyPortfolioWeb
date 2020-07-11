@@ -53,19 +53,17 @@
         </div>
 
         <?php
-            if($_SESSION['userId'] == 'admin@naver.com') {?>
+/*            if($_SESSION['userId'] == 'admin@naver.com') {*/?><!--
                 <div style="position: fixed; bottom: 100px; right: -300px; color: #ffffff;">
                     <a href="#"><img style="width: 30%; height: 30%; cursor: pointer" src="../img/broadcast.png" title="방송하기"></a>
                 </div>
-                <?php
-            }
-        ?>
+                --><?php
+/*            }
+        */?>
 
         <?php include './footer.php'?>
 
         <script src="../js/myPortfolioWeb.js"></script>
-        <script src="../js/broadcast.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
 
     </body>
 </html>

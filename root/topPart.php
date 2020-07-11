@@ -10,7 +10,7 @@
             <div class="nav-item"><a class="nav-link" href="./projects.php">projects</a></div>
             <div class="nav-item"><a class="nav-link" href="./bulletinBoard.php">bulletin board</a></div>
             <div class="nav-item"><a class="nav-link" href="./ITNews.php">IT news</a></div>
-            <div class="nav-item"><a class="nav-link" href="./broadcast.php">broadcast</a></div>
+            <div class="nav-item"><a class="nav-link" href="./chat.pug">chatting</a></div>
 
             <?php
                 session_start();
