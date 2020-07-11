@@ -1,43 +1,38 @@
-// server.js
-
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var path = require('path');
 
-app.set('src', './root');
-app.set('view engine', 'pug');
-app.use(express.static(path.join(__dirname, 'css')));
+var http = require('http');
+var server = http.Server(app);
 
-app.get('/', (req, res) => {
-    res.render('chat');
+var socket = require('socket.io');
+var io = socket(server);
+
+var port = 5000;
+var socketList = [];
+
+app.use('/root/broadcast.php', function(req, resp) {
+    resp.sendFile(__dirname + '/root/broadcast.php');
 });
 
-var count=1;
-io.on('connection', function(socket){
-    console.log('user connected: ', socket.id);
-    var name = "익명" + count++;
-    socket.name = name;
-    io.to(socket.id).emit('create name', name);
-    io.emit('new_connect', name);
+io.on('connection', function(socket) {
+    socketList.push(socket);
+    console.log('User Join');
 
-    socket.on('disconnect', function(){
-        console.log('user disconnected: '+ socket.id + ' ' + socket.name);
-        io.emit('new_disconnect', socket.name);
-    });
-
-    socket.on('send message', function(name, text){
-        var msg = name + ' : ' + text;
-        if(name != socket.name)
-            io.emit('change name', socket.name, name);
-        socket.name = name;
+    socket.on('SEND', function(msg) {
         console.log(msg);
-        io.emit('receive message', msg);
+        socketList.forEach(function(item, i) {
+            console.log(item.id);
+            if (item != socket) {
+                item.emit('SEND', msg);
+            }
+        });
     });
 
+    socket.on('disconnect', function() {
+        socketList.splice(socketList.indexOf(socket), 1);
+    });
 });
 
-http.listen(3000, function(){
-    console.log('server on..');
+server.listen(port, function() {
+    console.log('Server On !');
 });
